@@ -36,4 +36,11 @@ public class SpecialServiceImple implements SpecialService {
         Specials specials=manageSpecial.getSpecialsByDealer(dealerId,pageNumber);
         return specials;
     }
+
+    @Override
+    public void getVehiclesBySpecial(Special special) {
+        manageSpecial.getVehiclesBySpecial(special);
+    }
+
+
 }

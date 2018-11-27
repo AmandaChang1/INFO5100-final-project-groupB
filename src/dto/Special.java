@@ -76,6 +76,15 @@ public class Special {
 
     }
 
+    public Special(String id,float value,String dealerId,String maker) {
+        this.id = id;
+        this.value = value;
+        this.dealerId = dealerId;
+        VehicleCriterion vehicleCriterion = new VehicleCriterion();
+        this.criterion = vehicleCriterion;
+        this.criterion.maker = maker;
+    }
+
     public Special(String id, String dealerid, String startDate, String endDate, String title, String description, String disclaimer, float value, VehicleCriterion criterion) {
         this.id = id;
         this.dealerId = dealerid;
