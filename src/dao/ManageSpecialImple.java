@@ -29,8 +29,8 @@ public class ManageSpecialImple implements ManageSpecial{
 
         String data="";
 
-        data=special.getId()+","+special.getDealerId()+","+special.getStartDate()+","+special.getEndDate()+","+special.getTitle()+","+special.getDescription()+","+special.getDisclaimer()+","+special.getValue()+","+
-                special.getCriterion().getMaker()+","+special.getCriterion().getModel()+","+special.getCriterion().getYear()+","+special.getCriterion().getMinPrice()+","+special.getCriterion().getMaxPrice();
+        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+
+                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         io.addData("special",data);
     }
 
@@ -46,8 +46,8 @@ public class ManageSpecialImple implements ManageSpecial{
     public void updateSpecial(Special special) {
         String data="";
 
-        data=special.getId()+","+special.getDealerId()+","+special.getStartDate()+","+special.getEndDate()+","+special.getTitle()+","+special.getDescription()+","+special.getDisclaimer()+","+special.getValue()+","+
-                special.getCriterion().getMaker()+","+special.getCriterion().getModel()+","+special.getCriterion().getYear()+","+special.getCriterion().getMinPrice()+","+special.getCriterion().getMaxPrice();
+        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+
+                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         String id=special.getId();
         io.updateData("special",id,data);
     }

@@ -24,12 +24,12 @@ public class app {
         //test Vehicle
 
         VehicleService service=new VehicleServiceImple();
-        /*Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1");
+        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
         service.addVehicle(vehicle);
-       vehicle=new Vehicle("1","1","22","1","1","1","1","1","1","1");
+       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
         service.updateVehicle(vehicle);
         service.deleteVehicle(vehicle);
-*/
+
 
         Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
         if(inventory==null){

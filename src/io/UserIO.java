@@ -14,7 +14,7 @@ public class UserIO implements  UserIOInterface {
 
     private HashMap<String,String> map=new HashMap<>();
     public UserIO() {
-        map.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images,specialid");
+        map.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
         map.put("dealer","dealername,url,location");
         map.put("special","id,dealername,startdate,enddate,title,description,disclaimer,value,maker,model,year,minPrice,maxPrice");
 

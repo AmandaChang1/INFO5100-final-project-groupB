@@ -16,10 +16,10 @@ public class ManageVehicleImple implements ManageVehicle{
     public void addVehicle(Vehicle vehicle) {
         String data="";
 
-        data=vehicle.getId()+","+vehicle.getDealerId()+","+vehicle.getCategory()+","+
-                vehicle.getYear()+","+vehicle.getMake()+","+vehicle.getModel()+","+
-                vehicle.getTrim()+","+vehicle.getType()+","+vehicle.getPrice()+","+
-                vehicle.getImages()+","+vehicle.getSpecialId()+","+vehicle.getDiscountprice();
+        data="'"+vehicle.getId()+"','"+vehicle.getDealerId()+"','"+vehicle.getCategory()+"','"+
+                vehicle.getYear()+"','"+vehicle.getMake()+"','"+vehicle.getModel()+"','"+
+                vehicle.getTrim()+"','"+vehicle.getType()+"','"+vehicle.getPrice()+"','"+
+                vehicle.getImages()+"','"+vehicle.getSpecialId()+"','"+vehicle.getDiscountprice()+"'";
         io.addData("vehicle",data);
 
     }
@@ -38,10 +38,10 @@ public class ManageVehicleImple implements ManageVehicle{
     public void updateVehicle(Vehicle vehicle) {
         String data="";
 
-        data=vehicle.getId()+","+vehicle.getDealerId()+","+vehicle.getCategory()+","+
-                vehicle.getYear()+","+vehicle.getMake()+","+vehicle.getModel()+","+
-                vehicle.getTrim()+","+vehicle.getType()+","+vehicle.getPrice()+"," +
-                vehicle.getImages()+","+vehicle.getSpecialId()+","+vehicle.getDiscountprice();
+        data="'"+vehicle.getId()+"','"+vehicle.getDealerId()+"','"+vehicle.getCategory()+"','"+
+                vehicle.getYear()+"','"+vehicle.getMake()+"','"+vehicle.getModel()+"','"+
+                vehicle.getTrim()+"','"+vehicle.getType()+"','"+vehicle.getPrice()+"','"+
+                vehicle.getImages()+"','"+vehicle.getSpecialId()+"','"+vehicle.getDiscountprice()+"'";
         String id=vehicle.getId();
         io.updateData("vehicle",id,data);
 
