@@ -119,9 +119,7 @@ public class UserIO implements  UserIOInterface {
         ResultSet resultSet=null;
         ArrayList<String> resset=new ArrayList<>();
         try {
-
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
            resultSet=preparedStatement.executeQuery();
            int col=resultSet.getMetaData().getColumnCount();
            while(resultSet.next()){

@@ -7,5 +7,5 @@ public interface VehicleService {
     void addVehicle(Vehicle vehicle);
     void deleteVehicle(Vehicle vehicle);
     void updateVehicle(Vehicle vehicle);
-    Inventory getInventoryByDealer(String dealerId);
+    Inventory getInventoryByDealer(String dealerId,int pageNumber);
 }

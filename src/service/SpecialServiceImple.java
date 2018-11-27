@@ -23,23 +23,17 @@ public class SpecialServiceImple implements SpecialService {
 
     @Override
     public void deleteSpecial(Special special) {
-
         manageSpecial.deleteSpecial(special);
-
     }
 
     @Override
     public void updateSpecial(Special special) {
-
         manageSpecial.updateSpecial(special);
-
     }
 
     @Override
-    public Specials getSpecialsByDealer(String dealerId) {
-
-        Specials specials=manageSpecial.getSpecialsByDealer(dealerId);
+    public Specials getSpecialsByDealer(String dealerId,int pageNumber) {
+        Specials specials=manageSpecial.getSpecialsByDealer(dealerId,pageNumber);
         return specials;
-
     }
 }

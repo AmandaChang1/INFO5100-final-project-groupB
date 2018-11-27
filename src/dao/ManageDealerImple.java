@@ -31,8 +31,8 @@ public class ManageDealerImple implements ManageDealer{
     }
 
     @Override
-    public ArrayList<Dealer> getDealerByLocation(String location) {
-        ArrayList<String> resset=io.getData("SELECT * FROM cloud.dealer WHERE location='"+location+"'");
+    public ArrayList<Dealer> getDealerByLocation(String location,int pageNumber) {
+        ArrayList<String> resset=io.getData("SELECT * FROM cloud.dealer WHERE location='"+location+"'"+"limit "+(pageNumber-1)*10+", 10");
         ArrayList<Dealer> dealers=new ArrayList<>();
         for(String res:resset){
             String[] a=res.trim().split("~");

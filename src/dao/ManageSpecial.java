@@ -9,5 +9,5 @@ public interface ManageSpecial {
     void addSpecial(Special special);
     void deleteSpecial(Special special);
     void updateSpecial(Special special);
-    Specials getSpecialsByDealer(String dealerId);
+    Specials getSpecialsByDealer(String dealerId,int pageNumber);
 }

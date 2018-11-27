@@ -26,8 +26,8 @@ public class VehicleServiceImple implements VehicleService{
     }
 
     @Override
-    public Inventory getInventoryByDealer(String dealerId) {
-        Inventory vehicles=manageVehicle.getVehicle(dealerId);
+    public Inventory getInventoryByDealer(String dealerId,int pageNumber) {
+        Inventory vehicles=manageVehicle.getVehicle(dealerId,pageNumber);
         return vehicles;
     }
 }

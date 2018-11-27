@@ -25,7 +25,7 @@ public class DealerServiceImple implements DealerService{
     }
 
     @Override
-    public ArrayList<Dealer> getDealerByLocation(String location) {
-        return manageDealer.getDealerByLocation(location);
+    public ArrayList<Dealer> getDealerByLocation(String location,int pageNumber) {
+        return manageDealer.getDealerByLocation(location,pageNumber);
     }
 }

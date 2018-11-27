@@ -7,5 +7,5 @@ public interface ManageVehicle {
     void addVehicle(Vehicle vehicle);
     void deleteVehicle(Vehicle vehicle);
     void updateVehicle(Vehicle vehicle);
-   Inventory getVehicle(String id);
+   Inventory getVehicle(String id,int pageNumber);
 }

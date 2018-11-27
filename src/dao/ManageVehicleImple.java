@@ -48,9 +48,9 @@ public class ManageVehicleImple implements ManageVehicle{
     }
 
     @Override
-    public Inventory getVehicle(String dealerId) {
+    public Inventory getVehicle(String dealerId,int pageNumber) {
 
-       ArrayList<String> set=io.getData("SELECT * FROM cloud.vehicle where dealername='"+dealerId+"'");
+       ArrayList<String> set=io.getData("SELECT * FROM cloud.vehicle where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*30+", 30");
 
        Inventory inventory=new Inventory();
        for(String a:set) {

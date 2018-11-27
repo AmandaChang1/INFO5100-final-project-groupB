@@ -31,7 +31,7 @@ public class app {
         service.deleteVehicle(vehicle);
 */
 
-        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann");
+        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
         if(inventory==null){
             System.out.println("not found");
         }
@@ -44,16 +44,16 @@ public class app {
 
 
         //test Special
-
+      /*
         SpecialService specialService=new SpecialServiceImple();
-        /*
+
        Special.VehicleCriterion criterion=new Special.VehicleCriterion("1","1","1",1,1);
         Special special=new Special("1","1","1","1","1","1","1",1,criterion);
         specialService.addSpecial(special);
         special=new Special("1","1","22","1","1","1","1",1,criterion);
         specialService.updateSpecial(special);
         specialService.deleteSpecial(special);
-        */
+
         Specials specials=specialService.getSpecialsByDealer("gmps-davis-chevrolet");
         if(specials==null)
             System.out.println("not found");
@@ -66,8 +66,8 @@ public class app {
 
 
         //test getDealer
+/*
 
-        DealerService dealerService=new DealerServiceImple();
 
         Dealer dealer=dealerService.getDealerById("gmps-davis-chevrolet");
         if(dealer==null)
@@ -79,7 +79,8 @@ public class app {
 
         }
 
-        ArrayList<Dealer> dealers=dealerService.getDealerByLocation("en_US");
+        DealerService dealerService=new DealerServiceImple();
+        ArrayList<Dealer> dealers=dealerService.getDealerByLocation("en_US",1);
         if(dealers==null)
             System.out.println("not found");
 
@@ -91,7 +92,7 @@ public class app {
 
         }
 
-        /*
+
         dealer.setLocation("1");
         dealerService.updateDealer(dealer);
         */

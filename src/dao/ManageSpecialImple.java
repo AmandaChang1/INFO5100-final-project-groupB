@@ -53,9 +53,9 @@ public class ManageSpecialImple implements ManageSpecial{
     }
 
     @Override
-    public Specials getSpecialsByDealer(String dealerId) {
+    public Specials getSpecialsByDealer(String dealerId,int pageNumber) {
 
-        ArrayList<String> set=io.getData("SELECT * FROM cloud.special where dealername='"+dealerId+"'");
+        ArrayList<String> set=io.getData("SELECT * FROM cloud.special where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*10+", 10");
         Specials specials=new Specials();
         for(String a:set) {
             String[] res = a.trim().split("~");
