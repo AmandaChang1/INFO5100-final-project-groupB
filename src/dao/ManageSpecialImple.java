@@ -11,6 +11,7 @@ import dto.Inventory;
 import dto.Vehicle;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ManageSpecialImple implements ManageSpecial{
     private UserIOInterface io;
@@ -22,10 +23,8 @@ public class ManageSpecialImple implements ManageSpecial{
     public void addSpecial(Special special) {
         String data="";
 
-        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+
-                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         io.addData("special",data);
-        addVehiclesSpecial(special);
     }
 
     @Override
@@ -33,29 +32,33 @@ public class ManageSpecialImple implements ManageSpecial{
         String data="";
         data=special.getId();
         io.deleteData("special",data);
-        updateVehiclesSpecial(special);
     }
 
     @Override
     public void updateSpecial(Special special) {
         String data="";
 
-        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+
-                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         String id=special.getId();
         io.updateData("special",id,data);
-        updateVehiclesSpecial(special);
     }
 
     @Override
     public Specials getSpecialsByDealer(String dealerId,int pageNumber) {
-        ArrayList<String> set=io.getData("SELECT * FROM cloud.special where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*10+", 10");
+        ArrayList<String> set = new ArrayList<>();
+        if(pageNumber > 0){
+            set=io.getData("SELECT * FROM cloud.special where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*10+", 10");
+        }else{
+            set=io.getData("SELECT * FROM cloud.special where dealername='"+dealerId+"'");
+        }
         Specials specials=new Specials();
         constructSpeicals(set, specials);
         return specials;
     }
 
-    private void constructSpeicals(ArrayList<String> set, Specials specials) {
+
+
+    public void constructSpeicals(ArrayList<String> set, Specials specials) {
         for(String a:set) {
             String[] res = a.trim().split("~");
             Special special = new Special();
@@ -88,37 +91,37 @@ public class ManageSpecialImple implements ManageSpecial{
         }
     }
 
-    @Override
-    public void addVehiclesSpecial(Special special) {
-//        ArrayList<String> vehicles=io.getData("SELECT * FROM cloud.vehicle WHERE (make='"+special.getCriterion().getMaker()+"'" + "OR " + "model='"+special.getCriterion().getModel()+"'" + "OR " + "year='"+special.getCriterion().getYear()+"'" + "OR " + "price BETWEEN '"+special.getCriterion().getMinPrice()+"'" + "and" + "'"+special.getCriterion().getMaxPrice()+"'" + ")AND " + "dealername = '" + special.getDealerId() + "'");
-        String sql = "SELECT * FROM cloud.vehicle WHERE dealername='" +special.getDealerId()+"'";
-        if(!special.getCriterion().getMaker().equals("null")){
-            sql += " and make = '" + special.getCriterion().getMaker() + "'";
-        }
-        if(!special.getCriterion().getModel().equals("null")){
-            sql += " and model = '" + special.getCriterion().getModel() + "'";
-        }
-        if(!special.getCriterion().getStartYear().equals("null")){
-            sql += " and year = '" + special.getCriterion().getStartYear() + "'";
-        }
-        if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
-            sql += " and price BETWEEN '" + special.getCriterion().getMinPrice() + "'" + "and" + "'" + special.getCriterion().getMaxPrice() +"'";
-        }
-        ArrayList<String> vehicles=io.getData(sql);
-        Inventory inventory=new Inventory();
-        constructInventory(vehicles, inventory);
-        for(Vehicle vehicle:inventory.getVehicles()){
-            if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * special.getValue()){
-                vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * special.getValue()+"");
-                vehicle.setSpecialId(special.getId());
-                ManageVehicleImple manageVehicleImple = new ManageVehicleImple();
-                manageVehicleImple.updateVehicle(vehicle);
-            }
-        }
+//    @Override
+//    public void addVehiclesSpecial(Special special) {
+////        ArrayList<String> vehicles=io.getData("SELECT * FROM cloud.vehicle WHERE (make='"+special.getCriterion().getMaker()+"'" + "OR " + "model='"+special.getCriterion().getModel()+"'" + "OR " + "year='"+special.getCriterion().getYear()+"'" + "OR " + "price BETWEEN '"+special.getCriterion().getMinPrice()+"'" + "and" + "'"+special.getCriterion().getMaxPrice()+"'" + ")AND " + "dealername = '" + special.getDealerId() + "'");
+//        String sql = "SELECT * FROM cloud.vehicle WHERE dealername='" +special.getDealerId()+"'";
+//        if(!special.getCriterion().getMaker().equals("null")){
+//            sql += " and make = '" + special.getCriterion().getMaker() + "'";
+//        }
+//        if(!special.getCriterion().getModel().equals("null")){
+//            sql += " and model = '" + special.getCriterion().getModel() + "'";
+//        }
+//        if(!special.getCriterion().getYear().equals("null")){
+//            sql += " and year = '" + special.getCriterion().getYear() + "'";
+//        }
+//        if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
+//            sql += " and price BETWEEN '" + special.getCriterion().getMinPrice() + "'" + "and" + "'" + special.getCriterion().getMaxPrice() +"'";
+//        }
+//        ArrayList<String> vehicles=io.getData(sql);
+//        Inventory inventory=new Inventory();
+//        constructInventory(vehicles, inventory);
+//        for(Vehicle vehicle:inventory.getVehicles()){
+//            if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * special.getValue()){
+//                vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * special.getValue()+"");
+//                vehicle.setSpecialId(special.getId());
+//                ManageVehicleImple manageVehicleImple = new ManageVehicleImple();
+//                manageVehicleImple.updateVehicle(vehicle);
+//            }
+//        }
+//
+//    }
 
-    }
-
-    private void constructInventory(ArrayList<String> vehicles, Inventory inventory) {
+    public void constructInventory(ArrayList<String> vehicles, Inventory inventory) {
         for(String a:vehicles) {
             String[] res = a.trim().split("~");
             Vehicle vehicle = new Vehicle();
@@ -138,34 +141,53 @@ public class ManageSpecialImple implements ManageSpecial{
         }
     }
 
+//    @Override
+//    public void updateVehiclesSpecial(Special special) {
+//        String sql = "SELECT * FROM cloud.vehicle WHERE dealername='" +special.getDealerId()+"'";
+//        if(!special.getCriterion().getMaker().equals("null")){
+//            sql += " and make = '" + special.getCriterion().getMaker() + "'";
+//        }
+//        if(!special.getCriterion().getModel().equals("null")){
+//            sql += " and model = '" + special.getCriterion().getModel() + "'";
+//        }
+//        if(!special.getCriterion().getYear().equals("null")){
+//            sql += " and year = '" + special.getCriterion().getYear() + "'";
+//        }
+//        if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
+//            sql += " and price BETWEEN '" + special.getCriterion().getMinPrice() + "'" + "and" + "'" + special.getCriterion().getMaxPrice() +"'";
+//        }
+//        ArrayList<String> vehicles=io.getData(sql);
+//        Inventory inventory=new Inventory();
+//        constructInventory(vehicles, inventory);
+//        for(Vehicle vehicle:inventory.getVehicles()){
+//            vehicle.setDiscountprice(vehicle.getPrice());
+//            ManageVehicleImple manageVehicleImple = new ManageVehicleImple();
+//            manageVehicleImple.updateVehicle(vehicle);
+//            Specials specials = getSpecialsByDealer(vehicle.getDealerId(),0);
+//            for (int i = 0; i < specials.getSpecials().size(); i++) {
+//                addVehiclesSpecial(specials.getSpecials().get(i));
+//            }
+//        }
+//    }
+
     @Override
-    public void updateVehiclesSpecial(Special special) {
-        String sql = "SELECT * FROM cloud.vehicle WHERE dealername='" +special.getDealerId()+"'";
-        if(!special.getCriterion().getMaker().equals("null")){
-            sql += " and make = '" + special.getCriterion().getMaker() + "'";
-        }
-        if(!special.getCriterion().getModel().equals("null")){
-            sql += " and model = '" + special.getCriterion().getModel() + "'";
-        }
-        if(!special.getCriterion().getStartYear().equals("null")){
-            sql += " and year = '" + special.getCriterion().getStartYear() + "'";
-        }
-        if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
-            sql += " and price BETWEEN '" + special.getCriterion().getMinPrice() + "'" + "and" + "'" + special.getCriterion().getMaxPrice() +"'";
-        }
-        ArrayList<String> vehicles=io.getData(sql);
-        Inventory inventory=new Inventory();
-        constructInventory(vehicles, inventory);
+    public Inventory assocaiteSpecials(Inventory inventory) {
+        HashMap<String,Specials> map = new HashMap<>();
         for(Vehicle vehicle:inventory.getVehicles()){
-            vehicle.setDiscountprice(vehicle.getPrice());
-            ManageVehicleImple manageVehicleImple = new ManageVehicleImple();
-            manageVehicleImple.updateVehicle(vehicle);
-            Specials specials = getSpecialsByDealer(vehicle.getDealerId(),1);
+            if(!map.containsKey(vehicle.getDealerId())){
+                Specials specials = getSpecialsByDealer(vehicle.getDealerId(),0);
+                map.put(vehicle.getDealerId(),specials);
+            }
+            Specials specials = map.get(vehicle.getDealerId());
             for (int i = 0; i < specials.getSpecials().size(); i++) {
-                addVehiclesSpecial(specials.getSpecials().get(i));
+                    if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()){
+                    vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()+"");
+                }
             }
         }
+        return inventory;
     }
+
 }
 
 

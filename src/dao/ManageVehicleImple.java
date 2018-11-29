@@ -49,26 +49,16 @@ public class ManageVehicleImple implements ManageVehicle{
 
     @Override
     public Inventory getVehicle(String dealerId,int pageNumber) {
-
-       ArrayList<String> set=io.getData("SELECT * FROM cloud.vehicle where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*30+", 30");
-
+        ArrayList<String> set = new ArrayList<>();
+        if(pageNumber > 0){
+            set=io.getData("SELECT * FROM cloud.vehicle where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*30+", 30");
+        }else{
+            set=io.getData("SELECT * FROM cloud.vehicle where dealername='"+dealerId+"'");
+        }
        Inventory inventory=new Inventory();
-       for(String a:set) {
-           String[] res = a.trim().split("~");
-           Vehicle vehicle = new Vehicle();
-           vehicle.setId(res[0]);
-           vehicle.setDealerId(res[1]);
-           vehicle.setCategory(res[2]);
-           vehicle.setYear(res[3]);
-           vehicle.setMake(res[4]);
-           vehicle.setModel(res[5]);
-           vehicle.setTrim(res[6]);
-           vehicle.setType(res[7]);
-           vehicle.setPrice(res[8]);
-           vehicle.setImages(res[9]);
-           vehicle.setSpecialId(res[10]);
-           inventory.add(vehicle);
-       }
+       ManageSpecial manageSpecial = new ManageSpecialImple();
+       ((ManageSpecialImple) manageSpecial).constructInventory(set,inventory);
+       inventory = manageSpecial.assocaiteSpecials(inventory);
        return inventory;
     }
 

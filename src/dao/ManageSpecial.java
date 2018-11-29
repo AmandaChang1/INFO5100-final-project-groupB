@@ -12,6 +12,5 @@ public interface ManageSpecial {
     void deleteSpecial(Special special);
     void updateSpecial(Special special);
     Specials getSpecialsByDealer(String dealerId,int pageNumber);
-    void addVehiclesSpecial(Special special);
-    void updateVehiclesSpecial(Special special);
+    Inventory assocaiteSpecials(Inventory inventory);
 }
