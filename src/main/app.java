@@ -1,19 +1,10 @@
 package main;
 
-import dto.Inventory;
-import dto.Vehicle;
-
-import service.VehicleService;
-import service.VehicleServiceImple;
+import dao.ManageSpecial;
+import dao.ManageSpecialImple;
 
 
 import dto.*;
-
-import service.*;
-
-import java.rmi.activation.ActivationGroup_Stub;
-import java.util.ArrayList;
-
 
 
 public class app {
@@ -21,36 +12,50 @@ public class app {
     public static void main(String[] args) throws Exception {
 
 
-
-
         //test Vehicle
-        VehicleService service=new VehicleServiceImple();
-        ArrayList<String> res=service.getAttributeList("type");
-        int a=0;
-/*
 
+//        VehicleService service=new VehicleServiceImple();
+//        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
+//        service.addVehicle(vehicle);
+//       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
+//        service.updateVehicle(vehicle);
+//        service.deleteVehicle(vehicle);
+//
+//
+//        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
+//        if(inventory==null){
+//            System.out.println("not found");
+//        }
+//        else{
+//            for(Vehicle a:inventory.getVehicles()){
+//                System.out.println(a.getId());
+//            }
+//        }
 
+//        VehicleService service=new VehicleServiceImple();
+//        /*Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1");
+//        service.addVehicle(vehicle);
+//       vehicle=new Vehicle("1","1","22","1","1","1","1","1","1","1");
+//        service.updateVehicle(vehicle);
+//        service.deleteVehicle(vehicle);
+//*/
+//
+//        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
+//        if(inventory==null){
+//            System.out.println("not found");
+//
+//        else{
+//            for(Vehicle a:inventory.getVehicles()){
+//                System.out.println(a.getId());
+//            }
+//        }
 
-
-        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
-        service.addVehicle(vehicle);
-       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
-        service.updateVehicle(vehicle);
-        service.deleteVehicle(vehicle);
-
-
-        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
-        if(inventory==null){
-            System.out.println("not found");
-        }
-        else{
-            for(Vehicle a:inventory.getVehicles()){
-                System.out.println(a.getId());
-            }
-        }
-
-
-
+        ManageSpecial manageSpecial = new ManageSpecialImple();
+        Specials specials = manageSpecial.getSpecialsByDealer("gmps-goldstein",1);
+        manageSpecial.addVehiclesSpecial(specials.getSpecials().get(0));
+        manageSpecial.addVehiclesSpecial(specials.getSpecials().get(1));
+        manageSpecial.deleteSpecial(specials.getSpecials().get(1));
+//        manageSpecial.addVehiclesSpecial(specials);
         //test Special
       /*
         SpecialService specialService=new SpecialServiceImple();
