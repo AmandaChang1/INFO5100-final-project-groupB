@@ -2,21 +2,9 @@ package main;
 
 import dao.ManageSpecial;
 import dao.ManageSpecialImple;
-import dto.Inventory;
-import dto.Vehicle;
-
-import service.VehicleService;
-import service.VehicleServiceImple;
 
 
 import dto.*;
-
-import service.*;
-import ui.LoginSystem;
-
-import java.rmi.activation.ActivationGroup_Stub;
-import java.util.ArrayList;
-
 
 
 public class app {
@@ -26,23 +14,23 @@ public class app {
 
         //test Vehicle
 
-        VehicleService service=new VehicleServiceImple();
-        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
-        service.addVehicle(vehicle);
-       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
-        service.updateVehicle(vehicle);
-        service.deleteVehicle(vehicle);
-
-
-        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
-        if(inventory==null){
-            System.out.println("not found");
-        }
-        else{
-            for(Vehicle a:inventory.getVehicles()){
-                System.out.println(a.getId());
-            }
-        }
+//        VehicleService service=new VehicleServiceImple();
+//        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
+//        service.addVehicle(vehicle);
+//       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
+//        service.updateVehicle(vehicle);
+//        service.deleteVehicle(vehicle);
+//
+//
+//        Inventory inventory =service.getInventoryByDealer("gmps-aj-dohmann",1);
+//        if(inventory==null){
+//            System.out.println("not found");
+//        }
+//        else{
+//            for(Vehicle a:inventory.getVehicles()){
+//                System.out.println(a.getId());
+//            }
+//        }
 
 //        VehicleService service=new VehicleServiceImple();
 //        /*Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1");
@@ -62,9 +50,12 @@ public class app {
 //            }
 //        }
 
-//        ManageSpecial manageSpecial = new ManageSpecialImple();
-//        Special special = new Special("123",0.3f,"gmps-peach","Buick1");
-//        manageSpecial.getVehiclesBySpecial(special);
+        ManageSpecial manageSpecial = new ManageSpecialImple();
+        Specials specials = manageSpecial.getSpecialsByDealer("gmps-goldstein",1);
+        manageSpecial.addVehiclesSpecial(specials.getSpecials().get(0));
+        manageSpecial.addVehiclesSpecial(specials.getSpecials().get(1));
+        manageSpecial.deleteSpecial(specials.getSpecials().get(1));
+//        manageSpecial.addVehiclesSpecial(specials);
         //test Special
       /*
         SpecialService specialService=new SpecialServiceImple();

@@ -39,7 +39,7 @@ public class SpecialServiceImple implements SpecialService {
 
     @Override
     public void getVehiclesBySpecial(Special special) {
-        manageSpecial.getVehiclesBySpecial(special);
+        manageSpecial.addVehiclesSpecial(special);
     }
 
 
