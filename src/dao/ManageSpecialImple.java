@@ -23,7 +23,7 @@ public class ManageSpecialImple implements ManageSpecial{
     public void addSpecial(Special special) {
         String data="";
 
-        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         io.addData("special",data);
     }
 
@@ -38,7 +38,7 @@ public class ManageSpecialImple implements ManageSpecial{
     public void updateSpecial(Special special) {
         String data="";
 
-        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         String id=special.getId();
         io.updateData("special",id,data);
     }
@@ -76,15 +76,16 @@ public class ManageSpecialImple implements ManageSpecial{
             VehicleCriterion criterion=new VehicleCriterion();
             criterion.setMaker(res[8]);
             criterion.setModel(res[9]);
-            criterion.setYear(res[10]);
-            if(res[11].equals("null"))
-                criterion.setMaxPrice(0);
-            else
-            criterion.setMinPrice(Float.parseFloat(res[11]));
+            criterion.setStartYear(res[10]);
+            criterion.setEndYear(res[11]);
             if(res[12].equals("null"))
                 criterion.setMaxPrice(0);
             else
-                criterion.setMaxPrice(Float.parseFloat(res[12]));
+            criterion.setMinPrice(Float.parseFloat(res[12]));
+            if(res[13].equals("null"))
+                criterion.setMaxPrice(0);
+            else
+                criterion.setMaxPrice(Float.parseFloat(res[13]));
             special.setCriterion(criterion);
             specials.addSpecials(special);
         }
