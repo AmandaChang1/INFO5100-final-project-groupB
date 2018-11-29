@@ -16,7 +16,7 @@ public class ManageVehicleImple implements ManageVehicle{
     public void addVehicle(Vehicle vehicle) {
         String data="";
 
-        data="'"+vehicle.getId()+"','"+vehicle.getDealerId()+"','"+vehicle.getCategory()+"','"+
+        data="'"+vehicle.getDealerId()+"','"+vehicle.getCategory()+"','"+
                 vehicle.getYear()+"','"+vehicle.getMake()+"','"+vehicle.getModel()+"','"+
                 vehicle.getTrim()+"','"+vehicle.getType()+"','"+vehicle.getPrice()+"','"+
                 vehicle.getImages()+"','"+vehicle.getSpecialId()+"','"+vehicle.getDiscountprice()+"'";

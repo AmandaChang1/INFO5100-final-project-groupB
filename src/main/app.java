@@ -4,8 +4,7 @@ package main;
 import dao.ManageVehicle;
 import dao.ManageVehicleImple;
 import dto.*;
-import service.VehicleService;
-import service.VehicleServiceImple;
+import service.*;
 
 
 public class app {
@@ -50,10 +49,13 @@ public class app {
 //                System.out.println(a.getId());
 //            }
 //        }
-
-        ManageVehicle manageVehicle = new ManageVehicleImple();
-        Inventory inventory = manageVehicle.getVehicle("gmps-goldstein1",0);
-        System.out.println(inventory);
+        Special.VehicleCriterion criterion=new Special.VehicleCriterion("1","1","1","1",1,1);
+        Special special=new Special("1","1","1","1","1","1","1",1,criterion);
+        SpecialService specialService=new SpecialServiceImpl();
+        specialService.addSpecial(special);
+//        ManageVehicle manageVehicle = new ManageVehicleImple();
+//        Inventory inventory = manageVehicle.getVehicle("gmps-goldstein1",0);
+//        System.out.println(inventory);
 //        SpecialServiceImple specialServiceImple = new SpecialServiceImple();
 //
 ////        Special special = new Special("31","gmps-goldstein","2018-12-1","2018-12-31","WinterDiscount","Discount for Winter Holiday","disclaimer",0.5f,new Special.VehicleCriterion("GMC1","Yukon XL","2016",60000f,70000f));

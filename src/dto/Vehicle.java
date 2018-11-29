@@ -20,9 +20,8 @@ public class Vehicle {
     }
 
 
-    public Vehicle(String id, String dealerId, String category, String year, String make, String model, String trim, String type, String price, String images,String discountPrice) {
+    public Vehicle(String dealerId, String category, String year, String make, String model, String trim, String type, String price, String images,String discountPrice) {
 
-        this.id = id;
         this.dealerId = dealerId;
         this.category = category;
         this.year = year;

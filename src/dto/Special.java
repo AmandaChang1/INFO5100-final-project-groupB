@@ -89,8 +89,7 @@ public class Special {
 
     }
 
-    public Special(String id,float value,String dealerId,String maker) {
-        this.id = id;
+    public Special(float value,String dealerId,String maker) { ;
         this.value = value;
         this.dealerId = dealerId;
         VehicleCriterion vehicleCriterion = new VehicleCriterion();

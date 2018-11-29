@@ -12,11 +12,15 @@ public class UserIO implements  UserIOInterface {
 
     private Connection connection;
 
-    private HashMap<String,String> map=new HashMap<>();
+    private HashMap<String,String> updatemap=new HashMap<>();
+    private HashMap<String,String> addmap=new HashMap<>();
     public UserIO() {
-        map.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
-        map.put("dealer","dealername,url,location");
-        map.put("special","id,dealername,startdate,enddate,title,description,disclaimer,value,maker,model,startyear,endyear,minPrice,maxPrice");
+        updatemap.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
+        updatemap.put("dealer","dealername,url,location");
+        updatemap.put("special","id,dealername,startdate,enddate,title,description,disclaimer,value,maker,model,startyear,endyear,minPrice,maxPrice");
+        addmap.put("vehicle","dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
+       addmap.put("dealer","dealername,url,location");
+        addmap.put("special","dealername,startdate,enddate,title,description,disclaimer,value,maker,model,startyear,endyear,minPrice,maxPrice");
 
     }
 
@@ -52,7 +56,11 @@ public class UserIO implements  UserIOInterface {
 
         try {
             Connection connection=getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO cloud."+tableName+" ("+map.get(tableName)+")  VALUES ("+data+")");
+            PreparedStatement preparedStatement;
+
+           preparedStatement = connection.prepareStatement("INSERT INTO cloud."+tableName+" ("+addmap.get(tableName)+")  VALUES ("+data+")");
+
+
 
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -101,7 +109,7 @@ public class UserIO implements  UserIOInterface {
                 preparedStatement = connection.prepareStatement("DELETE from cloud."+tableName+" WHERE id="+"'"+id+"'");
 
             preparedStatement.executeUpdate();
-            preparedStatement=connection.prepareStatement("INSERT INTO cloud."+tableName+" ("+map.get(tableName)+")  VALUES ("+data+")");
+            preparedStatement=connection.prepareStatement("INSERT INTO cloud."+tableName+" ("+updatemap.get(tableName)+")  VALUES ("+data+")");
 
             preparedStatement.executeUpdate();
             preparedStatement.close();
