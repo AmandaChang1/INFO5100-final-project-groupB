@@ -3,21 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecial.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecialImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecialImple.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageVehicleImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageVehicleImple.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FinalProject/main/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/main/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialServiceImple.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageSpecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageSpecial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Special.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Special.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/UserIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/UserIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/SpecialService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/SpecialServiceImple.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +27,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="2" />
-          <entry key="java" value="50" />
+          <entry key="java" value="51" />
           <entry key="md" value="1" />
           <entry key="png" value="1" />
         </counts>
@@ -48,18 +36,20 @@
         <counts>
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="50" />
+          <entry key="JAVA" value="51" />
           <entry key="Markdown" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="623" />
+          <entry key="txt" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="623" />
+          <entry key="PLAIN_TEXT" value="17" />
         </counts>
       </usages-collector>
     </session>
@@ -144,6 +134,25 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dto/Special.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-518">
+              <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+              <folding>
+                <element signature="e#915#916#0" expanded="true" />
+                <element signature="e#953#954#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1127#1128#0" expanded="true" />
+                <element signature="e#1176#1177#0" expanded="true" />
+                <element signature="e#1220#1221#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/SpecialService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -169,15 +178,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/UserServiceImple.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/ManageUserImple.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="177">
@@ -189,11 +189,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/LoginSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -360,7 +360,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543533274444" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543533511752" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -451,14 +451,29 @@
       <option name="project" value="LOCAL" />
       <updated>1543362183201</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="auto-generated id">
+      <created>1543533224028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543533224028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="auto-generated id">
+      <created>1543533383251</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543533383251</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37436000" />
+    <option name="totallyTimeSpent" value="37727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21888413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -469,15 +484,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.2178344" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.2178344" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2925408" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49928468" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32867134" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" visible="true" weight="0.2178344" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32867134" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -498,7 +513,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Associate speical to Vehicles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Associate speical to Vehicles" />
+    <MESSAGE value="auto-generated id" />
+    <option name="LAST_COMMIT_MESSAGE" value="auto-generated id" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -681,23 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Special.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
-          <folding>
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
-            <element signature="e#1220#1221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -709,34 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SpecialService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SpecialServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,8 +767,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/LoginSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
+        <state relative-caret-position="210">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/SpecialService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/SpecialServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dto/Special.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-518">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+          <folding>
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
+            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
