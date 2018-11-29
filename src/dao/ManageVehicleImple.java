@@ -71,4 +71,13 @@ public class ManageVehicleImple implements ManageVehicle{
        }
        return inventory;
     }
+
+    @Override
+    public ArrayList<String> getAttributeList(String attribute) {
+        ArrayList<String> set=io.getData("select distinct("+attribute+") from vehicle;");
+
+            set.remove("null");
+
+        return set;
+    }
 }

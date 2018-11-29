@@ -21,9 +21,17 @@ public class app {
     public static void main(String[] args) throws Exception {
 
 
-        //test Vehicle
 
+
+        //test Vehicle
         VehicleService service=new VehicleServiceImple();
+        ArrayList<String> res=service.getAttributeList("type");
+        int a=0;
+/*
+
+
+
+
         Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
         service.addVehicle(vehicle);
        vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");

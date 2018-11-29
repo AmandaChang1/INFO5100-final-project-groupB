@@ -4,6 +4,8 @@ import dto.Inventory;
 import dto.Vehicle;
 import dao.*;
 
+import java.util.ArrayList;
+
 public class VehicleServiceImple implements VehicleService{
     private ManageVehicle manageVehicle;
     public VehicleServiceImple() {
@@ -29,5 +31,11 @@ public class VehicleServiceImple implements VehicleService{
     public Inventory getInventoryByDealer(String dealerId,int pageNumber) {
         Inventory vehicles=manageVehicle.getVehicle(dealerId,pageNumber);
         return vehicles;
+    }
+
+    @Override
+    public ArrayList<String> getAttributeList(String attribute) {
+        ArrayList<String> typeList=manageVehicle.getAttributeList(attribute);
+        return typeList;
     }
 }
