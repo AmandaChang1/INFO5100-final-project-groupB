@@ -16,7 +16,7 @@ public class UserIO implements  UserIOInterface {
     public UserIO() {
         map.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
         map.put("dealer","dealername,url,location");
-        map.put("special","id,dealername,startdate,enddate,title,description,disclaimer,value,maker,model,year,minPrice,maxPrice");
+        map.put("special","id,dealername,startdate,enddate,title,description,disclaimer,value,maker,model,startyear,endyear,minPrice,maxPrice");
 
     }
 

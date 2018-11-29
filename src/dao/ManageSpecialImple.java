@@ -23,7 +23,7 @@ public class ManageSpecialImple implements ManageSpecial{
         String data="";
 
         data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+
-                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         io.addData("special",data);
         addVehiclesSpecial(special);
     }
@@ -41,7 +41,7 @@ public class ManageSpecialImple implements ManageSpecial{
         String data="";
 
         data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+
-                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+                special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         String id=special.getId();
         io.updateData("special",id,data);
         updateVehiclesSpecial(special);
@@ -73,15 +73,16 @@ public class ManageSpecialImple implements ManageSpecial{
             VehicleCriterion criterion=new VehicleCriterion();
             criterion.setMaker(res[8]);
             criterion.setModel(res[9]);
-            criterion.setYear(res[10]);
-            if(res[11].equals("null"))
-                criterion.setMaxPrice(0);
-            else
-            criterion.setMinPrice(Float.parseFloat(res[11]));
+            criterion.setStartYear(res[10]);
+            criterion.setEndYear(res[11]);
             if(res[12].equals("null"))
                 criterion.setMaxPrice(0);
             else
-                criterion.setMaxPrice(Float.parseFloat(res[12]));
+            criterion.setMinPrice(Float.parseFloat(res[12]));
+            if(res[13].equals("null"))
+                criterion.setMaxPrice(0);
+            else
+                criterion.setMaxPrice(Float.parseFloat(res[13]));
             special.setCriterion(criterion);
             specials.addSpecials(special);
         }
@@ -97,8 +98,8 @@ public class ManageSpecialImple implements ManageSpecial{
         if(!special.getCriterion().getModel().equals("null")){
             sql += " and model = '" + special.getCriterion().getModel() + "'";
         }
-        if(!special.getCriterion().getYear().equals("null")){
-            sql += " and year = '" + special.getCriterion().getYear() + "'";
+        if(!special.getCriterion().getStartYear().equals("null")){
+            sql += " and year = '" + special.getCriterion().getStartYear() + "'";
         }
         if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
             sql += " and price BETWEEN '" + special.getCriterion().getMinPrice() + "'" + "and" + "'" + special.getCriterion().getMaxPrice() +"'";
@@ -146,8 +147,8 @@ public class ManageSpecialImple implements ManageSpecial{
         if(!special.getCriterion().getModel().equals("null")){
             sql += " and model = '" + special.getCriterion().getModel() + "'";
         }
-        if(!special.getCriterion().getYear().equals("null")){
-            sql += " and year = '" + special.getCriterion().getYear() + "'";
+        if(!special.getCriterion().getStartYear().equals("null")){
+            sql += " and year = '" + special.getCriterion().getStartYear() + "'";
         }
         if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
             sql += " and price BETWEEN '" + special.getCriterion().getMinPrice() + "'" + "and" + "'" + special.getCriterion().getMaxPrice() +"'";

@@ -17,7 +17,8 @@ public class Special {
 
         private String maker;
         private String model;
-        private String year;
+        private String startYear;
+        private String endYear;
         private float minPrice;
         private float maxPrice;
 
@@ -37,13 +38,24 @@ public class Special {
         public void setModel(String model) {
             this.model = model;
         }
-        public String getYear() {
-            return year;
-        }
-        public void setYear(String year) {
-            this.year = year;
-        }
-        public float getMinPrice() {
+
+       public String getStartYear() {
+           return startYear;
+       }
+
+       public void setStartYear(String startyear) {
+           this.startYear = startyear;
+       }
+
+       public String getEndYear() {
+           return endYear;
+       }
+
+       public void setEndYear(String endyear) {
+           this.endYear = endyear;
+       }
+
+       public float getMinPrice() {
             return minPrice;
         }
 
@@ -58,19 +70,20 @@ public class Special {
         }
 
 
-        public VehicleCriterion(String maker, String model, String year, float minPrice, float maxPrice) {
-            super();
-            this.maker = maker;
-            this.model = model;
-            this.year = year;
-            this.minPrice = minPrice;
-            this.maxPrice = maxPrice;
-        }
+
         public void setMaxPrice(float maxPrice) {
             this.maxPrice = maxPrice;
         }
 
-    }
+       public VehicleCriterion(String maker, String model, String startyear, String endyear, float minPrice, float maxPrice) {
+           this.maker = maker;
+           this.model = model;
+           this.startYear = startyear;
+           this.endYear = endyear;
+           this.minPrice = minPrice;
+           this.maxPrice = maxPrice;
+       }
+   }
 
     public Special() {
 
