@@ -1,16 +1,11 @@
 package main;
 
-import dao.ManageSpecial;
-import dao.ManageSpecialImple;
 
-
+import dao.ManageVehicle;
+import dao.ManageVehicleImple;
 import dto.*;
-import service.SpecialService;
-import service.SpecialServiceImple;
 import service.VehicleService;
 import service.VehicleServiceImple;
-
-import java.util.ArrayList;
 
 
 public class app {
@@ -18,14 +13,9 @@ public class app {
     public static void main(String[] args) throws Exception {
 
 
-
         //test Vehicle
 
-
-       VehicleService service=new VehicleServiceImple();
-       ArrayList<String > a=service.getAttributeList("type");
-
-
+//        VehicleService service=new VehicleServiceImple();
 //        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
 //        service.addVehicle(vehicle);
 //       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
@@ -61,26 +51,44 @@ public class app {
 //            }
 //        }
 
-       //
-//        manageSpecial.addVehiclesSpecial(specials);
-        //test Special
+        ManageVehicle manageVehicle = new ManageVehicleImple();
+        Inventory inventory = manageVehicle.getVehicle("gmps-goldstein1",0);
+        System.out.println(inventory);
+//        SpecialServiceImple specialServiceImple = new SpecialServiceImple();
+//
+////        Special special = new Special("31","gmps-goldstein","2018-12-1","2018-12-31","WinterDiscount","Discount for Winter Holiday","disclaimer",0.5f,new Special.VehicleCriterion("GMC1","Yukon XL","2016",60000f,70000f));
+//        Special special = new Special("14","gmps-goldstein","2018-12-1","2018-12-31","WinterDiscount","Discount for Winter Holiday","disclaimer",0.1f,new Special.VehicleCriterion("GMC1","Yukon XL","2016",60000f,70000f));
+//        specialServiceImple.updateSpecial(special);
+//        manageSpecial.addSpecial(special);
+//        Specials specials = manageSpecial.getSpecialsByDealer("gmps-goldstein",1);
+//        manageSpecial.addVehiclesSpecial(specials.getSpecials().get(0));
+//        manageSpecial.addVehiclesSpecial(specials.getSpecials().get(1));
 
+//        manageSpecial.deleteSpecial(specials.getSpecials().get(1));
+
+
+
+
+
+        //        manageSpecial.addVehiclesSpecial(specials);
+        //test Special
+      /*
         SpecialService specialService=new SpecialServiceImple();
 
-       Special.VehicleCriterion criterion=new Special.VehicleCriterion("1","1","1","1",1,1);
+       Special.VehicleCriterion criterion=new Special.VehicleCriterion("1","1","1",1,1);
         Special special=new Special("1","1","1","1","1","1","1",1,criterion);
         specialService.addSpecial(special);
         special=new Special("1","1","22","1","1","1","1",1,criterion);
         specialService.updateSpecial(special);
         specialService.deleteSpecial(special);
 
-        Specials specials=specialService.getSpecialsByDealer("gmps-davis-chevrolet",1);
+        Specials specials=specialService.getSpecialsByDealer("gmps-davis-chevrolet");
         if(specials==null)
             System.out.println("not found");
 
         else{
-            for(Special b:specials.getSpecials()){
-                System.out.println(b.getDealerId());
+            for(Special a:specials.getSpecials()){
+                System.out.println(a.getDealerId());
             }
         }
 
