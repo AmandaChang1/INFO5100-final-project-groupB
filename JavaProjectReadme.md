@@ -10,15 +10,15 @@
 
 # Vehicle
 
-| Field Name | Type   | Description                      | Example           |
-| ---------- | ------ | -------------------------------- | ----------------- |
-| id         | String | unique id,auto generated         | "2345367743"      |
-| specialId  | String | the associated specialId         | "11"              |
-| dealerId   | String | the name of the vehicle's dealer | "gmps-brown-wood" |
-| category   | String | new or used                      | "new","used"      |
-| year       | String |                                  |                   |
-|            |        |                                  |                   |
-|            |        |                                  |                   |
+| Field Name | Type   | Description                      | Example                       |
+| ---------- | ------ | -------------------------------- | ----------------------------- |
+| id         | String | unique id,auto generated         | "2345367743"                  |
+| specialId  | String | the associated specialId         | "11"                          |
+| dealerId   | String | the name of the vehicle's dealer | "gmps-brown-wood"             |
+| category   | String | new or used                      | "new","used"                  |
+| year       | String |                                  | "2007"                        |
+| make       | String |                                  | "Chevrolet","Hyundai","Buick" |
+| trim       |        |                                  |                               |
 
 
 

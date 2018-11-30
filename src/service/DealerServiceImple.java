@@ -19,13 +19,24 @@ public class DealerServiceImple implements DealerService{
     }
 
     @Override
-    public Dealer getDealerById(String dealerId) {
+    public ArrayList<Dealer> getDealerByName(String dealerName) {
 
-        return manageDealer.getDealerById(dealerId);
+        return manageDealer.getDealerByName(dealerName);
+    }
+
+    @Override
+    public ArrayList<Dealer> getDealerByZipcode(String zipcode, int pageNumber) {
+        return manageDealer.getDealerByZipcode(zipcode,pageNumber);
     }
 
     @Override
     public ArrayList<Dealer> getDealerByLocation(String location,int pageNumber) {
         return manageDealer.getDealerByLocation(location,pageNumber);
+    }
+
+    @Override
+    public ArrayList<String> getAttributeList(String attribute) {
+        ArrayList<String> typeList=manageDealer.getAttributeList(attribute);
+        return typeList;
     }
 }
