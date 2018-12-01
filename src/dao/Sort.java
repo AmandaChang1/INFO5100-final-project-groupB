@@ -2,44 +2,46 @@ package dao;
 
 import dto.Inventory;
 import dto.Vehicle;
-
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class Sort {
-    class sortbyYear implements Comparator {
-        public Comparator<Vehicle> year = new Comparator<Vehicle>() {
-            @Override
-            public int compare(Vehicle v1, Vehicle v2) {
-                if (Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())) == 0) {
-                    return 0;
-                } else if (Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())) > 0) {
-                    return 1;
-                } else if (Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())) < 0) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+    class SortbyBear implements Comparator {
+        @Override
+        public int compare(Object o1, Object o2) {
+            Vehicle v1 = (Vehicle) o1;
+            Vehicle v2 = (Vehicle) o2;
+            if (Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())) == 0) {
+                return 0;
+            } else if (Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())) > 0) {
+                return 1;
+            } else if (Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())) < 0) {
+                return -1;
+            } else {
+                return 0;
             }
-        };
+        }
     }
 
+    ;
 
-    class sortbyPrice implements Comparator {
-        public Comparator<Vehicle> price = new Comparator<Vehicle>() {
-            @Override
-            public int compare(Vehicle v1, Vehicle v2) {
-                if (Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())) == 0) {
-                    return 0;
-                } else if (Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())) > 0) {
-                    return 1;
-                } else if (Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())) < 0) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+
+    class SortByPrice implements Comparator {
+        @Override
+        public int compare(Object o1, Object o2) {
+            Vehicle v1 = (Vehicle) o1;
+            Vehicle v2 = (Vehicle) o2;
+            if (Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())) == 0) {
+                return 0;
+            } else if (Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())) > 0) {
+                return 1;
+            } else if (Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())) < 0) {
+                return -1;
+            } else {
+                return 0;
             }
-        };
+        }
     }
 
     public static void main(String args[]) {
