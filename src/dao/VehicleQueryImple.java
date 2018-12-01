@@ -27,7 +27,16 @@ public class VehicleQueryImple implements VehicleQuery{
     @Override
     public FilterContentModel setModel(Inventory inventory) {
     	FilterContentModel model = new FilterContentModel();
-    	
+    	ArrayList<Vehicle> vehicles = inventory.getVehicles();
+	model.setBrand(getBrand(vehicles));
+	model.setModel(getModel(vehicles));
+	model.setTrim(getTrim(vehicles));
+	Double[] priceRange = getPriceRange(vehicles);
+	int[] yearRange = getYearRange(vehicles);
+	model.setMaxprice(priceRange[1]);
+	model.setMinprice(priceRange[0]);
+	model.setMaxyear(yearRange[1]);
+	model.setMinyear(yearRange[0]);  
     	return model;
     }
     
@@ -141,6 +150,76 @@ public class VehicleQueryImple implements VehicleQuery{
     	return results;
     }
     
+	
+    private ArrayList<String> getBrand(ArrayList<Vehicle> vehicles) {
+	ArrayList<String> brand = new ArrayList<String>();
+	for (Vehicle v : vehicles) {
+		if (!brand.contains(v)){
+			brand.add(v);
+		}
+	}
+	return brand;
+    }
+	
+  
+    private ArrayList<String> getModel(ArrayList<Vehicle> vehicles) {
+	ArrayList<String> model = new ArrayList<String>();
+	for (Vehicle v : vehicles) {
+		if (!model.contains(v)){
+			model.add(v);
+		}
+	}
+	return model;
+    }
+	
+ 
+   private ArrayList<String> getTrim(ArrayList<Vehicle> vehicles) {
+	ArrayList<String> trim = new ArrayList<String>();
+	for (Vehicle v : vehicles) {
+		if (!trim.contains(v)){
+			trim.add(v);
+		}
+	}
+	return trim;
+    }
+	
+    private double[] getPriceRange(ArrayList<Vehicle> vehicles) {
+	double[] range = new double[2];
+	double max = 0.0;
+	double min = Double.MAX_VALUE;
+	for (Vehicle v : vehicles) {
+		price = Double.parseDouble(v.getPrice);
+		if (price > max) {
+			max = price;
+		}
+
+		if (price < min) {
+			min = price;
+		}
+	}
+	range[0] = min;
+	range[1] = max;
+	return range;
+    }
+
+    private int[] getYearRange(ArrayList<Vehicle> vehicles) {
+	int[] range = new int[2];
+	int max = 0;
+	int min = Integer.MAX_VALUE;
+	for (Vehicle v : vehicles) {
+		year = Integer.parseInt(v.getYear);
+		if (year > max) {
+			max = year;
+		}
+
+		if (year < min) {
+			min = year;
+		}
+	}
+	range[0] = min;
+	range[1] = max;
+	return range;
+    }
     /*
     public void test() {
     	FilterContent filter = new FilterContent();
