@@ -30,6 +30,8 @@
 
 
 
+
+
 # Special  
 
 Field Name | Type | Description|Can be NULL| Example
@@ -66,10 +68,16 @@ specials|ArrayList<Special>|List of Specials|True
   
 # FilterContent
 
-Filed Name | Type | Description | Example
+Field Name | Type | Description | Example
 -----------|------|-------------|--------
+dealerName|String|Name of the dealer|blue-ribbon
+vehicleID|String|Id of the car|2844479993
+condition|ArrayList<String>|condition of the car|used or new
+brand|ArrayList<String>|brand of the car|Honda
+model|ArrayList<String>|model of the car|envision
+bodyType|ArrayList<String>|type of the car|
 
 # FilterContentModel
 
-Filed Name | Type | Description | Example
+Field Name | Type | Description | Example
 -----------|------|-------------|--------
