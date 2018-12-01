@@ -66,18 +66,32 @@ Field Name | Type | Description|Can be NULL| Example
 specials|ArrayList<Special>|List of Specials|True
   
   
-# FilterContent
-
-Field Name | Type | Description | Example
------------|------|-------------|--------
-dealerName|String|Name of the dealer|blue-ribbon
-vehicleID|String|Id of the car|2844479993
-condition|ArrayList<String>|condition of the car|used or new
-brand|ArrayList<String>|brand of the car|Honda
-model|ArrayList<String>|model of the car|envision
-bodyType|ArrayList<String>|type of the car|
 
 # FilterContentModel
 
 Field Name | Type | Description | Example
 -----------|------|-------------|--------
+vehicleID|ArrayList<String>|Id of the car|2844479993
+brand|ArrayList<String>|brands of the car|Honda
+model|ArrayList<String>|models of the car|envision
+trim|ArrayList<String>|trims of the car|AWD 4dr
+maxprice|int|maxprice of cars in the inventory|N/A
+minprice|int|minprice of cars in the inventory|N/A
+maxyear|int|maxyear of cars in the inventory|N/A
+minyear|int|minyear of cars in the inventory|N/A
+
+
+# FilterContent
+
+Field Name | Type | Description | Example | DefaultValue
+-----------|------|-------------|--------|---------------
+dealerName|String|Name of the dealer|blue-ribbon|"dealername"
+vehicleID|String|Id of the car|2844479993|"vehicleid"
+condition|ArrayList<String>|conditions of the car|used or new|"condition"
+brand|ArrayList<String>|brands of the car|Honda|"brand"
+model|ArrayList<String>|models of the car|envision|"model"
+bodyType|ArrayList<String>|types of the car|suv|"bodytype"
+highPrice|int|highprice of customer's input|N/A |maxprice
+lowPrice|int|lowprice of customer's input|N/A |minprice
+highYear|int|highyear of customer's input|N/A|maxyear
+lowYear|int|lowyear of customer's input|N/A|minyear
