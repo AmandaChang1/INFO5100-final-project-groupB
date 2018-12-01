@@ -15,8 +15,9 @@ public class Vehicle {
     private String images;
     private String discountPrice;
 
-
-
+    public Vehicle() {
+    	
+    }
     public Vehicle(String dealerId, String category, String year, String make, String model, String trim, String type, String price, String images,String discountPrice) {
 
         this.dealerId = dealerId;

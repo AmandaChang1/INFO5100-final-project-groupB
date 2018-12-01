@@ -102,8 +102,8 @@ public class VehicleQueryImple implements VehicleQuery{
     	return false;
     }
     
-    private boolean queryPriceRange(int lowPrice, int highPrice, Vehicle v) {
-    	int targetPrice = Integer.valueOf(v.getPrice());
+    private boolean queryPriceRange(double lowPrice, double highPrice, Vehicle v) {
+    	double targetPrice = Double.valueOf(v.getPrice());
     	if(targetPrice >= lowPrice && targetPrice <= highPrice) 
     		return true;
     	return false;

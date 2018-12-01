@@ -7,8 +7,8 @@ public class FilterContentModel {
 	private ArrayList<String> brand; 
 	private ArrayList<String> model; 
 	private ArrayList<String> trim; 
-	private int maxprice;
-	private int minprice;
+	private double maxprice;
+	private double minprice;
 	private int maxyear;
 	private int minyear;
 	
@@ -45,22 +45,22 @@ public class FilterContentModel {
 		this.trim = trim;
 	}
 	
-	public int getMaxprice() {
+	public double getMaxprice() {
 		return maxprice;
 	}
-	
-	public void setMaxprice(int maxprice) {
+
+	public void setMaxprice(double maxprice) {
 		this.maxprice = maxprice;
 	}
-	
-	public int getMinprice() {
+
+	public double getMinprice() {
 		return minprice;
 	}
-	
-	public void setMinprice(int minprice) {
+
+	public void setMinprice(double minprice) {
 		this.minprice = minprice;
 	}
-	
+
 	public int getMaxyear() {
 		return maxyear;
 	}
