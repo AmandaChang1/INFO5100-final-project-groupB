@@ -62,3 +62,14 @@ endyear	|String |end year of build|False|"2016"
 Field Name | Type | Description|Can be NULL| Example
 -----------|------|------------|-----------|--------
 specials|ArrayList<Special>|List of Specials|True
+  
+  
+# FilterContent
+
+Filed Name | Type | Description | Example
+-----------|------|-------------|--------
+
+# FilterContentModel
+
+Filed Name | Type | Description | Example
+-----------|------|-------------|--------
