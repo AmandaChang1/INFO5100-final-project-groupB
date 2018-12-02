@@ -5,6 +5,7 @@ import dto.Special;
 import dto.Specials;
 import dto.Vehicle;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public interface ManageSpecial {
@@ -12,5 +13,5 @@ public interface ManageSpecial {
     void deleteSpecial(Special special);
     void updateSpecial(Special special);
     Specials getSpecialsByDealer(String dealerId,int pageNumber);
-    Inventory assocaiteSpecials(Inventory inventory);
+    Inventory assocaiteSpecials(Inventory inventory) throws ParseException;
 }

@@ -14,16 +14,16 @@ public class VehicleQueryImple implements VehicleQuery{
 	//private ArrayList<Vehicle> vehicles;
 	//private String dealername;
 	//private int pageCount;
-	
+
 	public VehicleQueryImple() {
-    	
-    	
+
+
     }
     public VehicleQueryImple(Inventory inventory) {
-    	
+
     	this.inventory = inventory;
     }
-    
+
     @Override
     public FilterContentModel setModel(Inventory inventory) {
     	FilterContentModel model = new FilterContentModel();
@@ -36,39 +36,39 @@ public class VehicleQueryImple implements VehicleQuery{
 	model.setMaxprice(priceRange[1]);
 	model.setMinprice(priceRange[0]);
 	model.setMaxyear(yearRange[1]);
-	model.setMinyear(yearRange[0]);  
+	model.setMinyear(yearRange[0]);
     	return model;
     }
-    
+
     @Override
     public Inventory queryByFilter (Inventory inventory, FilterContent filterContentSelected) {
-    	
-    	
+
+
     	ArrayList<Vehicle> vehicles = inventory.getVehicles();
     	ArrayList<Vehicle> result = new ArrayList<>();
-    	
+
     	for(Vehicle v : vehicles) {
     		if(		queryCondition(filterContentSelected.getCondition(), v) &&
     				queryBrand(filterContentSelected.getBrand(), v) &&
-    				queryBodyType(filterContentSelected.getBodyType(), v) && 
+    				queryBodyType(filterContentSelected.getBodyType(), v) &&
     				queryCarModel(filterContentSelected.getModel(),v) &&
     				queryPriceRange(filterContentSelected.getLowPrice(), filterContentSelected.getHighPrice(), v) &&
     				queryYearRange(filterContentSelected.getLowYear(), filterContentSelected.getHighYear(), v)
     				) {
     			result.add(v);
     		}
-    		
+
     	}
-    	
+
     	Inventory results = new Inventory();
     	results.setVehicles(result);
     	return results;
     }
-    
+
     private boolean queryCondition(List<String> conditions, Vehicle v) {
     	String targetContition = v.getCategory();
     	for(String condition : conditions) {
-    		if(condition == "condition") 
+    		if(condition == "condition")
     			return true;
     		else if(targetContition == condition) {
     			return true;
@@ -76,11 +76,11 @@ public class VehicleQueryImple implements VehicleQuery{
     	}
     	return false;
     }
-    
+
     private boolean queryBrand(List<String> brands, Vehicle v) {
     	String targetBrand = v.getMake();
     	for(String brand : brands) {
-    		if(brand == "brand") 
+    		if(brand == "brand")
     			return true;
     		else if(targetBrand == brand) {
     			return true;
@@ -88,18 +88,18 @@ public class VehicleQueryImple implements VehicleQuery{
     	}
     	return false;
     }
-    
+
     private boolean queryCarModel(List<String> models, Vehicle v) {
     	String targetmodel = v.getModel();
 		for(String model : models) {
-			if(model == "model") 
+			if(model == "model")
 				return true;
-			else if(targetmodel == model) 
+			else if(targetmodel == model)
 				return true;
 		}
 		return false;
 	}
-    
+
     private boolean queryBodyType(List<String> bodyTypes, Vehicle v) {
     	String targetBodyType = v.getType();
     	for(String bodyType : bodyTypes) {
@@ -110,21 +110,21 @@ public class VehicleQueryImple implements VehicleQuery{
     	}
     	return false;
     }
-    
+
     private boolean queryPriceRange(double lowPrice, double highPrice, Vehicle v) {
     	double targetPrice = Double.valueOf(v.getPrice());
-    	if(targetPrice >= lowPrice && targetPrice <= highPrice) 
+    	if(targetPrice >= lowPrice && targetPrice <= highPrice)
     		return true;
     	return false;
     }
-    
+
     private boolean queryYearRange(int lowYear, int highYear, Vehicle v) {
     	int targetYear = Integer.valueOf(v.getYear());
     	if(targetYear >= lowYear && targetYear <= highYear)
     		return true;
     	return false;
     }
-    
+
     @Override
     public Vehicle queryByCarID(String carID, Inventory inventory) {
     	ArrayList<Vehicle> vehicles = inventory.getVehicles();
@@ -135,7 +135,7 @@ public class VehicleQueryImple implements VehicleQuery{
     	}
     	return null;
     }
-    	 
+
     @Override
     public Inventory queryBySpecialID(String specialID, Inventory inventory){
     	ArrayList<Vehicle> vehicles = inventory.getVehicles();
@@ -149,8 +149,8 @@ public class VehicleQueryImple implements VehicleQuery{
     	results.setVehicles(result);
     	return results;
     }
-    
-	
+
+
     private ArrayList<String> getBrand(ArrayList<Vehicle> vehicles) {
 	ArrayList<String> brand = new ArrayList<String>();
 	for (Vehicle v : vehicles) {
@@ -160,8 +160,8 @@ public class VehicleQueryImple implements VehicleQuery{
 	}
 	return brand;
     }
-	
-  
+
+
     private ArrayList<String> getModel(ArrayList<Vehicle> vehicles) {
 	ArrayList<String> model = new ArrayList<String>();
 	for (Vehicle v : vehicles) {
@@ -171,8 +171,8 @@ public class VehicleQueryImple implements VehicleQuery{
 	}
 	return model;
     }
-	
- 
+
+
    private ArrayList<String> getTrim(ArrayList<Vehicle> vehicles) {
 	ArrayList<String> trim = new ArrayList<String>();
 	for (Vehicle v : vehicles) {
@@ -182,7 +182,7 @@ public class VehicleQueryImple implements VehicleQuery{
 	}
 	return trim;
     }
-	
+
     private double[] getPriceRange(ArrayList<Vehicle> vehicles) {
 	double[] range = new double[2];
 	double max = 0.0;
@@ -223,13 +223,13 @@ public class VehicleQueryImple implements VehicleQuery{
     /*
     public void test() {
     	FilterContent filter = new FilterContent();
-    	
+
     }
 
 */
 
-	
-    
-    
+
+
+
 
 }
