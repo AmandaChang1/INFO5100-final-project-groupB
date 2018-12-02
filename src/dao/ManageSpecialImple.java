@@ -176,6 +176,7 @@ public class ManageSpecialImple implements ManageSpecial{
         for(Vehicle vehicle:inventory.getVehicles()){
             if(!map.containsKey(vehicle.getDealerId())){
                 Specials specials = getSpecialsByDealer(vehicle.getDealerId(),0);
+                //get special by criterion
                 map.put(vehicle.getDealerId(),specials);
             }
             Specials specials = map.get(vehicle.getDealerId());
@@ -186,6 +187,29 @@ public class ManageSpecialImple implements ManageSpecial{
             }
         }
         return inventory;
+    }
+
+
+    public boolean vehiclemeetsSpecial(Vehicle vehicle,Special special){
+        if(special.getCriterion().getMaker() != null){
+            if(special.getCriterion().getMaker() != vehicle.getMake()){
+                return false;
+            }
+        }
+        if(special.getCriterion().getModel() != null){
+            if(special.getCriterion().getModel() != vehicle.getModel()){
+                return false;
+            }
+        }
+        if(special.getCriterion().getStartYear() != null && special.getCriterion().getEndYear() != null){
+            if(vehicle.getYear())
+        }
+        if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
+            if(Float.parseFloat(vehicle.getPrice()) < special.getCriterion().getMinPrice() || Float.parseFloat(vehicle.getPrice()) > special.getCriterion().getMaxPrice()){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
