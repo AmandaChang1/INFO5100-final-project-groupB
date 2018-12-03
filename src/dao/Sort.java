@@ -8,8 +8,10 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Sort{
-    public void SortBySelection(SortType sortType, Inventory inventory){
+    public Inventory SortBySelection(SortType sortType, Inventory inventory){
         ArrayList<Vehicle> vehicles = inventory.getVehicles();
+        Inventory output = new Inventory();
+        //ArrayList<Vehicle> out = new ArrayList<Vehicle>();
         switch (sortType){
             case YEAR_ASC:
                 Collections.sort(vehicles,new SortByYearAsc());break;
@@ -20,6 +22,8 @@ public class Sort{
             case PRICE_DSC:
                 Collections.sort(vehicles,new SortByPriceDes());break;
         }
+        output.setVehicles(vehicles);
+        return output;
     }
     class SortByYearAsc implements Comparator<Vehicle> {
         @Override
