@@ -26,18 +26,21 @@ public class VehicleQueryImple implements VehicleQuery{
     
     @Override
     public FilterContentModel setModel(Inventory inventory) {
-    	FilterContentModel model = new FilterContentModel();
+    	
+    	FilterContentModel filterModel = new FilterContentModel();
     	ArrayList<Vehicle> vehicles = inventory.getVehicles();
-	model.setBrand(getBrand(vehicles));
-	model.setModel(getModel(vehicles));
-	model.setTrim(getTrim(vehicles));
-	Double[] priceRange = getPriceRange(vehicles);
-	int[] yearRange = getYearRange(vehicles);
-	model.setMaxprice(priceRange[1]);
-	model.setMinprice(priceRange[0]);
-	model.setMaxyear(yearRange[1]);
-	model.setMinyear(yearRange[0]);  
-    	return model;
+    	
+    	filterModel.setBrand(getBrand(vehicles));
+    	filterModel.setModel(getModel(vehicles));
+    	filterModel.setTrim(getTrim(vehicles));
+    	double[] priceRange = getPriceRange(vehicles);
+    	int[] yearRange = getYearRange(vehicles);
+    	filterModel.setMaxprice(priceRange[1]);
+    	filterModel.setMinprice(priceRange[0]);
+    	filterModel.setMaxyear(yearRange[1]);
+    	filterModel.setMinyear(yearRange[0]);  
+    	
+    	return filterModel;
     }
     
     @Override
@@ -154,8 +157,8 @@ public class VehicleQueryImple implements VehicleQuery{
     private ArrayList<String> getBrand(ArrayList<Vehicle> vehicles) {
 	ArrayList<String> brand = new ArrayList<String>();
 	for (Vehicle v : vehicles) {
-		if (!brand.contains(v)){
-			brand.add(v);
+		if (!brand.contains(v.getMake())){
+			brand.add(v.getMake());
 		}
 	}
 	return brand;
@@ -165,8 +168,8 @@ public class VehicleQueryImple implements VehicleQuery{
     private ArrayList<String> getModel(ArrayList<Vehicle> vehicles) {
 	ArrayList<String> model = new ArrayList<String>();
 	for (Vehicle v : vehicles) {
-		if (!model.contains(v)){
-			model.add(v);
+		if (!model.contains(v.getModel())){
+			model.add(v.getModel());
 		}
 	}
 	return model;
@@ -176,8 +179,8 @@ public class VehicleQueryImple implements VehicleQuery{
    private ArrayList<String> getTrim(ArrayList<Vehicle> vehicles) {
 	ArrayList<String> trim = new ArrayList<String>();
 	for (Vehicle v : vehicles) {
-		if (!trim.contains(v)){
-			trim.add(v);
+		if (!trim.contains(v.getTrim())){
+			trim.add(v.getTrim());
 		}
 	}
 	return trim;
@@ -188,7 +191,7 @@ public class VehicleQueryImple implements VehicleQuery{
 	double max = 0.0;
 	double min = Double.MAX_VALUE;
 	for (Vehicle v : vehicles) {
-		price = Double.parseDouble(v.getPrice);
+		double price = Double.parseDouble(v.getPrice());
 		if (price > max) {
 			max = price;
 		}
@@ -207,7 +210,7 @@ public class VehicleQueryImple implements VehicleQuery{
 	int max = 0;
 	int min = Integer.MAX_VALUE;
 	for (Vehicle v : vehicles) {
-		year = Integer.parseInt(v.getYear);
+		int year = Integer.parseInt(v.getYear());
 		if (year > max) {
 			max = year;
 		}
