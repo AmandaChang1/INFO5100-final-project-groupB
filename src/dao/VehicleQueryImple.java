@@ -188,7 +188,7 @@ public class VehicleQueryImple implements VehicleQuery{
 	double max = 0.0;
 	double min = Double.MAX_VALUE;
 	for (Vehicle v : vehicles) {
-		price = Double.parseDouble(v.getPrice);
+		double price = Double.parseDouble(v.getPrice());
 		if (price > max) {
 			max = price;
 		}
@@ -207,7 +207,7 @@ public class VehicleQueryImple implements VehicleQuery{
 	int max = 0;
 	int min = Integer.MAX_VALUE;
 	for (Vehicle v : vehicles) {
-		year = Integer.parseInt(v.getYear);
+		int year = Integer.parseInt(v.getYear());
 		if (year > max) {
 			max = year;
 		}
