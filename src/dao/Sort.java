@@ -6,24 +6,22 @@ import dto.Vehicle;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class Sort{
     public void SortBySelection(SortType sortType, Inventory inventory){
         ArrayList<Vehicle> vehicles = inventory.getVehicles();
-        ArrayList<Vehicle> result = new ArrayList<>();
         switch (sortType){
             case YEAR_ASC:
-                Collections.sort(vehicles,new SortbyYearAsc());break;
+                Collections.sort(vehicles,new SortByYearAsc());break;
             case YEAR_DSC:
-                Collections.sort(vehicles,new SortbyYearDes());break;
+                Collections.sort(vehicles,new SortByYearDes());break;
             case PRICE_ASC:
-                Collections.sort(vehicles,new SortbyPriceAsc());break;
+                Collections.sort(vehicles,new SortByPriceAsc());break;
             case PRICE_DSC:
-                Collections.sort(vehicles,new SortbyPriceDes());break;
+                Collections.sort(vehicles,new SortByPriceDes());break;
         }
     }
-    class SortbyYearAsc implements Comparator<Vehicle> {
+    class SortByYearAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
             int i = Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())); //比较名字字符串
@@ -36,7 +34,7 @@ public class Sort{
             return 0;
         }
     }
-    class SortbyYearDes implements Comparator<Vehicle> {
+    class SortByYearDes implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
             int i = Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())); //比较名字字符串
@@ -49,7 +47,7 @@ public class Sort{
                 return 0;
         }
     }
-    class SortbyPriceAsc implements Comparator<Vehicle> {
+    class SortByPriceAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
             int i = Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())); //比较名字字符串
@@ -62,7 +60,7 @@ public class Sort{
                 return 0;
         }
     }
-    class SortbyPriceDes implements Comparator<Vehicle> {
+    class SortByPriceDes implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
             int i = Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())); //比较名字字符串
