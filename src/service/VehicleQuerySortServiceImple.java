@@ -8,6 +8,7 @@ import dto.FilterContent;
 import dto.FilterContentModel;
 import dto.Inventory;
 import dto.Vehicle;
+import dao.SortType;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,12 +43,9 @@ public class VehicleQuerySortServiceImple implements VehicleQuerySortService{
 		VehicleQuery vehicleQuery = new VehicleQueryImple(inventory);
 		return vehicleQuery.queryBySpecialID(specialID, inventory);
 	}
-	public Inventory Sort(String sortType, Inventory inventory) {
-
-		ArrayList<Vehicle> vehicles = inventory.getVehicles();
-		Inventory output = new Inventory();
-		output.setVehicles(vehicles);
-		return output;
+	public Inventory Sort(SortType sortType, Inventory inventory) {
+		Sort sort = new Sort();
+		return sort.SortBySelection(sortType,inventory);
 	}
 
 }
