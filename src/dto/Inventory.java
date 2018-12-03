@@ -1,7 +1,5 @@
 package dto;
-
 import java.util.ArrayList;
-
 public class Inventory  {
     private ArrayList<Vehicle> vehicles;
 
@@ -21,4 +19,5 @@ public class Inventory  {
     public void add(Vehicle o) {
         vehicles.add(o);
     }
+
 }

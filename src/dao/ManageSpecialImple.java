@@ -10,7 +10,10 @@ import io.UserIOInterface;
 import dto.Inventory;
 import dto.Vehicle;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class ManageSpecialImple implements ManageSpecial{
@@ -135,8 +138,7 @@ public class ManageSpecialImple implements ManageSpecial{
             vehicle.setType(res[7]);
             vehicle.setPrice(res[8]);
             vehicle.setImages(res[9]);
-            vehicle.setSpecialId(res[10]);
-            vehicle.setDiscountprice(res[11]);
+            vehicle.setDiscountprice(vehicle.getPrice());
             inventory.add(vehicle);
         }
     }
@@ -171,23 +173,57 @@ public class ManageSpecialImple implements ManageSpecial{
 //    }
 
     @Override
-    public Inventory assocaiteSpecials(Inventory inventory) {
+    public Inventory assocaiteSpecials(Inventory inventory) throws ParseException {
         HashMap<String,Specials> map = new HashMap<>();
         for(Vehicle vehicle:inventory.getVehicles()){
             if(!map.containsKey(vehicle.getDealerId())){
                 Specials specials = getSpecialsByDealer(vehicle.getDealerId(),0);
+                //get special by criterion
                 map.put(vehicle.getDealerId(),specials);
             }
             Specials specials = map.get(vehicle.getDealerId());
             for (int i = 0; i < specials.getSpecials().size(); i++) {
+                if(vehiclemeetsSpecial(vehicle,specials.getSpecials().get(i))){
                     if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()){
-                    vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()+"");
+                        vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()+"");
+                    }
                 }
             }
         }
         return inventory;
     }
 
+
+    public boolean vehiclemeetsSpecial(Vehicle vehicle,Special special) throws ParseException {
+        if(special.getCriterion().getMaker() != null){
+            if(!special.getCriterion().getMaker().equals(vehicle.getMake())){
+                return false;
+            }
+        }
+        if(special.getCriterion().getModel() != null){
+            if(!special.getCriterion().getModel().equals(vehicle.getModel())){
+                return false;
+            }
+        }
+        if(special.getCriterion().getStartYear() != null && special.getCriterion().getEndYear() != null){
+            if(Integer.valueOf(vehicle.getYear()) < Integer.valueOf(special.getCriterion().getStartYear()) || Integer.valueOf(vehicle.getYear()) > Integer.valueOf(special.getCriterion().getEndYear())){
+                return false;
+            }
+        }
+        if(special.getCriterion().getMinPrice() != 0 && special.getCriterion().getMaxPrice() != 0){
+            if(Float.parseFloat(vehicle.getPrice()) < special.getCriterion().getMinPrice() || Float.parseFloat(vehicle.getPrice()) > special.getCriterion().getMaxPrice()){
+                return false;
+            }
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = sdf.parse(special.getStartDate());
+        Date endDate = sdf.parse(special.getEndDate());
+        Date date = sdf.parse(sdf.format(new Date()));
+        if(date.before(startDate) || date.after(endDate)){
+            return false;
+        }
+        return true;
+    }
 }
 
 

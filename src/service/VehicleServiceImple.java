@@ -4,6 +4,7 @@ import dto.Inventory;
 import dto.Vehicle;
 import dao.*;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class VehicleServiceImple implements VehicleService{
@@ -28,7 +29,7 @@ public class VehicleServiceImple implements VehicleService{
     }
 
     @Override
-    public Inventory getInventoryByDealer(String dealerId,int pageNumber) {
+    public Inventory getInventoryByDealer(String dealerId,int pageNumber) throws ParseException {
         Inventory vehicles=manageVehicle.getVehicle(dealerId,pageNumber);
         return vehicles;
     }
