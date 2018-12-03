@@ -85,7 +85,7 @@ minyear|int|minyear of cars in the inventory|N/A
 
 Field Name | Type | Description | Example | DefaultValue
 -----------|------|-------------|--------|---------------
-dealerName|String|Name of the dealer|blue-ribbon|"dealername"
+dealerName|String|Name of the dealer|gmps-blue-ribbon|"dealername"
 vehicleID|String|Id of the car|2844479993|"vehicleid"
 condition|ArrayList<String>|conditions of the car|used or new|"condition"
 brand|ArrayList<String>|brands of the car|Honda|"brand"
