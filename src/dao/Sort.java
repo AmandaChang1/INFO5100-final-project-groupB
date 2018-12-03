@@ -2,21 +2,25 @@ package dao;
 
 import dto.Inventory;
 import dto.Vehicle;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class Sort{
-    Inventory SortBySelection(SortType sortType,Inventory inventory){
+    public void SortBySelection(SortType sortType, Inventory inventory){
+        ArrayList<Vehicle> vehicles = inventory.getVehicles();
+        ArrayList<Vehicle> result = new ArrayList<>();
         switch (sortType){
             case YEAR_ASC:
-                Collections.sort(inventory,new SortbyYearAsc());break;
+                Collections.sort(vehicles,new SortbyYearAsc());break;
             case YEAR_DSC:
-                Collections.sort(inventory,new SortbyYearDes());break;
+                Collections.sort(vehicles,new SortbyYearDes());break;
             case PRICE_ASC:
-                Collections.sort(inventory,new SortbyPriceAsc());break;
+                Collections.sort(vehicles,new SortbyPriceAsc());break;
             case PRICE_DSC:
-                Collections.sort(inventory,new SortbyPriceDes());break;
+                Collections.sort(vehicles,new SortbyPriceDes());break;
         }
     }
     class SortbyYearAsc implements Comparator<Vehicle> {
