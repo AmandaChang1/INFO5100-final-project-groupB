@@ -9,8 +9,8 @@ public class FilterContent {
 	private ArrayList<String> brand; 
 	private ArrayList<String> model;
 	private ArrayList<String> bodyType;
-	private int highPrice;
-	private int lowPrice; 
+	private double highPrice;
+	private double lowPrice; 
 	private int highYear;
 	private int lowYear;
 	
@@ -64,38 +64,41 @@ public class FilterContent {
 		this.bodyType = bodyType;
 	}
 
-	
-	public int getHighPrice() {
+	public double getHighPrice() {
 		return highPrice;
 	}
-	
-	public void setHighPrice(int highPrice) {
+
+	public void setHighPrice(double highPrice) {
 		this.highPrice = highPrice;
 	}
-	
-	public int getLowPrice() {
+
+	public double getLowPrice() {
 		return lowPrice;
 	}
-	
-	public void setLowPrice(int lowPrice) {
+
+	public void setLowPrice(double lowPrice) {
 		this.lowPrice = lowPrice;
 	}
-	
+
 	public int getHighYear() {
 		return highYear;
 	}
-	
+
 	public void setHighYear(int highYear) {
 		this.highYear = highYear;
 	}
-	
+
 	public int getLowYear() {
 		return lowYear;
 	}
-	
+
 	public void setLowYear(int lowYear) {
 		this.lowYear = lowYear;
 	}
+
+	
+
+	
 	
 	
 

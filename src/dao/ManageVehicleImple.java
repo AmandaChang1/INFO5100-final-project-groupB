@@ -3,6 +3,7 @@ import dto.Inventory;
 import io.*;
 import dto.Vehicle;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 
@@ -48,7 +49,7 @@ public class ManageVehicleImple implements ManageVehicle{
     }
 
     @Override
-    public Inventory getVehicle(String dealerId,int pageNumber) {
+    public Inventory getVehicle(String dealerId,int pageNumber) throws ParseException {
         ArrayList<String> set = new ArrayList<>();
         if(pageNumber > 0){
             set=io.getData("SELECT * FROM cloud.vehicle where dealername='"+dealerId+"'"+"limit "+(pageNumber-1)*30+", 30");

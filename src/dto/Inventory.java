@@ -1,7 +1,6 @@
 package dto;
-
 import java.util.ArrayList;
-
+import java.util.Comparator;
 public class Inventory  {
     private ArrayList<Vehicle> vehicles;
 
@@ -21,4 +20,5 @@ public class Inventory  {
     public void add(Vehicle o) {
         vehicles.add(o);
     }
+
 }

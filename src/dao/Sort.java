@@ -7,6 +7,18 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Sort{
+    Inventory SortBySelection(SortType sortType,Inventory inventory){
+        switch (sortType){
+            case YEAR_ASC:
+                Collections.sort(inventory,new SortbyYearAsc());break;
+            case YEAR_DSC:
+                Collections.sort(inventory,new SortbyYearDes());break;
+            case PRICE_ASC:
+                Collections.sort(inventory,new SortbyPriceAsc());break;
+            case PRICE_DSC:
+                Collections.sort(inventory,new SortbyPriceDes());break;
+        }
+    }
     class SortbyYearAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
