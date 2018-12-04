@@ -26,7 +26,7 @@ public class ManageSpecialImple implements ManageSpecial{
     public void addSpecial(Special special) {
         String data="";
 
-        data="'"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
+        data="'"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getType()+"','" +special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"',"+special.getDiscount().isCashBack()+","+special.getDiscount().getValue();
         io.addData("special",data);
     }
 
@@ -40,9 +40,9 @@ public class ManageSpecialImple implements ManageSpecial{
     @Override
     public void updateSpecial(Special special) {
         String data="";
-
-        data="'"+special.getId()+"','"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+special.getValue()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"'";
         String id=special.getId();
+        data=id+",'"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getType()+"','" +special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"',"+special.getDiscount().isCashBack()+","+special.getDiscount().getValue();
+
         io.updateData("special",id,data);
     }
 
@@ -72,13 +72,10 @@ public class ManageSpecialImple implements ManageSpecial{
             special.setTitle(res[4]);
             special.setDescription(res[5]);
             special.setDisclaimer(res[6]);
-            if(res[7].equals("null"))
-                special.setValue(0);
-            else
-                special.setValue(Float.parseFloat(res[7]));
             VehicleCriterion criterion=new VehicleCriterion();
-            criterion.setMaker(res[8]);
-            criterion.setModel(res[9]);
+            criterion.setMaker(res[7]);
+            criterion.setModel(res[8]);
+            criterion.setType(res[9]);
             criterion.setStartYear(res[10]);
             criterion.setEndYear(res[11]);
             if(res[12].equals("null"))
@@ -90,6 +87,19 @@ public class ManageSpecialImple implements ManageSpecial{
             else
                 criterion.setMaxPrice(Float.parseFloat(res[13]));
             special.setCriterion(criterion);
+            Discount discount = new Discount();
+            if(res[14].equals("1")){
+                discount.setCashBack(true);
+            }
+            else if(res[14].equals("0")){
+                discount.setCashBack(false);
+            }
+            if(res[12].equals("null"))
+                discount.setValue(1);
+            else
+                discount.setValue(Float.parseFloat(res[15]));
+
+            special.setDiscount(discount);
             specials.addSpecials(special);
         }
     }
@@ -184,8 +194,15 @@ public class ManageSpecialImple implements ManageSpecial{
             Specials specials = map.get(vehicle.getDealerId());
             for (int i = 0; i < specials.getSpecials().size(); i++) {
                 if(vehiclemeetsSpecial(vehicle,specials.getSpecials().get(i))){
-                    if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()){
-                        vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * specials.getSpecials().get(i).getValue()+"");
+                    if(specials.getSpecials().get(i).getDiscount().isCashBack()){
+                        if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) - (specials.getSpecials().get(i).getDiscount().getValue() * 1000)){
+                            vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) - (specials.getSpecials().get(i).getDiscount().getValue() * 1000)+"");
+                        }
+                    }
+                    else{
+                        if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * (specials.getSpecials().get(i).getDiscount().getValue())){
+                            vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) * (specials.getSpecials().get(i).getDiscount().getValue())+"");
+                        }
                     }
                 }
             }
@@ -202,6 +219,11 @@ public class ManageSpecialImple implements ManageSpecial{
         }
         if(special.getCriterion().getModel() != null){
             if(!special.getCriterion().getModel().equals(vehicle.getModel())){
+                return false;
+            }
+        }
+        if(special.getCriterion().getType() != null){
+            if(!special.getCriterion().getType().equals(vehicle.getType())){
                 return false;
             }
         }

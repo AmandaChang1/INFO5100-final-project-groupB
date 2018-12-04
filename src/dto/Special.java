@@ -9,14 +9,45 @@ public class Special {
     private String title;
     private String description;
     private String disclaimer;
-    private float value;
     private VehicleCriterion criterion;
+    private Discount discount;
+
+    public static class Discount{
+        private boolean isCashBack;
+        private float value;
+
+        public boolean isCashBack() {
+            return isCashBack;
+        }
+
+        public void setCashBack(boolean cashBack) {
+            isCashBack = cashBack;
+        }
+
+        public float getValue() {
+            return value;
+        }
+
+        public void setValue(float value) {
+            this.value = value;
+        }
+
+        public Discount(){
+
+        }
+
+        public Discount(Boolean isCashBack, float value) {
+            this.isCashBack = isCashBack;
+            this.value = value;
+        }
+    }
 
 
    public static class VehicleCriterion{
 
         private String maker;
         private String model;
+        private String type;
         private String startYear;
         private String endYear;
         private float minPrice;
@@ -39,6 +70,14 @@ public class Special {
             this.model = model;
         }
 
+       public String getType() {
+           return type;
+       }
+
+       public void setType(String type) {
+           this.type = type;
+       }
+
        public String getStartYear() {
            return startYear;
        }
@@ -59,8 +98,6 @@ public class Special {
             return minPrice;
         }
 
-
-
         public void setMinPrice(float minPrice) {
 
             this.minPrice = minPrice;
@@ -75,9 +112,10 @@ public class Special {
             this.maxPrice = maxPrice;
         }
 
-       public VehicleCriterion(String maker, String model, String startyear, String endyear, float minPrice, float maxPrice) {
+       public VehicleCriterion(String maker, String model, String type,String startyear, String endyear, float minPrice, float maxPrice) {
            this.maker = maker;
            this.model = model;
+           this.type = type;
            this.startYear = startyear;
            this.endYear = endyear;
            this.minPrice = minPrice;
@@ -89,15 +127,7 @@ public class Special {
 
     }
 
-    public Special(float value,String dealerId,String maker) { ;
-        this.value = value;
-        this.dealerId = dealerId;
-        VehicleCriterion vehicleCriterion = new VehicleCriterion();
-        this.criterion = vehicleCriterion;
-        this.criterion.maker = maker;
-    }
-
-    public Special(String id, String dealerid, String startDate, String endDate, String title, String description, String disclaimer, float value, VehicleCriterion criterion) {
+    public Special(String id, String dealerid, String startDate, String endDate, String title, String description, String disclaimer, VehicleCriterion criterion,Discount discount) {
         this.id = id;
         this.dealerId = dealerid;
         this.startDate = startDate;
@@ -105,8 +135,8 @@ public class Special {
         this.title = title;
         this.description = description;
         this.disclaimer = disclaimer;
-        this.value = value;
         this.criterion = criterion;
+        this.discount = discount;
     }
 
     //getter
@@ -139,9 +169,6 @@ public class Special {
         return disclaimer;
     }
 
-    public float getValue() {
-        return value;
-    }
 
     public VehicleCriterion getCriterion() {
         return criterion;
@@ -178,11 +205,15 @@ public class Special {
         this.disclaimer = disclaimer;
     }
 
-    public void setValue(float value) {
-        this.value = value;
-    }
-
     public void setCriterion(VehicleCriterion criterion) {
         this.criterion = criterion;
+    }
+
+    public Discount getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
     }
 }
