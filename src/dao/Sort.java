@@ -56,7 +56,7 @@ public class Sort{
     class SortByPriceAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //价格升序
+            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getDiscountprice())); //价格升序
             if (i > 0){
                 return 1;
             }
@@ -70,7 +70,7 @@ public class Sort{
     class SortByPriceDes implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //价格降序
+            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getDiscountprice())); //价格降序
             if (i < 0){
                 return 1;
             }
