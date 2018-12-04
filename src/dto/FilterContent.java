@@ -14,6 +14,9 @@ public class FilterContent {
 	private int highYear;
 	private int lowYear;
 	
+	public FilterContent() {
+		
+	}
 	
 
 	public String getDealerName() {

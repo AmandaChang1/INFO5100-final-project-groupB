@@ -32,10 +32,11 @@ public class Sort{
             if (i > 0){
                 return 1;
             }
-            if (i < 0){
+            else if (i < 0){
                 return -1;
-            }else
-            return 0;
+            }
+            else
+            	return 0;
         }
     }
     class SortByYearDes implements Comparator<Vehicle> {
@@ -45,35 +46,38 @@ public class Sort{
             if (i < 0){
                 return 1;
             }
-            if (i > 0){
+            else if (i > 0){
                 return -1;
-            }else
+            }
+            else
                 return 0;
         }
     }
     class SortByPriceAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())); //比较名字字符串
+            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //比较名字字符串
             if (i > 0){
                 return 1;
             }
-            if (i < 0){
+            else if (i < 0){
                 return -1;
-            }else
+            }
+            else
                 return 0;
         }
     }
     class SortByPriceDes implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Integer.valueOf(v1.getPrice()).compareTo(Integer.valueOf(v2.getPrice())); //比较名字字符串
+            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //比较名字字符串
             if (i < 0){
                 return 1;
             }
-            if (i > 0){
+            else if (i > 0){
                 return -1;
-            }else
+            }
+            else
                 return 0;
         }
     }
