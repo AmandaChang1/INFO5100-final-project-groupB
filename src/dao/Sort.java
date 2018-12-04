@@ -28,7 +28,7 @@ public class Sort{
     class SortByYearAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())); //比较名字字符串
+            int i = Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())); //年份升序
             if (i > 0){
                 return 1;
             }
@@ -42,7 +42,7 @@ public class Sort{
     class SortByYearDes implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())); //比较名字字符串
+            int i = Integer.valueOf(v1.getYear()).compareTo(Integer.valueOf(v2.getYear())); //年份降序
             if (i < 0){
                 return 1;
             }
@@ -56,7 +56,7 @@ public class Sort{
     class SortByPriceAsc implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //比较名字字符串
+            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //价格升序
             if (i > 0){
                 return 1;
             }
@@ -70,7 +70,7 @@ public class Sort{
     class SortByPriceDes implements Comparator<Vehicle> {
         @Override
         public int compare(Vehicle v1, Vehicle v2) {
-            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //比较名字字符串
+            int i = Double.valueOf(v1.getPrice()).compareTo(Double.valueOf(v2.getPrice())); //价格降序
             if (i < 0){
                 return 1;
             }
