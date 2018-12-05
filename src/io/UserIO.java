@@ -1,9 +1,13 @@
 package io;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
 import java.util.HashMap;
+import java.util.Properties;
 
 
 public class UserIO implements  UserIOInterface {
@@ -28,21 +32,36 @@ public class UserIO implements  UserIOInterface {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            FileInputStream in = null;
+            try {
+                in = new FileInputStream("src/DB.properties");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            Properties properties=new Properties();
+            try {
+                properties.load(in);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+            String url=properties.getProperty("address");
+            String user=properties.getProperty("user");
+            String password=properties.getProperty("password");
             if(connection == null)
-                connection= DriverManager.getConnection("jdbc:mysql://111.230.49.171/cloud","xiaoxu","xiaoxu");
+                connection= DriverManager.getConnection(url,user,password);
 
             System.out.println("Success");
             return connection;
 
+        }
+
+        catch (SQLException e) {
+
+            e.printStackTrace();
+
         } catch (ClassNotFoundException e) {
-
             e.printStackTrace();
-
-        } catch (SQLException e) {
-
-            e.printStackTrace();
-
         }
 
         return connection;

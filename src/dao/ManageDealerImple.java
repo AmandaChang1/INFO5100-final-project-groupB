@@ -36,10 +36,10 @@ public class ManageDealerImple implements ManageDealer{
     public ArrayList<Dealer> getDealerByLocation(String location,int pageNumber) {
         ArrayList<String> resset;
         if(pageNumber > 0) {
-          resset = io.getData("SELECT * FROM cloud.dealer WHERE location='" + location + "'" + "limit " + (pageNumber - 1) * 10 + ", 10");
+          resset = io.getData("SELECT * FROM cloud.dealer WHERE location='" + location + "'" + "limit " + (pageNumber - 1) * 3 + ", 3");
         }
         else {
-            resset=io.getData("SELECT * FROM cloud.vehicle where location='"+location+"'");
+            resset=io.getData("SELECT * FROM cloud.dealer where location='"+location+"'");
         }
 
         ArrayList<Dealer> dealers=new ArrayList<>();
@@ -55,10 +55,10 @@ public class ManageDealerImple implements ManageDealer{
     public ArrayList<Dealer> getDealerByZipcode(String zipcode,int pageNumber) {
         ArrayList<String> resset;
         if(pageNumber > 0) {
-            resset = io.getData("SELECT * FROM cloud.dealer WHERE zipcode='" + zipcode + "'" + "limit " + (pageNumber - 1) * 10 + ", 10");
+            resset = io.getData("SELECT * FROM cloud.dealer WHERE zipcode='" + zipcode + "'" + "limit " + (pageNumber - 1) * 3 + ", 3");
         }
         else {
-            resset=io.getData("SELECT * FROM cloud.vehicle where zipcode='"+zipcode+"'");
+            resset=io.getData("SELECT * FROM cloud.dealer where zipcode='"+zipcode+"'");
         }
 
         ArrayList<Dealer> dealers=new ArrayList<>();
