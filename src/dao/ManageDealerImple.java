@@ -1,6 +1,7 @@
 package dao;
 
 import dto.Dealer;
+import dto.SearchResult;
 import io.UserIO;
 import io.UserIOInterface;
 
@@ -34,6 +35,7 @@ public class ManageDealerImple implements ManageDealer{
 
     @Override
     public ArrayList<Dealer> getDealerByLocation(String location,int pageNumber) {
+
         ArrayList<String> resset;
         if(pageNumber > 0) {
           resset = io.getData("SELECT * FROM cloud.dealer WHERE location='" + location + "'" + "limit " + (pageNumber - 1) * 3 + ", 3");
@@ -48,6 +50,7 @@ public class ManageDealerImple implements ManageDealer{
             Dealer dealer=new Dealer(a[0],a[1],a[2],a[3],a[4]);
             dealers.add(dealer);
         }
+
         return dealers;
     }
 

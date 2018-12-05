@@ -19,10 +19,10 @@ public class UserIO implements  UserIOInterface {
     private HashMap<String,String> updatemap=new HashMap<>();
     private HashMap<String,String> addmap=new HashMap<>();
     public UserIO() {
-        updatemap.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
+        updatemap.put("vehicle","id,dealername,category,year,make,model,trim,type,price,images");
         updatemap.put("dealer","dealername,url,location,zipcode,address");
         updatemap.put("special","id,dealername,startdate,enddate,title,description,disclaimer,maker,model,type,startyear,endyear,minPrice,maxPrice,isCashBack,value");
-        addmap.put("vehicle","dealername,category,year,make,model,trim,type,price,images,specialid,discountprice");
+        addmap.put("vehicle","dealername,category,year,make,model,trim,type,price,images");
        addmap.put("dealer","dealername,url,location,zipcode,address");
         addmap.put("special","dealername,startdate,enddate,title,description,disclaimer,maker,model,type,startyear,endyear,minPrice,maxPrice,isCashBack,value");
 

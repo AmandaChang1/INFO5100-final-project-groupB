@@ -383,6 +383,7 @@ pageUp=new PageButton("<");
 
             }
 
+
             if(resultPanel!=null)
             container.remove(resultPanel);
 

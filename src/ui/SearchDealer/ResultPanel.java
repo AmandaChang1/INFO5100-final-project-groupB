@@ -10,12 +10,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ResultPanel extends MyPanel{
+
+    ImageIcon icon;
+    Image img;
     public ResultPanel(JFrame frame) {
         super();
         init(frame);
     }
-    ImageIcon icon;
-    Image img;
+
     public ResultPanel(JFrame frame, ArrayList<Dealer> dealers) {
         super();
 
