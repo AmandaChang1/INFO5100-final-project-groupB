@@ -9,6 +9,8 @@ import io.UserIOInterface;
 
 import dto.Inventory;
 import dto.Vehicle;
+import service.VehicleService;
+import service.VehicleServiceImple;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -246,6 +248,25 @@ public class ManageSpecialImple implements ManageSpecial{
         }
         return true;
     }
+
+    public int numberOfCars(Special special) throws ParseException {
+        int res = 0;
+        VehicleService vehicleService=new VehicleServiceImple();
+        Inventory inventory = vehicleService.getInventoryByDealer(special.getDealerId(),0);
+        for(Vehicle vehicle:inventory.getVehicles()){
+            if(special.getDiscount().isCashBack()){
+                if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) - (special.getDiscount().getValue() * 1000)){
+                    res++;
+                }
+            }else{
+                if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) * (special.getDiscount().getValue())){
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
+
 }
 
 
