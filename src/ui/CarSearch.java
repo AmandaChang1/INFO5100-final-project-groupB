@@ -106,7 +106,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	private void defineFilters() {
 
-		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000",
+		String[] minPriceFilterItems = new String[] {"1000", "5000", "10000", "15000", "20000", "30000",
 				"40000" };
 		String[] maxPriceFilterItems = new String[] { "2000", "6000", "10000", "20000", "40000", "60000",
 				"70000" };
@@ -234,10 +234,19 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		Inventory tmp = getFilterValue();
 		if (tmp == null)
 			System.out.println("tmp IS NULL");
+		clearFiltersButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Clear button pressed");
+				brandFilter.setSelectedIndex(0);
+				
+			}
+		});
 
 		applyFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("applyFilterbuttonpressed");
 				setVehicleDetailsPanel(getFilterValue());
 			}
 		});
