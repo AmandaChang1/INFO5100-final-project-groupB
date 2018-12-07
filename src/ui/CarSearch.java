@@ -3,7 +3,7 @@ package ui;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import dao.VehicleQueryImple;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import dao.*;
@@ -13,6 +13,7 @@ import service.*;
 public class CarSearch extends CarSearchDefination implements ActionListener {
 	VehicleQueryImple searchVehicle = new VehicleQueryImple();
 	VehicleQuerySortServiceImple vehicleService = new VehicleQuerySortServiceImple();
+	Inventory inventory;
 
 	public CarSearch() {
 		super();
@@ -75,9 +76,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		leftPanel.add(minPriceFilter);
 		leftPanel.add(maxPriceLabel);
 		leftPanel.add(maxPriceFilter);
-		ButtonGroup G = new ButtonGroup();
-		G.add(clearFiltersButton);
-		G.add(applyFiltersButton);
+		
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 40)));
 		leftPanel.add(clearFiltersButton);
 		leftPanel.add(applyFiltersButton);
@@ -96,10 +95,10 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 		String[] minPriceFilterItems = new String[] {"1000", "5000", "10000", "15000", "20000", "30000",
 				"40000" };
-		String[] maxPriceFilterItems = new String[] { "2000", "6000", "10000", "20000", "40000", "60000",
+		String[] maxPriceFilterItems = new String[] {"2000", "6000", "10000", "20000", "40000", "60000",
 				"70000" };
-		String[] modelFilterItems = new String[] { "CTS Sedan", "A", "B", "C" };
-		String[] brandFilterItems = new String[] {  "Cadillac", "Chevrolet", "Chrysler", "Ford", "Toyota",
+		String[] modelFilterItems = new String[] {"CTS Sedan", "A", "B", "C" };
+		String[] brandFilterItems = new String[] {"Cadillac", "Chevrolet", "Chrysler", "Ford", "Toyota",
 				"Mazda", "Jaguar", "BMW", "Mercedes", "Jeep", "Mitsubishi", "Nissan", "Land Rover", "Other" };
 		String[] bodyTypeItems = new String[] { "CAR", "SUV", "HatchBack", "Coupe" };
 		String[] minYearFilterItems = new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
@@ -158,17 +157,17 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		container.add(topPanel, BorderLayout.NORTH);
 	}
 
-	public Inventory CallInventory(String dealerID) {
+	public void CallInventory() {
 
 		Inventory inventory = null;
 		VehicleService vehicleService = new VehicleServiceImple();
 		try {
-			inventory = vehicleService.getInventoryByDealer(dealerID, 0);
+			this.inventory = vehicleService.getInventoryByDealer("gmps-aj-dohmann", 0);
 		} catch (ParseException e1) {
 
 			e1.printStackTrace();
 		}
-		return inventory;
+		
 
 	}
 	public Inventory getFilterValue() {
@@ -226,6 +225,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Clear button pressed");
+				setVehicleDetailsPanel(inventory);
 				brandFilter.setSelectedIndex(0);
 				
 			}
@@ -244,14 +244,14 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				Inventory sortedinventory = null;
 				if (sortComboBox.getSelectedItem().equals("Year ascending")) {
-					sortedinventory = vehicleService.Sort(SortType.YEAR_ASC, CallInventory("gmps-aj-dohmann"));
+					sortedinventory = vehicleService.Sort(SortType.YEAR_ASC, inventory);
 				} else if (sortComboBox.getSelectedItem().equals("Year descending")) {
-					sortedinventory = vehicleService.Sort(SortType.YEAR_DSC, CallInventory("gmps-aj-dohmann"));
+					sortedinventory = vehicleService.Sort(SortType.YEAR_DSC, inventory);
 				} else if (sortComboBox.getSelectedItem().equals("Price low to high")) {
-					sortedinventory = vehicleService.Sort(SortType.PRICE_ASC, CallInventory("gmps-aj-dohmann"));
+					sortedinventory = vehicleService.Sort(SortType.PRICE_ASC, inventory);
 					System.out.println(sortedinventory.getVehicles().size());
 				} else if (sortComboBox.getSelectedItem().equals("Price high to low")) {
-					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC, CallInventory("gmps-aj-dohmann"));
+					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC, inventory);
 				}
 				System.out.println("New sorted Inventory size: " + sortedinventory.getVehicles().size());
 				setVehicleDetailsPanel(sortedinventory);
@@ -334,6 +334,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	// @Override
 	public void setLayout() {
+	    CallInventory();
 		setTopPanel();
 		setLeftPanel();
 		vehicleDetailsPane = new JPanel();
@@ -345,7 +346,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		//vehicleDetailsPane.setLayout(layout);
 		vehicleDetailsPane.setBackground(Color.WHITE);
 		vehicleDetailsPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-		setVehicleDetailsPanel(CallInventory("gmps-aj-dohmann"));
+		setVehicleDetailsPanel(inventory);
 		scrollPane = new JScrollPane(vehicleDetailsPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.getVerticalScrollBar().setUnitIncrement(20);
