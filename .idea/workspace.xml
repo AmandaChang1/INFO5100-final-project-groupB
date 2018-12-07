@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/SearchDealer/WebButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/VehicleQueryImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/VehicleQueryImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageDealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageDealer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageDealerImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageDealerImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/VehicleQueryImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/VehicleQueryImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/SearchResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/UserIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/UserIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/UserIOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/UserIOInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DealerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DealerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DealerServiceImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DealerServiceImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/DealerSearchUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DealerSearchUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/BackgroundPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/MyComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/MyComboBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/Mylist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/ResetButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/ResetButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/SearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/SearchButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/SearchPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SearchDealer/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SearchDealer/main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,7 +91,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicleImple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
+            <state relative-caret-position="348">
               <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
             </state>
           </provider>
@@ -315,13 +292,7 @@
             <path>
               <item name="FinalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="Document" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -482,7 +453,7 @@
       <workItem from="1544060490571" duration="569000" />
       <workItem from="1544061600371" duration="1593000" />
       <workItem from="1544213001405" duration="21000" />
-      <workItem from="1544220081254" duration="1597000" />
+      <workItem from="1544220081254" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="Associate speical to Vehicles">
       <created>1543362183200</created>
@@ -554,11 +525,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543973399085</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="bug fixed">
+      <created>1544226548710</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1544226548710</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82263000" />
+    <option name="totallyTimeSpent" value="82570000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,8 +548,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
+    <frame x="1" y="24" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18025751" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -591,7 +568,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49499285" weight="0.29808918" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32867134" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5071531" side_tool="true" weight="0.21528663" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5071531" side_tool="true" visible="true" weight="0.21528663" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49713877" weight="0.07388535" />
       <window_info anchor="bottom" id="Duplicate detector" order="12" visible="true" weight="0.32897863" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -1044,7 +1021,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicleImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
+        <state relative-caret-position="348">
           <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
         </state>
       </provider>
