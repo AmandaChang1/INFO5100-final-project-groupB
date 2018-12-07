@@ -6,6 +6,9 @@ public class SearchResult<T> {
     private int page;
     private ArrayList<T> resultSet;
 
+    public SearchResult() {
+    }
+
     public SearchResult(int page, ArrayList<T> resultSet) {
         this.page = page;
         this.resultSet = resultSet;
@@ -19,7 +22,7 @@ public class SearchResult<T> {
         this.page = page;
     }
 
-    public ArrayList<?> getResultSet() {
+    public ArrayList<T> getResultSet() {
         return resultSet;
     }
 

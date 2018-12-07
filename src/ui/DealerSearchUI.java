@@ -3,6 +3,7 @@ package ui;
 import dao.ManageDealer;
 import dao.ManageDealerImple;
 import dto.Dealer;
+import dto.SearchResult;
 
 import java.awt.Container;
 import java.awt.Font;
@@ -247,21 +248,23 @@ public class DealerSearchUI extends JFrame{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			SearchResult<Dealer> searchResult = new SearchResult<>();
 			ArrayList<Dealer> dealers=new ArrayList<>();
-			
-			if(locationCB.getSelectedItem()!= null) {
-				
+
+			if (locationCB.getSelectedItem() != null) {
+
 				String location = (String) locationCB.getSelectedItem();
-				dealers = md.getDealerByLocation(location,0);
+				searchResult = md.getDealerByLocation(location, 0);
+				dealers=searchResult.getResultSet();
 
-					//new project.ListOfDealersUI(dealers);
-
+				//new project.ListOfDealersUI(dealers);
 			}
 			else if(zipcodeCB.getSelectedItem()!= null) {
 				
 				String zipcode = (String) zipcodeCB.getSelectedItem();
-				dealers = md.getDealerByZipcode(zipcode,0);
-
+                String location = (String) locationCB.getSelectedItem();
+                searchResult = md.getDealerByLocation(location, 0);
+                dealers=searchResult.getResultSet();
 					//new project.ListOfDealersUI(dealers);
 
 			}

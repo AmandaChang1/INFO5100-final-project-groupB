@@ -1,51 +1,40 @@
 package ui.SearchDealer;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.RoundRectangle2D;
 
-import static java.awt.Color.decode;
-
-public class SearchButton extends MyButton {
-    Graphics2D g2;
-
-    public Graphics2D getG2() {
-        return g2;
-    }
-
-    public SearchButton() {
-        super();
+public class WebButton extends MyButton{
+    public WebButton(String text) {
+        super(text);
         setBackground(Color.cyan);
         setOpaque(false);
-        setPreferredSize(new Dimension(55, 55));
+        setPreferredSize(new Dimension(30, 30));
+        setFont(new Font("Chalkboard",Font.BOLD,20));
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-         g2= (Graphics2D) g;
+        Graphics2D g2= (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.setColor(Color.decode("#ffffff"));
+        g2.setColor(Color.decode("#8B7355"));
         g2.setStroke(new BasicStroke(2.f));
-        g2.drawOval(2, 1, getWidth() - 4, getHeight() - 4);
+        g2.drawOval(8, 8, getWidth()-10, getHeight()-10);
 
 
         switch (isMouseEntered) {
             case 0:
-                setIcon(new ImageIcon("src/Picture3.png"));
-
+                setForeground(Color.decode("#ffffff"));
                 break;
             case 1:
                 //g2.setColor(Color.decode("#e6e6e6"));
-                setIcon(new ImageIcon("src/Picture2.png"));
+                setForeground(Color.decode("#cdcdcd"));
                 break;
             case 2:
-
-                setIcon(new ImageIcon("src/Picture1.png"));
+                setForeground(Color.decode("#e6e6e6"));
             case 3:
                 // g2.setColor(Color.decode("#e6e6e6"));
-                setIcon(new ImageIcon("src/Picture2.png"));
+                setForeground(Color.decode("#ffffff"));
 
             default:
                 break;
@@ -53,6 +42,5 @@ public class SearchButton extends MyButton {
         super.paintComponent(g);
 
     }
-
-
 }
+

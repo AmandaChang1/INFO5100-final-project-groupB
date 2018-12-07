@@ -160,17 +160,33 @@ public class UserIO implements  UserIOInterface {
                resset.add(res);
            }
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return resset;
     }
 
+    @Override
+    public int getPage(String sql) {
+        int page=0;
+        Connection connection=getConnection();
+        ResultSet resultSet=null;
+        ArrayList<String> resset=new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet=preparedStatement.executeQuery();
+            resultSet.next();
 
+            page=resultSet.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        return page;
+    }
 
-    /*public void insertdealer(Dealers dealer) {
+/*public void insertdealer(Dealers dealer) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO demo.dealer (name ,url,location) VALUES (?, ?,?)");
             preparedStatement.setString(1,  dealer.getName());

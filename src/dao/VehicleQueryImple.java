@@ -53,14 +53,14 @@ public class VehicleQueryImple implements VehicleQuery{
     	for(Vehicle v : vehicles) {
     		if(		queryCondition(filterContentSelected.getCondition(), v) &&
     				queryBrand(filterContentSelected.getBrand(), v) &&
-    				queryBodyType(filterContentSelected.getBodyType(), v) && 
+    				queryBodyType(filterContentSelected.getBodyType(), v) &&
     				queryCarModel(filterContentSelected.getModel(),v) &&
     				queryPriceRange(filterContentSelected.getLowPrice(), filterContentSelected.getHighPrice(), v) &&
     				queryYearRange(filterContentSelected.getLowYear(), filterContentSelected.getHighYear(), v)
     				) {
     			result.add(v);
     		}
-    		
+
     	}
     	
     	Inventory results = new Inventory();
@@ -195,7 +195,6 @@ public class VehicleQueryImple implements VehicleQuery{
 		if (price > max) {
 			max = price;
 		}
-
 		if (price < min) {
 			min = price;
 		}
@@ -214,7 +213,6 @@ public class VehicleQueryImple implements VehicleQuery{
 		if (year > max) {
 			max = year;
 		}
-
 		if (year < min) {
 			min = year;
 		}

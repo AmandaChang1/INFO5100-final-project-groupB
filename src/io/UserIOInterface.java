@@ -11,8 +11,7 @@ public interface UserIOInterface {
     void deleteData(String tableName, String data);
     void updateData(String tableName, String id, String data);
     ArrayList<String> getData(String sql);
-
-
+    int getPage(String sql);
 
 
 }
