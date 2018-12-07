@@ -183,46 +183,48 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		return inventory;
 
 	}
-
 	public Inventory getFilterValue() {
-
-		FilterContent fb = new FilterContent();
-		ArrayList<String> category = new ArrayList<>();
+		
+        FilterContent fb= new FilterContent();
+        ArrayList<String> category = new ArrayList<>();
 		ArrayList<String> brands = new ArrayList<>();
 		ArrayList<String> model = new ArrayList<>();
 		ArrayList<String> bodytype = new ArrayList<>();
-		if (categoryFilter1.isSelected()) {
+		if(categoryFilter1.isSelected())
+		{
 			category.add("Cartified");
-		} else if (categoryFilter2.isSelected()) {
+		}
+		else if(categoryFilter2.isSelected())
+		{
 			category.add("New");
-		} else if (categoryFilter3.isSelected()) {
+		}
+		else if(categoryFilter3.isSelected())
+		{
 			category.add("Used");
 		}
 		fb.setCondition(category);
-		brands.add((String) brandFilter.getSelectedItem());
+		brands.add((String)brandFilter.getSelectedItem());
 		fb.setBrand(brands);
-		model.add((String) bodyTypeFilter.getSelectedItem());
-		fb.setBodyType(bodytype);
-		model.add((String) modelFilter.getSelectedItem());
+		bodytype.add((String)bodyTypeFilter.getSelectedItem());
+	    fb.setBodyType(bodytype);
+		model.add((String)modelFilter.getSelectedItem());
 		fb.setModel(model);
-
-		String minValue = (String) minPriceFilter.getSelectedItem();
-		if (minValue.equals("None"))
-			fb.setLowPrice(1000);
-		else
-			fb.setLowPrice(Double.parseDouble((String) minPriceFilter.getSelectedItem()));
-
-		if (minValue.equals("None"))
-			fb.setHighPrice(70000);
-		else
-			fb.setHighPrice(Double.parseDouble((String) maxPriceFilter.getSelectedItem()));
-
-		fb.setLowYear(Integer.parseInt((String) minYearFilter.getSelectedItem()));
-		fb.setHighYear(Integer.parseInt((String) maxYearFilter.getSelectedItem()));
-
-		Inventory inventory1 = searchVehicle.queryByFilter(CallInventory("gmps-aj-dohmann"), fb);
+		fb.setLowPrice(Double.valueOf(minPriceFilter.getSelectedItem().toString()));
+		fb.setHighPrice(Double.valueOf(maxPriceFilter.getSelectedItem().toString()));
+		fb.setLowYear(Integer.valueOf(minYearFilter.getSelectedItem().toString()));
+		fb.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
+		
+		System.out.println( fb.getCondition()+" " +fb.getBodyType() + " "+ fb.getModel()+" "+
+		fb.getBrand() +" "+fb.getHighPrice()+" "+fb.getLowPrice() + "  "+fb.getLowYear()+"  "+fb.getHighYear());
+		System.out.println("get all vehicles" + inventory.getVehicles().size());
+		Inventory inventory1=searchVehicle.queryByFilter(inventory, fb);
+	
+		System.out.println("return result inventory "+ inventory1.getVehicles().size());
 		return inventory1;
-	}
+}
+
+
+	
 
 	public void setActionListener() {
 		if (applyFiltersButton == null)
