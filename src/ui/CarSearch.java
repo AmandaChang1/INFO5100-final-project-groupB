@@ -106,12 +106,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	private void defineFilters() {
 
-		String[] minPriceFilterItems = new String[] { "None", "1000", "5000", "10000", "15000", "20000", "30000",
+		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000",
 				"40000" };
-		String[] maxPriceFilterItems = new String[] { "None", "2000", "6000", "10000", "20000", "40000", "60000",
+		String[] maxPriceFilterItems = new String[] { "2000", "6000", "10000", "20000", "40000", "60000",
 				"70000" };
 		String[] modelFilterItems = new String[] { "CTS Sedan", "A", "B", "C" };
-		String[] brandFilterItems = new String[] { "None", "Cadillac", "Chevrolet", "Chrysler", "Ford", "Toyota",
+		String[] brandFilterItems = new String[] {  "Cadillac", "Chevrolet", "Chrysler", "Ford", "Toyota",
 				"Mazda", "Jaguar", "BMW", "Mercedes", "Jeep", "Mitsubishi", "Nissan", "Land Rover", "Other" };
 		String[] bodyTypeItems = new String[] { "CAR", "SUV", "HatchBack", "Coupe" };
 		String[] minYearFilterItems = new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
@@ -211,11 +211,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		fb.setModel(model);
 		fb.setLowPrice(Double.valueOf(minPriceFilter.getSelectedItem().toString()));
 		fb.setHighPrice(Double.valueOf(maxPriceFilter.getSelectedItem().toString()));
+		
 		fb.setLowYear(Integer.valueOf(minYearFilter.getSelectedItem().toString()));
 		fb.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
 		
 		System.out.println( fb.getCondition()+" " +fb.getBodyType() + " "+ fb.getModel()+" "+
 		fb.getBrand() +" "+fb.getHighPrice()+" "+fb.getLowPrice() + "  "+fb.getLowYear()+"  "+fb.getHighYear());
+		
 		System.out.println("get all vehicles" + inventory.getVehicles().size());
 		Inventory inventory1=searchVehicle.queryByFilter(inventory, fb);
 	
