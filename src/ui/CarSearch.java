@@ -244,14 +244,14 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				Inventory sortedinventory = null;
 				if (sortComboBox.getSelectedItem().equals("Year ascending")) {
-					sortedinventory = vehicleService.Sort(SortType.YEAR_ASC, inventory);
+					sortedinventory = vehicleService.Sort(SortType.YEAR_ASC,inventory);
 				} else if (sortComboBox.getSelectedItem().equals("Year descending")) {
-					sortedinventory = vehicleService.Sort(SortType.YEAR_DSC, inventory);
+					sortedinventory = vehicleService.Sort(SortType.YEAR_DSC,inventory);
 				} else if (sortComboBox.getSelectedItem().equals("Price low to high")) {
 					sortedinventory = vehicleService.Sort(SortType.PRICE_ASC, inventory);
 					System.out.println(sortedinventory.getVehicles().size());
 				} else if (sortComboBox.getSelectedItem().equals("Price high to low")) {
-					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC, inventory);
+					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC,inventory);
 				}
 				System.out.println("New sorted Inventory size: " + sortedinventory.getVehicles().size());
 				setVehicleDetailsPanel(sortedinventory);
@@ -262,7 +262,8 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	public void setVehicleDetailsPanel(Inventory inventory) {
 		// clear the vehicleDetailsPane
 		vehicleDetailsPane.removeAll();
-	
+		vehicleDetailsPane.revalidate(); 
+		vehicleDetailsPane.repaint();
 		// call the function to return List of; Vehicles
 		int length = inventory.getVehicles().size();
 
