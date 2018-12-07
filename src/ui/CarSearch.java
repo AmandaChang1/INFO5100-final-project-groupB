@@ -3,21 +3,9 @@ package ui;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import com.mysql.cj.util.Util;
-
 import dao.VehicleQueryImple;
-
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.List;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import dao.*;
 import dto.*;
 import service.*;
