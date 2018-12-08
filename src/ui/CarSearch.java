@@ -143,7 +143,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 		createTopPanelComponents();
 		topPanel.setBorder(BorderFactory.createTitledBorder("Dealer Name"));
-		// topPanel.setBorder(BorderFactory);
+	    topPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 		topPanel.add(Box.createRigidArea(new Dimension(200, 200)));
 		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
 		topPanel.add(homeButton);
@@ -207,17 +207,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		    String message = "Enter a valid price range";
 		    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
 		    JOptionPane.ERROR_MESSAGE);
-		    return inventory;
-		    
-		    
 		}
 		if(filtercontent.getHighYear()<filtercontent.getLowYear())
 		{
 		    String message = "Enter a valid range for year";
 		    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
 		    JOptionPane.ERROR_MESSAGE);
-		    return inventory;
-		    
 		    
 		}
 		System.out.println( filtercontent.getCondition()+" " +filtercontent.getBodyType() + " "+ filtercontent.getModel()+" "+
@@ -225,6 +220,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		
 		System.out.println("get all vehicles" + inventory.getVehicles().size());
 		Inventory inventory1=searchVehicle.queryByFilter(inventory, filtercontent);
+		if(getFilterValue().getVehicles().size()==0)
+		{
+			String message = "No matching search found";
+		    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
+		    JOptionPane.ERROR_MESSAGE);
+		}
 	
 		System.out.println("return result inventory "+ inventory1.getVehicles().size());
 		
@@ -261,12 +262,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVehicleDetailsPanel(getFilterValue());
-				if(getFilterValue().getVehicles().size()==0)
-				{
-					String message = "No matching search found";
-				    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
-				    JOptionPane.ERROR_MESSAGE);
-				}
+				
 			}
 		});
 
