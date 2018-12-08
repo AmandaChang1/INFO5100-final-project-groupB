@@ -5,8 +5,13 @@ import dto.Dealer;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ResultPanel extends MyPanel{
@@ -41,7 +46,7 @@ public class ResultPanel extends MyPanel{
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        //下面这行是为了背景图片可以跟随窗口自行调整大小，可以自己设置成固定大小
+
         g.drawImage(img, 0, 0,this.getWidth(), this.getHeight(), this);
     }
 
@@ -58,21 +63,6 @@ public class ResultPanel extends MyPanel{
         int height=(int)(frame.getBounds().getHeight()*0.7);
         setBounds(270,15,900,550);
         setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
-//      setLayout(null);
-//      JLabel jLabel= null;
-//      try {
-//            jLabel = new JLabel();
-//            ImageIcon imageIcon=new ImageIcon(ImageIO.read(new File("src/Road.jpg")));
-//            Image image=imageIcon.getImage();
-//            // image.getScaledInstance(width,height,Image.SCALE_DEFAULT);
-//            imageIcon.setImage(image);
-//            jLabel.setIcon(imageIcon);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//      panel.add(jLabel);
-//      add(jLabel);
     }
 
 
@@ -83,39 +73,71 @@ public class ResultPanel extends MyPanel{
         public ResPanel(Dealer dealer) {
 
             super();
-            JPanel panelname,panelzipcode,panellocation,paneladdress;
+            JPanel panelname,panelzipcode,panellocation,paneladdress,spacepanel;
             panelname=new MyPanel();
             panelzipcode=new MyPanel();
             panellocation=new MyPanel();
             paneladdress=new MyPanel();
-            panelname.setPreferredSize(new Dimension(200,30));
-            panelzipcode.setPreferredSize(new Dimension(200,30));
-            panellocation.setPreferredSize(new Dimension(200,30));
-            paneladdress.setPreferredSize(new Dimension(200,30));
+            spacepanel=new MyPanel();
+            panelname.setPreferredSize(new Dimension(200,150));
+            spacepanel.setPreferredSize(new Dimension(200,50));
+            panelzipcode.setPreferredSize(new Dimension(200,20));
+            //panellocation.setPreferredSize(new Dimension(200,10));
+            paneladdress.setPreferredSize(new Dimension(200,20));
             panelname.setLayout(new FlowLayout(FlowLayout.LEFT));
             panelzipcode.setLayout(new FlowLayout(FlowLayout.LEFT));
             panellocation.setLayout(new FlowLayout(FlowLayout.LEFT));
             paneladdress.setLayout(new FlowLayout(FlowLayout.LEFT));
             name=new MyLabel(dealer.getName());
-            zipcode=new MyLabel(dealer.getZipcode());
-            location=new MyLabel(dealer.getLocation());
+            zipcode=new MyLabel(dealer.getZipcode()+","+dealer.getLocation());
+
             address=new MyLabel(dealer.getAddress());
-            setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+            setLayout(new FlowLayout(FlowLayout.LEFT,15,0));
             setPreferredSize(new Dimension(200,300));
             setBackground(Color.BLACK);
-            name.setFont(new Font("Bauhaus 93",Font.PLAIN,20));
+            name.setFont(new Font("HeadLineA",Font.PLAIN,25));
             name.setForeground(Color.decode("#8B7355"));
-            zipcode.setFont(new Font("Bauhaus 93",Font.PLAIN,18));
-            location.setFont(new Font("Bauhaus 93",Font.PLAIN,18));
-            address.setFont(new Font("Bauhaus 93",Font.PLAIN,18));
+            zipcode.setFont(new Font("Heiti SC",Font.PLAIN,12));
+            //location.setFont(new Font("Heiti SC",Font.PLAIN,12));
+            address.setFont(new Font("Heiti SC",Font.PLAIN,12));
+
             panelname.add(name);
             panelzipcode.add(zipcode);
-            panellocation.add(location);
+
             paneladdress.add(address);
+            add(spacepanel);
             add(panelname);
             add(panelzipcode);
-            add(panellocation);
+
             add(paneladdress);
+            WebButton searchButton=new WebButton("W");
+
+
+            searchButton.addActionListener(new ActionListener() {
+
+                public void actionPerformed(final ActionEvent arg0) {
+
+
+
+//Runtime.getRuntime().exec("C:/Program Files/Internet Explorer/IEXPLORE.exe　http://www.baidu.com"); 　//绝对路径
+
+                        Desktop desktop = Desktop.getDesktop();
+
+                        try {
+                            try {
+                                desktop.browse(new URI("http://"+dealer.getUrl()));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } catch (URISyntaxException e) {
+                            e.printStackTrace();
+                        }
+
+
+                }
+            });
+
+                    add(searchButton);
         }
 
 

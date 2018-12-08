@@ -3,6 +3,7 @@ package service;
 import dao.ManageDealer;
 import dao.ManageDealerImple;
 import dto.Dealer;
+import dto.SearchResult;
 
 import java.util.ArrayList;
 
@@ -25,12 +26,12 @@ public class DealerServiceImple implements DealerService{
     }
 
     @Override
-    public ArrayList<Dealer> getDealerByZipcode(String zipcode, int pageNumber) {
+    public SearchResult<Dealer> getDealerByZipcode(String zipcode, int pageNumber) {
         return manageDealer.getDealerByZipcode(zipcode,pageNumber);
     }
 
     @Override
-    public ArrayList<Dealer> getDealerByLocation(String location,int pageNumber) {
+    public SearchResult<Dealer> getDealerByLocation(String location, int pageNumber) {
         return manageDealer.getDealerByLocation(location,pageNumber);
     }
 

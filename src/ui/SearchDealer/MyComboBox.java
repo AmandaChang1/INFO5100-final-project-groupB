@@ -196,25 +196,26 @@ class IComboBoxUI extends BasicComboBoxUI {
     }
 }
 
+
 class IScrollBarUI extends BasicScrollBarUI {
-    public IScrollBarUI(){
+    public IScrollBarUI() {
         super();
     }
 
     protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
         int width = thumbBounds.width;
         int height = thumbBounds.height;
-        Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
 
         g2.translate(thumbBounds.x, thumbBounds.y);
         g2.setColor(Color.WHITE);
-        g2.drawRoundRect(1,1,width-2, height-2,5,5);
+        g2.drawRoundRect(1, 1, width - 2, height - 2, 5, 5);
 
         g2.setColor(Color.ORANGE);
-        g2.drawLine(3,height/2,width-4,height/2);
-        g2.drawLine(3,height/2+3,width-4,height/2+3);
+        g2.drawLine(3, height / 2, width - 4, height / 2);
+        g2.drawLine(3, height / 2 + 3, width - 4, height / 2 + 3);
         g2.translate(-thumbBounds.x, -thumbBounds.y);
     }
 
@@ -224,7 +225,7 @@ class IScrollBarUI extends BasicScrollBarUI {
         int y = trackBounds.y;
         int width = trackBounds.width;
         int height = trackBounds.height;
-        Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setComposite(AlphaComposite
@@ -234,26 +235,25 @@ class IScrollBarUI extends BasicScrollBarUI {
         g2.setComposite(AlphaComposite
                 .getInstance(AlphaComposite.SRC_OVER, 1f));
         g2.setColor(Color.GRAY.brighter());
-        g2.fill3DRect(x, y, 1, height+1, true);
-        if(trackHighlight == DECREASE_HIGHLIGHT) {
+        g2.fill3DRect(x, y, 1, height + 1, true);
+        if (trackHighlight == DECREASE_HIGHLIGHT) {
             paintDecreaseHighlight(g);
-        }
-        else if(trackHighlight == INCREASE_HIGHLIGHT)  {
+        } else if (trackHighlight == INCREASE_HIGHLIGHT) {
             paintIncreaseHighlight(g);
         }
     }
 
     protected JButton createIncreaseButton(int orientation) {
-        JButton button = new BasicArrowButton(orientation){
+        JButton button = new BasicArrowButton(orientation) {
             public void paint(Graphics g) {
-                Graphics2D g2 = (Graphics2D)g;
+                Graphics2D g2 = (Graphics2D) g;
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                         RenderingHints.VALUE_ANTIALIAS_ON);
                 g2.setColor(Color.BLACK);
-                g2.drawLine(0,0,0,getHeight());
-                g2.drawLine(0,0,getWidth(),0-1);
+                g2.drawLine(0, 0, 0, getHeight());
+                g2.drawLine(0, 0, getWidth(), 0 - 1);
                 try {
-                    g2.drawImage((new ImageIcon(ImageIO.read(new File("src/xiala.png")))).getImage(),-1,0,null);
+                    g2.drawImage((new ImageIcon(ImageIO.read(new File("src/xiala.png")))).getImage(), -1, 0, null);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -266,16 +266,16 @@ class IScrollBarUI extends BasicScrollBarUI {
     protected JButton createDecreaseButton(int orientation) {
 
 
-        JButton button = new BasicArrowButton(orientation){
+        JButton button = new BasicArrowButton(orientation) {
             public void paint(Graphics g) {
-                Graphics2D g2 = (Graphics2D)g;
+                Graphics2D g2 = (Graphics2D) g;
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                         RenderingHints.VALUE_ANTIALIAS_ON);
                 g2.setColor(Color.BLACK);
-                g2.drawLine(0,0,0,getHeight());
-                g2.drawLine(0,getHeight()-1,getWidth(),getHeight());
+                g2.drawLine(0, 0, 0, getHeight());
+                g2.drawLine(0, getHeight() - 1, getWidth(), getHeight());
                 try {
-                    g2.drawImage((new ImageIcon(ImageIO.read(new File("src/xiala.png")))).getImage(),-1,0,null);
+                    g2.drawImage((new ImageIcon(ImageIO.read(new File("src/xiala.png")))).getImage(), -1, 0, null);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -285,5 +285,6 @@ class IScrollBarUI extends BasicScrollBarUI {
         return button;
     }
 }
+
 
 

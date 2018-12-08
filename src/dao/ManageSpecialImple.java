@@ -140,7 +140,7 @@ public class ManageSpecialImple implements ManageSpecial{
         for(String a:vehicles) {
             String[] res = a.trim().split("~");
             Vehicle vehicle = new Vehicle();
-            vehicle.setId(res[0]);
+            vehicle.setId(String.valueOf(res[0]));
             vehicle.setDealerId(res[1]);
             vehicle.setCategory(res[2]);
             vehicle.setYear(res[3]);
