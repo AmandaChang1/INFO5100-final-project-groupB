@@ -204,7 +204,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		filtercontent.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
 		if(filtercontent.getHighPrice()<filtercontent.getLowPrice())
 		{
-		    String message = "Enter a valid Input";
+		    String message = "Enter a valid price range";
 		    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
 		    JOptionPane.ERROR_MESSAGE);
 		    return inventory;
@@ -213,7 +213,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		}
 		if(filtercontent.getHighYear()<filtercontent.getLowYear())
 		{
-		    String message = "Enter a valid Input";
+		    String message = "Enter a valid range for year";
 		    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
 		    JOptionPane.ERROR_MESSAGE);
 		    return inventory;
@@ -227,6 +227,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		Inventory inventory1=searchVehicle.queryByFilter(inventory, filtercontent);
 	
 		System.out.println("return result inventory "+ inventory1.getVehicles().size());
+		
 		return inventory1;
 		}
 }
@@ -259,8 +260,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		applyFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("applyFilterbuttonpressed");
 				setVehicleDetailsPanel(getFilterValue());
+				if(getFilterValue().getVehicles().size()==0)
+				{
+					String message = "No matching search found";
+				    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
+				    JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 
@@ -315,11 +321,6 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			//carImagePanel.setLayout(new );
 			carImagePanel.add(Picture);
 			carImagePanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-
-			
-			
-			
-			
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(yearLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
