@@ -91,32 +91,35 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private void defineFilters() {
+		
+		for (int j=0;j<inventory.getVehicles().size();j++)
+		{
+		 brandFilterItems.add(inventory.getVehicles().get(j).getMake());
+		 System.out.println("Size of brand filter"+brandFilterItems.size());
+		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
+		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
+		 yearItems.add(inventory.getVehicles().get(j).getYear());
+		}
 
 		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000" };
 		String[] maxPriceFilterItems = new String[] { "2000", "6000", "10000", "20000", "40000", "60000", "70000" };
-		String[] modelFilterItems = new String[] { "Model", "CTS Sedan", "A", "B", "C" };
-		String[] brandFilterItems = new String[] { "Brand", "Cadillac", "Chevrolet", "Chrysler", "Ford", "Toyota",
-				"Mazda", "Jaguar", "BMW", "Mercedes", "Jeep", "Mitsubishi", "Nissan", "Land Rover", "Other" };
-		String[] bodyTypeItems = new String[] { "Body type", "CAR", "SUV", "HatchBack", "Coupe" };
-		String[] minYearFilterItems = new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
-				"2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" };
-		String[] maxYearFilterItems = new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
-				"2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" };
 
 		categoryFilter1 = new JCheckBox("Certified");
 		categoryFilter2 = new JCheckBox("New");
 		categoryFilter3 = new JCheckBox("Used");
 
-		modelFilter = new JComboBox(modelFilterItems);
+		modelFilter = new JComboBox(modelFilterItems.toArray());
 		minPriceFilter = new JComboBox(minPriceFilterItems);
 		maxPriceFilter = new JComboBox(maxPriceFilterItems);
-		brandFilter = new JComboBox(brandFilterItems);
-		bodyTypeFilter = new JComboBox(bodyTypeItems);
-		minYearFilter = new JComboBox(minYearFilterItems);
-		maxYearFilter = new JComboBox(maxYearFilterItems);
+		brandFilter = new JComboBox(brandFilterItems.toArray());
+		bodyTypeFilter = new JComboBox(bodyTypeFilterItems.toArray());
+		minYearFilter = new JComboBox(yearItems.toArray());
+		maxYearFilter = new JComboBox(yearItems.toArray());
 
 	}
+	
 
 	public void createTopPanelComponents() {
 		topPanel = new JPanel() {
@@ -213,11 +216,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			System.out.println("get all vehicles" + inventory.getVehicles().size());
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			
-			//no matching search found validation
-			if (inventory1.getVehicles().size() == 0) {
-				String message = "No matching search found";
-				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-			}
+			
 
 			System.out.println("return result inventory " + inventory1.getVehicles().size());
 
@@ -250,6 +249,11 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVehicleDetailsPanel(getFilterValue());
+				//no matching search found validation
+				if (getFilterValue().getVehicles().size()== 0) {
+					String message = "No matching search found";
+					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				}
 
 			}
 		});
