@@ -295,19 +295,17 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		vehicleDetailsPane.removeAll();
 		vehicleDetailsPane.revalidate(); 
 		vehicleDetailsPane.repaint();
+		
 		// call the function to return List of; Vehicles
 		int length = inventory.getVehicles().size();
 
 		for (int i = 0; i < length; i++) {
-			JPanel carPanel = new JPanel();			
+			JPanel carPanel = new JPanel();		
+			carPanel.setLayout(new BorderLayout());
 			JPanel carItemPanel = new JPanel();
 			JPanel carImagePanel = new JPanel();
-			//carItemPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			// JLabel Picture = new JLabel(new
-			// ImageIcon(inventory.getVehicles().get(i).getImages()));
-			// JLabel Picture = new JLabel(new
-			// ImageIcon("http://inventory-dmg.assets-cdk.com/5/1/7/13411480715x90.jpg"));
-
+			JPanel trimPanel = new JPanel();
+			carItemPanel.setLayout(new BoxLayout(carItemPanel, BoxLayout.Y_AXIS));
 			JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
 			JLabel vehicleIdLabel = new JLabel("VEHICLE ID : " + inventory.getVehicles().get(i).getId());
 			JLabel brandLabel = new JLabel("BRAND : " + inventory.getVehicles().get(i).getMake());
@@ -317,21 +315,18 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			JLabel trimLabel = new JLabel(inventory.getVehicles().get(i).getTrim());
 			JLabel yearLabel = new JLabel("YEAR: "+inventory.getVehicles().get(i).getYear());
 			JButton moreDetails = new JButton("More Details");
-			//moreDetails.setPreferredSize(new Dimension(100,30));
-			//carImagePanel.setLayout(new );
+			
 			carImagePanel.add(Picture);
-			carImagePanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(yearLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 
-			carItemPanel.add(trimLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+			trimLabel.setFont(new Font("Courier New", Font.BOLD, 18));
+			trimPanel.add(trimLabel , FlowLayout.LEFT);
+			trimPanel.setBackground(Color.WHITE);
+
 
 			carItemPanel.add(vehicleIdLabel);
-			//carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-
-			// carItemPanel.add(Picture);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(brandLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -342,19 +337,17 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			carItemPanel.add(priceLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(moreDetails);
-			carItemPanel.setPreferredSize(new Dimension(200,500));
+			carItemPanel.setPreferredSize(new Dimension(400,180));
 			carItemPanel.setBackground(new Color(225, 225, 0, 0));
-			carItemPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+			carItemPanel.add(moreDetails);
 
-			carPanel.setLayout(new FlowLayout());
-			carPanel.add(carImagePanel);
-			carPanel.add(carItemPanel);
-			carPanel.setPreferredSize(new Dimension(400,300));
+			carPanel.add(carImagePanel , BorderLayout.CENTER);
+			carPanel.add(carItemPanel , BorderLayout.EAST);
+			carPanel.add(trimPanel , BorderLayout.NORTH);
+			carPanel.setPreferredSize(new Dimension(500,180));
 			carPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
 			vehicleDetailsPane.add(carPanel);
-			vehicleDetailsPane.add(moreDetails);
-			vehicleDetailsPane.add(trimLabel);
 		}
 
 	}
