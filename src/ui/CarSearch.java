@@ -97,7 +97,6 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		for (int j=0;j<inventory.getVehicles().size();j++)
 		{
 		 brandFilterItems.add(inventory.getVehicles().get(j).getMake());
-		 System.out.println("Size of brand filter"+brandFilterItems.size());
 		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
 		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
 		 yearItems.add(inventory.getVehicles().get(j).getYear());
@@ -201,11 +200,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
 				String message = "Enter a valid price range";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				return inventory;
 			}
 			//Price filter validation
 			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
 				String message = "Enter a valid range for year";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				return inventory;
 
 			}
 			System.out.println(filtercontent.getCondition() + " " + filtercontent.getBodyType() + " "
@@ -216,10 +217,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			System.out.println("get all vehicles" + inventory.getVehicles().size());
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			
-			
-
 			System.out.println("return result inventory " + inventory1.getVehicles().size());
-
 			return inventory1;
 		}
 	}
@@ -233,13 +231,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		clearFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				minPriceFilter.setSelectedIndex(-1);
-				maxPriceFilter.setSelectedIndex(-1);
-				brandFilter.setSelectedIndex(-1);
-				modelFilter.setSelectedIndex(-1);
-				bodyTypeFilter.setSelectedIndex(-1);
-				minYearFilter.setSelectedIndex(-1);
-				maxYearFilter.setSelectedIndex(-1);
+				defineFilters();
 				setVehicleDetailsPanel(inventory);
 
 			}
@@ -248,14 +240,15 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		applyFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVehicleDetailsPanel(getFilterValue());
+				Inventory temp = getFilterValue();
+				setVehicleDetailsPanel(temp);
 				//no matching search found validation
-				if (getFilterValue().getVehicles().size()== 0) {
+				if (temp.getVehicles().size()== 0) {
 					String message = "No matching search found";
 					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				}
-
 			}
+			
 		});
 
 		sortComboBox.addActionListener(new ActionListener() {
