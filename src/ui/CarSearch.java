@@ -1,6 +1,4 @@
 package ui;
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -108,7 +106,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		}
 
 		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000" };
-		String[] maxPriceFilterItems = new String[] { "2000", "6000", "10000", "20000", "40000", "60000", "70000" };
+		String[] maxPriceFilterItems = new String[] { "70000", "60000", "50000", "40000", "30000", "20000", "10000" };
 
 		categoryFilter1 = new JCheckBox("Certified");
 		categoryFilter2 = new JCheckBox("New");
@@ -238,6 +236,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				defineFilters();
+				brandFilter.setSelectedIndex(0);
+				modelFilter.setSelectedIndex(0);
+				minPriceFilter.setSelectedIndex(0);
+				maxPriceFilter.setSelectedIndex(0);
+				minYearFilter.setSelectedIndex(0);
+				maxYearFilter.setSelectedIndex(0);
+				bodyTypeFilter.setSelectedIndex(0);
 				setVehicleDetailsPanel(inventory);
 
 			}
