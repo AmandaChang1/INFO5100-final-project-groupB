@@ -1,9 +1,11 @@
 package ui;
 
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import dao.*;
@@ -14,9 +16,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	VehicleQueryImple searchVehicle = new VehicleQueryImple();
 	VehicleQuerySortServiceImple vehicleService = new VehicleQuerySortServiceImple();
 	Inventory inventory;
+	String dealerName;
 
-	public CarSearch() {
+	public CarSearch(String dealerName)
+	{
 		super();
+		this.dealerName = dealerName;
 	}
 
 	public void createLeftPanelComponents() {
@@ -128,13 +133,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			}
 		};
 		topPanel.setOpaque(true);
-		homeButton = new JButton("HOME");
+		homeButton = new JButton("Home");
+		backButton = new JButton("Back");
 		searchBar = new JTextField(40);
 		searchButton = new JButton("Search");
-		sortLabel = new JLabel("SORT:");
+		sortLabel = new JLabel("Sort:");
 		sortLabel.setForeground(Color.WHITE);
-		sortComboBox = new JComboBox(
-				new String[] { "Year ascending", "Year descending", "Price low to high", "Price high to low" });
+		sortComboBox = new JComboBox(new String[] { "Year ascending", "Year descending", "Price low to high", "Price high to low" });
 
 	}
 
@@ -145,6 +150,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		topPanel.setBorder(BorderFactory.createTitledBorder("Dealer Name"));
 		topPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 		topPanel.add(Box.createRigidArea(new Dimension(200, 200)));
+		topPanel.add(backButton);
 		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
 		topPanel.add(homeButton);
 		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
@@ -157,12 +163,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		container.add(topPanel, BorderLayout.NORTH);
 	}
 
-	public void CallInventory() {
+	public void callInventory() {
 
-		Inventory inventory = null;
 		VehicleService vehicleService = new VehicleServiceImple();
+		
 		try {
-			this.inventory = vehicleService.getInventoryByDealer("gmps-aj-dohmann", 0);
+			this.inventory = vehicleService.getInventoryByDealer(this.dealerName, 0);
 		} catch (ParseException e1) {
 
 			e1.printStackTrace();
@@ -243,12 +249,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				Inventory temp = getFilterValue();
 				setVehicleDetailsPanel(temp);
 				//no matching search found validation
-				if (temp.getVehicles().size()== 0) {
+				if (temp.getVehicles().size() == 0) {
 					String message = "No matching search found";
 					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				}
 			}
-			
+
 		});
 
 		sortComboBox.addActionListener(new ActionListener() {
@@ -267,6 +273,20 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				}
 				System.out.println("New sorted Inventory size: " + sortedinventory.getVehicles().size());
 				setVehicleDetailsPanel(sortedinventory);
+			}
+		});
+
+		homeButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					new DealerSearchUI().setVisible(true);
+				} catch (IOException e1) {
+					System.out.println("Error in Going to Home");
+					e1.printStackTrace();
+				}
+				dispose();
 			}
 		});
 	}
@@ -303,8 +323,10 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 
 			trimLabel.setFont(new Font("Courier New", Font.BOLD, 18));
-			trimPanel.add(trimLabel, FlowLayout.LEFT);
-			trimPanel.setBackground(Color.WHITE);
+
+			trimPanel.add(trimLabel , FlowLayout.LEFT);
+			trimPanel.setBackground(Color.GRAY);
+			trimPanel.setBorder(BorderFactory.createLineBorder(Color.gray));
 
 			carItemPanel.add(vehicleIdLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -334,16 +356,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	// @Override
 	public void setLayout() {
-		CallInventory();
+		callInventory();
 		setTopPanel();
 		setLeftPanel();
 		vehicleDetailsPane = new JPanel();
 		BoxLayout layout = new BoxLayout(vehicleDetailsPane, BoxLayout.Y_AXIS);
 		vehicleDetailsPane.setLayout(layout);
 		vehicleDetailsPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-		// BoxLayout layout = new BoxLayout(vehicleDetailsPane, BoxLayout.Y_AXIS);
-		// vehicleDetailsPane.setLayout(layout);
 		vehicleDetailsPane.setBackground(Color.WHITE);
 		vehicleDetailsPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 		setVehicleDetailsPanel(inventory);

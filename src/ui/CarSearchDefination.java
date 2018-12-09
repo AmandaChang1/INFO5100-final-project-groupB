@@ -7,15 +7,23 @@ import java.util.*;
 public class CarSearchDefination extends JFrame{
 	//protected JFrame mainFrame;
 	private static final String JLable = null;
+//<<<<<<< Updated upstream
 	protected JPanel leftPanel, vehicleDetailsPanel, topPanel, 
 	vehicleDetailsPane,carImagePanel;
 	protected JButton homeButton, viewDetails, searchButton, 
-	clearFiltersButton, applyFiltersButton, moreDetails, clearButton;
+	clearFiltersButton, applyFiltersButton, moreDetails, clearButton, backButton;
 	protected JLabel topPicture, modelFilterLabel, yearFilterLabel,
 	brandFilterLabel, priceFilterLabel, bodyTypeFilterLabel,categoryFilterLabel, sortLabel,
 	vehicleImageLabel, vehicleModel, vehicleMake,
 	vehicleBodyType, vehiclePrice, vehicleCategory,
 	vehicleYear,searchVehicleLabel,minYearFilterLabel,maxYearFilterLabel,
+//=======
+//	protected JPanel leftPanel, vehicleDetailsPanel, topPanel, vehicleDetailsPane,carImagePanel;
+//	protected JButton homeButton, viewDetails, searchButton, clearFiltersButton, applyFiltersButton, moreDetails, clearButton, backButton;
+//	protected JLabel topPicture, modelFilterLabel, yearFilterLabel, brandFilterLabel,
+//	priceFilterLabel, bodyTypeFilterLabel,categoryFilterLabel, sortLabel, vehicleImageLabel, vehicleModel, vehicleMake,
+//	vehicleBodyType, vehiclePrice, vehicleCategory, vehicleYear,searchVehicleLabel,minYearFilterLabel,maxYearFilterLabel,
+//>>>>>>> Stashed changes
 	minPriceLabel,maxPriceLabel,trimLabel,yearLabel;
 	protected JCheckBox categoryFilter1, categoryFilter2, categoryFilter3, categoryFilter4;
 	protected JComboBox yearFilter, brandFilter, modelFilter, priceFilter, bodyTypeFilter, 
@@ -31,6 +39,7 @@ public class CarSearchDefination extends JFrame{
 	           
 	    
 	protected CarSearchDefination(){
+		String Brand ;
 
 		this.setSize(1924,500);
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

@@ -3,11 +3,14 @@ package ui;
 public class CarSearchUI {
 
 	public static void main(String[] args) {
-	   
-	   CarSearch c= new CarSearch();
-	   c.setLayout();
-	   c.setVisible(true);
-	   c.setActionListener();
+	 	CarSearchUI carSearchUI = new CarSearchUI("gmps-aj-dohmann");
+	}
+
+	public CarSearchUI(String dealerName){
+		CarSearch c= new CarSearch(dealerName);
+		c.setLayout();
+		c.setVisible(true);
+		c.setActionListener();
 	}
 
 }
