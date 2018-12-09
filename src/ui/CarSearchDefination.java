@@ -17,7 +17,7 @@ public class CarSearchDefination extends JFrame{
 	vehicleBodyType, vehiclePrice, vehicleCategory,
 	vehicleYear,searchVehicleLabel,minYearFilterLabel,maxYearFilterLabel,
 	minPriceLabel,maxPriceLabel,trimLabel,yearLabel;
-	protected JCheckBox categoryFilter1, categoryFilter2, categoryFilter3, categoryFilter4;
+	protected JCheckBox categoryFilter1, categoryFilter2, categoryFilter3;
 	protected JComboBox yearFilter, brandFilter, modelFilter, priceFilter, bodyTypeFilter, 
 	categoryFilter, sortComboBox, minYearFilter,maxYearFilter,
 	minPriceFilter,maxPriceFilter;

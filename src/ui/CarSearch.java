@@ -235,14 +235,10 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		clearFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				categoryFilter1.setSelected(false);
+				categoryFilter2.setSelected(false);
+				categoryFilter3.setSelected(false);
 				defineFilters();
-				brandFilter.setSelectedIndex(0);
-				modelFilter.setSelectedIndex(0);
-				minPriceFilter.setSelectedIndex(0);
-				maxPriceFilter.setSelectedIndex(0);
-				minYearFilter.setSelectedIndex(0);
-				maxYearFilter.setSelectedIndex(0);
-				bodyTypeFilter.setSelectedIndex(0);
 				setVehicleDetailsPanel(inventory);
 
 			}
