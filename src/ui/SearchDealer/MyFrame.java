@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-class MyFrame extends JFrame implements MouseListener, MouseMotionListener {
+public class MyFrame extends JFrame implements MouseListener, MouseMotionListener {
     JFrame frame;
     Container container;
     int x;
