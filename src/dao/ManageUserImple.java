@@ -26,10 +26,10 @@ public class ManageUserImple implements ManageUser {
                 if (pa.equals(password)) {
                     m = true;
                 } else {
-                    JOptionPane.showMessageDialog(null, "密码错误!!");
+                    JOptionPane.showMessageDialog(null, "Your password is Wrong!!");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "用户名不存在");
+                JOptionPane.showMessageDialog(null, "There is no such account");
             }
             resultSet.close();
         } catch (SQLException e) {
@@ -64,10 +64,10 @@ public class ManageUserImple implements ManageUser {
                 if (pa.equals(password)) {
                     m = true;
                 } else {
-                    JOptionPane.showMessageDialog(null, "密码错误");
+                    JOptionPane.showMessageDialog(null, "Your password is Wrong!!");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "用户名不存在");
+                JOptionPane.showMessageDialog(null, "There is no such account");
             }
             resultSet.close();
         } catch (SQLException e) {

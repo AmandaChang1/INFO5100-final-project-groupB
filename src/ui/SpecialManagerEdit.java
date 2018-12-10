@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class SpecialManagerEdit extends JFrame implements VCEventListener {
-    private  Special special;
+    private Special special;
     private VehicleCriterion vehicleCriterion;
     private boolean isAddSpecial, isCopy;
 
