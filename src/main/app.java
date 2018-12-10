@@ -49,11 +49,11 @@ public class app {
 //                System.out.println(a.getId());
 //            }
 //        }
-        Special.VehicleCriterion criterion=new Special.VehicleCriterion("Ford","Mustang","CAR","2000","2003",10000,20000);
-        Special.Discount discount = new Special.Discount(true,1.5f);
-        Special special=new Special("38","gmps-tincher-london1","2018-12-1","2018-12-12","1","1","1",criterion,discount);
-        SpecialService specialService=new SpecialServiceImpl();
-        specialService.deleteSpecial(special);
+//        Special.VehicleCriterion criterion=new Special.VehicleCriterion("Ford","Mustang","CAR","2000","2003",10000,20000);
+//        Special.Discount discount = new Special.Discount(true,1.5f);
+//        Special special=new Special("38","gmps-tincher-london1","2018-12-1","2018-12-12","1","1","1",criterion,discount);
+//        SpecialService specialService=new SpecialServiceImpl();
+//        specialService.deleteSpecial(special);
 //        VehicleService vehicleService=new VehicleServiceImple();
 //        Inventory inventory = vehicleService.getInventoryByDealer("gmps-tincher-london1",0);
 //        System.out.println(inventory);

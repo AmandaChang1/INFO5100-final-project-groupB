@@ -1,22 +1,17 @@
 package dao;
 
 
-import dto.Special;
+import dto.*;
 import dto.Special.*;
-import dto.Specials;
 import io.UserIO;
 import io.UserIOInterface;
 
-import dto.Inventory;
-import dto.Vehicle;
 import service.VehicleService;
 import service.VehicleServiceImple;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 public class ManageSpecialImple implements ManageSpecial{
     private UserIOInterface io;
@@ -27,8 +22,25 @@ public class ManageSpecialImple implements ManageSpecial{
     @Override
     public void addSpecial(Special special) {
         String data="";
+        StringBuilder sb = new StringBuilder();
+        if(special.getCriterion().getType()!= null){
+            for (int i = 0; i < special.getCriterion().getType().size(); i++) {
+                sb.append(special.getCriterion().getType().get(i));
+                sb.append(" ");
+            }
+        }
 
-        data="'"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getType()+"','" +special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"',"+special.getDiscount().isCashBack()+","+special.getDiscount().getValue();
+
+        StringBuilder sb1 = new StringBuilder();
+        if(special.getCriterion().getCategory()!= null){
+            for (int i = 0; i < special.getCriterion().getCategory().size(); i++) {
+                sb1.append(special.getCriterion().getCategory().get(i));
+                sb1.append(" ");
+            }
+        }
+
+
+        data="'"+special.getDealerName()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+sb1.toString()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+sb.toString()+"','" +special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"',"+special.getDiscount().getCashBack()+","+special.getDiscount().getValue();
         io.addData("special",data);
     }
 
@@ -43,7 +55,19 @@ public class ManageSpecialImple implements ManageSpecial{
     public void updateSpecial(Special special) {
         String data="";
         String id=special.getId();
-        data=id+",'"+special.getDealerId()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+special.getDisclaimer()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+special.getCriterion().getType()+"','" +special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"',"+special.getDiscount().isCashBack()+","+special.getDiscount().getValue();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < special.getCriterion().getType().size(); i++) {
+            sb.append(special.getCriterion().getType().get(i));
+            sb.append(" ");
+        }
+
+        StringBuilder sb1 = new StringBuilder();
+        for (int i = 0; i < special.getCriterion().getCategory().size(); i++) {
+            sb1.append(special.getCriterion().getCategory().get(i));
+            sb1.append(" ");
+        }
+
+        data=Integer.parseInt(special.getId())+",'"+special.getDealerName()+"','"+special.getStartDate()+"','"+special.getEndDate()+"','"+special.getTitle()+"','"+special.getDescription()+"','"+sb1.toString()+"','"+ special.getCriterion().getMaker()+"','"+special.getCriterion().getModel()+"','"+sb.toString()+"','" +special.getCriterion().getStartYear()+"','"+special.getCriterion().getEndYear()+"','"+special.getCriterion().getMinPrice()+"','"+special.getCriterion().getMaxPrice()+"',"+special.getDiscount().getCashBack()+","+special.getDiscount().getValue();
 
         io.updateData("special",id,data);
     }
@@ -68,16 +92,22 @@ public class ManageSpecialImple implements ManageSpecial{
             String[] res = a.trim().split("~");
             Special special = new Special();
             special.setId(res[0]);
-            special.setDealerId(res[1]);
+            special.setDealerName(res[1]);
             special.setStartDate(res[2]);
             special.setEndDate(res[3]);
             special.setTitle(res[4]);
             special.setDescription(res[5]);
-            special.setDisclaimer(res[6]);
             VehicleCriterion criterion=new VehicleCriterion();
+            String[] strs = res[6].split("\\s+");
+            ArrayList<String> category = new ArrayList<>();
+            Collections.addAll(category,strs);
+            criterion.setCategory(category);
             criterion.setMaker(res[7]);
             criterion.setModel(res[8]);
-            criterion.setType(res[9]);
+            String[] strs1 = res[9].split("\\s+");
+            ArrayList<String> type = new ArrayList<>();
+            Collections.addAll(type,strs1);
+            criterion.setType(type);
             criterion.setStartYear(res[10]);
             criterion.setEndYear(res[11]);
             if(res[12].equals("null"))
@@ -196,7 +226,7 @@ public class ManageSpecialImple implements ManageSpecial{
             Specials specials = map.get(vehicle.getDealerId());
             for (int i = 0; i < specials.getSpecials().size(); i++) {
                 if(vehiclemeetsSpecial(vehicle,specials.getSpecials().get(i))){
-                    if(specials.getSpecials().get(i).getDiscount().isCashBack()){
+                    if(specials.getSpecials().get(i).getDiscount().getCashBack()){
                         if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) - (specials.getSpecials().get(i).getDiscount().getValue() * 1000)){
                             vehicle.setDiscountprice(Float.parseFloat((vehicle.getPrice())) - (specials.getSpecials().get(i).getDiscount().getValue() * 1000)+"");
                         }
@@ -224,8 +254,13 @@ public class ManageSpecialImple implements ManageSpecial{
                 return false;
             }
         }
-        if(special.getCriterion().getType() != null){
-            if(!special.getCriterion().getType().equals(vehicle.getType())){
+        if(special.getCriterion().getCategory().size() == 1){
+            if(!special.getCriterion().getCategory().get(0).equals(vehicle.getCategory())){
+                return false;
+            }
+        }
+        if(special.getCriterion().getType().size() != 0){
+            if(!special.getCriterion().getType().contains(vehicle.getType())){
                 return false;
             }
         }
@@ -252,9 +287,9 @@ public class ManageSpecialImple implements ManageSpecial{
     public int numberOfCars(Special special) throws ParseException {
         int res = 0;
         VehicleService vehicleService=new VehicleServiceImple();
-        Inventory inventory = vehicleService.getInventoryByDealer(special.getDealerId(),0);
+        Inventory inventory = vehicleService.getInventoryByDealer(special.getDealerName(),0);
         for(Vehicle vehicle:inventory.getVehicles()){
-            if(special.getDiscount().isCashBack()){
+            if(special.getDiscount().getCashBack()){
                 if(Float.parseFloat(vehicle.getDiscountprice()) > Float.parseFloat((vehicle.getPrice())) - (special.getDiscount().getValue() * 1000)){
                     res++;
                 }

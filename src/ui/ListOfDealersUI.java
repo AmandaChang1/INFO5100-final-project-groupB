@@ -1,4 +1,4 @@
-package project;
+package ui;
 
 import dto.Dealer;
 
@@ -36,7 +36,7 @@ public class ListOfDealersUI extends JFrame{
 	private void addComponents() {
 		frame.setTitle("List Of Dealers");
 		for (int i = 0; i < ad.size(); i++) {
-	         c.add(new project.SingleDealerPanelUI(ad.get(i)));
+	         c.add(new ui.SingleDealerPanelUI(ad.get(i)));
 	    }
 		
 	}

@@ -1,4 +1,4 @@
-package project;
+package ui;
 
 import dto.Dealer;
 
