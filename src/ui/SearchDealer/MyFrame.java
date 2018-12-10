@@ -34,7 +34,6 @@ public class MyFrame extends JFrame implements MouseListener, MouseMotionListene
     DealerService dealerService;
     MyPanel panel1, panel2, panel3;
     JPanel searchPanel;
-    JPanel logInPanel;
     MyLabel label11, label12, label21, label22, label31, label32;
     ResultPanel resultPanel;
 
