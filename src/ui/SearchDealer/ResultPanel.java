@@ -29,17 +29,13 @@ public class ResultPanel extends MyPanel{
         for(int i=0;i<dealers.size();i++){
            ResPanel res=new ResPanel(dealers.get(i));
            panel.add(res);
-
         }
         add(panel);
-
-
     }
         //  /img/HomeImg.jpg 是存放在你正在编写的项目的bin文件夹下的img文件夹下的一个图片
     @Override
 
     public void paintComponent(Graphics g) {
-
         super.paintComponent(g);
         //下面这行是为了背景图片可以跟随窗口自行调整大小，可以自己设置成固定大小
         g.drawImage(img, 0, 0,this.getWidth(), this.getHeight(), this);
@@ -117,8 +113,5 @@ public class ResultPanel extends MyPanel{
             add(panellocation);
             add(paneladdress);
         }
-
-
-
     }
 }
