@@ -7,12 +7,14 @@ import static java.awt.Color.decode;
 
 public class ResetButton extends MyButton{
     Graphics2D g2;
+    private MyFont font;
     public ResetButton(String text) {
         super(text);
-        setFont(new Font("Chalkboard",Font.BOLD,50));
+        font=new MyFont();
+        setFont(font.loadOCRAStdFont(20));
         setBackground(Color.cyan);
         setOpaque(false);
-        setPreferredSize(new Dimension(60, 60));
+        setPreferredSize(new Dimension(20, 20));
     }
 
     @Override
@@ -23,7 +25,7 @@ public class ResetButton extends MyButton{
                 RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(Color.decode("#ffffff"));
         g2.setStroke(new BasicStroke(2.f));
-        g2.drawOval(8, 8, getWidth()-10, getHeight()-10);
+        g2.drawOval(1, 1, getWidth()-3, getHeight()-3);
 
 
         switch (isMouseEntered) {

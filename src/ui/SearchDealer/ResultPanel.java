@@ -1,12 +1,13 @@
 package ui.SearchDealer;
 
 import dto.Dealer;
+import ui.CarSearch;
+import ui.CarSearchUI;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
@@ -18,6 +19,7 @@ public class ResultPanel extends MyPanel{
 
     ImageIcon icon;
     Image img;
+    MyFont font;
     public ResultPanel(JFrame frame) {
         super();
         init(frame);
@@ -58,7 +60,7 @@ public class ResultPanel extends MyPanel{
             e.printStackTrace();
         }
         img=icon.getImage();
-
+        font=new MyFont();
         int width=(int) (frame.getBounds().getWidth()*0.3);
         int height=(int)(frame.getBounds().getHeight()*0.7);
         setBounds(270,15,900,550);
@@ -95,13 +97,15 @@ public class ResultPanel extends MyPanel{
             setLayout(new FlowLayout(FlowLayout.LEFT,15,0));
             setPreferredSize(new Dimension(200,300));
             setBackground(Color.BLACK);
-            name.setFont(new Font("HeadLineA",Font.PLAIN,25));
+            name.setFont(font.loadHeadlineAFont(25));
+            //new Font("HeadLineA",Font.PLAIN,25)
             name.setForeground(Color.decode("#8B7355"));
-            zipcode.setFont(new Font("Heiti SC",Font.PLAIN,12));
+            zipcode.setFont(font.loadHeitiFont(12));
             //location.setFont(new Font("Heiti SC",Font.PLAIN,12));
-            address.setFont(new Font("Heiti SC",Font.PLAIN,12));
+            address.setFont(font.loadHeitiFont(12));
 
             panelname.add(name);
+            panelname.addMouseListener(new panelListener(dealer.getName()));
             panelzipcode.add(zipcode);
 
             paneladdress.add(address);
@@ -142,5 +146,39 @@ public class ResultPanel extends MyPanel{
 
 
 
+    }
+    class panelListener implements MouseListener {
+        String dealername;
+
+        public panelListener(String dealername) {
+            this.dealername = dealername;
+        }
+
+
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            CarSearchUI carSearchUI=new CarSearchUI(dealername);
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
     }
 }

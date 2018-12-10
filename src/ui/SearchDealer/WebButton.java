@@ -8,7 +8,7 @@ public class WebButton extends MyButton{
         setBackground(Color.cyan);
         setOpaque(false);
         setPreferredSize(new Dimension(30, 30));
-        setFont(new Font("Chalkboard",Font.BOLD,20));
+        setFont(font.loadHeitiFont(20));
     }
 
     @Override

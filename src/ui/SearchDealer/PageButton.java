@@ -4,10 +4,13 @@ import java.awt.*;
 
 public class PageButton extends ResetButton{
 
+    private MyFont font;
     public PageButton(String text) {
         super(text);
+        font=new MyFont();
+
         setPreferredSize(new Dimension(30, 30));
-        setFont(new Font("Chalkboard",Font.BOLD,20));
+        setFont(font.loadCALIBRIBFont(20));
 
     }
 

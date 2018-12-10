@@ -40,7 +40,7 @@ class MyFrame extends JFrame implements MouseListener, MouseMotionListener {
     JPanel searchPanel;
     MyLabel label11,label12,label21,label22,label31,label32;
     ResultPanel resultPanel;
-
+    MyFont font;
 
     JLabel label,result;
 
@@ -54,6 +54,7 @@ class MyFrame extends JFrame implements MouseListener, MouseMotionListener {
     public void init() throws IOException {
 
 
+        font=new MyFont();
 
         setLayoutAddComponents();
         frame.setUndecorated(true);
@@ -90,12 +91,12 @@ pageUp=new PageButton("<");
     int height = (int) (frame.getHeight() * 0.7);
 
    label = new JLabel("HELLO");
-        label.setFont(new Font("Sensa Sans", Font.PLAIN, 70));
+        label.setFont(font.loadSensaSansFont(70));
         label.setBounds(200, 200, 300, 100);
         label.setForeground(Color.WHITE);
 
         result=new JLabel("Search Result");
-        result.setFont(new Font("Nanum Brush Script", Font.BOLD,  90));
+        result.setFont(font.loadNanumBrushScriptFont(90));
         result.setBounds(280,90,500,100);
         result.setForeground(Color.WHITE);
 
@@ -147,24 +148,24 @@ pageUp=new PageButton("<");
 
 
 
-        label11=new  MyLabel("NO.01                            ");
-        label11.setFont(new Font("Bauhaus 93",Font.PLAIN,12));
-       label12=new  MyLabel("Dealer Name          ");
-        label12.setFont(new Font("Calibri",Font.BOLD,15));
+        label11=new  MyLabel("NO.01                   ");
+        label11.setFont(font.loadBauhausFont(18));
+       label12=new  MyLabel("Dealer Name              ");
+        label12.setFont(font.loadCALIBRIBFont(17));
         comboBox1=new MyComboBox();
 
 
-        label21=new MyLabel("NO.02                            ");
-        label21.setFont(new Font("Bauhaus 93",Font.PLAIN,12));
-        label22=new  MyLabel("Zipcode                 ");
-        label22.setFont(new Font("Calibri",Font.BOLD,15));
+        label21=new MyLabel("NO.02                    ");
+        label21.setFont(font.loadBauhausFont(18));
+        label22=new  MyLabel("Zipcode                        ");
+        label22.setFont(font.loadCALIBRIBFont(17));
         comboBox2=new MyComboBox();
 
 
-       label31=new  MyLabel("NO.03                            ");
-        label31.setFont(new Font("Bauhaus 93",Font.PLAIN,12));
+       label31=new  MyLabel("NO.03                       ");
+        label31.setFont(font.loadBauhausFont(18));
        label32=new  MyLabel("Location               ");
-        label32.setFont(new Font("Calibri",Font.BOLD,15));
+        label32.setFont(font.loadCALIBRIBFont(17));
         comboBox3=new MyComboBox();
 
         panel1.add(label11);

@@ -7,9 +7,11 @@ import java.awt.event.MouseEvent;
 
 public class MaximizeButton extends MyButton{
     private boolean time=false;
+    private MyFont font;
     public MaximizeButton(String buttonText,JFrame frame) {
         super(buttonText);
-        setFont(new Font("Courier",Font.BOLD,20));
+        font=new MyFont();
+        setFont(font.loadCourierFont(20));
         addMouseListener(new MouseAdapter(){
             @Override
             public void mouseReleased(MouseEvent e) {

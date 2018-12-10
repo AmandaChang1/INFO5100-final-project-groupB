@@ -7,9 +7,11 @@ import java.awt.event.MouseEvent;
 
 public class MinimizeButton extends MyButton{
 
+    private MyFont font;
     public MinimizeButton(String buttonText,JFrame frame) {
         super(buttonText);
-        setFont(new Font("Courier",Font.BOLD,20));
+        font=new MyFont();
+        setFont(font.loadCourierFont(20));
         addMouseListener(new MouseAdapter(){
             @Override
             public void mouseReleased(MouseEvent e) {

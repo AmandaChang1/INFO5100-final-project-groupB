@@ -14,9 +14,11 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	VehicleQueryImple searchVehicle = new VehicleQueryImple();
 	VehicleQuerySortServiceImple vehicleService = new VehicleQuerySortServiceImple();
 	Inventory inventory;
+	String dealername;
 
-	public CarSearch() {
+	public CarSearch(String dealername) {
 		super();
+		this.dealername=dealername;
 	}
 
 	public void createLeftPanelComponents() {
@@ -162,7 +164,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		Inventory inventory = null;
 		VehicleService vehicleService = new VehicleServiceImple();
 		try {
-			this.inventory = vehicleService.getInventoryByDealer("gmps-aj-dohmann", 0);
+			this.inventory = vehicleService.getInventoryByDealer(dealername, 0);
 		} catch (ParseException e1) {
 
 			e1.printStackTrace();

@@ -1,13 +1,15 @@
 package ui;
 
 public class CarSearchUI {
-
-	public static void main(String[] args) {
-	   
-	   CarSearch c= new CarSearch();
-	   c.setLayout();
-	   c.setVisible(true);
-	   c.setActionListener();
+	String dealername;
+	public CarSearchUI(String dealername) {
+		this.dealername=dealername;
+		CarSearch c= new CarSearch(dealername);
+		c.setLayout();
+		c.setVisible(true);
+		c.setActionListener();
 	}
+
+
 
 }

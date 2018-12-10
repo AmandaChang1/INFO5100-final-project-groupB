@@ -10,6 +10,7 @@ class MyButton extends JButton {
     private float alpha = 1f; // 底色的透明度，默认为不透明
     protected int isMouseEntered = 1;// 鼠标是否进入按钮
 
+    MyFont font;
     public MyButton() {
         initStyle();
 init();
@@ -26,8 +27,9 @@ init();
     }
 
         private void init(){
+        font=new MyFont();
         setForeground(new Color(130,130,130));
-        setFont(new Font("Sensa Sans",Font.PLAIN,30));
+        setFont(font.loadSensaSansFont(20));
         initStyle();
         setPreferredSize(new Dimension(20,20));
         //添加鼠标监听
