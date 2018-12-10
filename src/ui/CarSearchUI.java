@@ -3,7 +3,7 @@ package ui;
 public class CarSearchUI {
 
 	public static void main(String[] args) {
-		CarSearchUI carSearchUI = new CarSearchUI("gmps-aj-dohmann");
+	 	CarSearchUI carSearchUI = new CarSearchUI("gmps-aj-dohmann");
 	}
 
 	public CarSearchUI(String dealerName){

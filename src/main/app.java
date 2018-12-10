@@ -17,7 +17,7 @@ public class app {
 //        VehicleService service=new VehicleServiceImple();
 //        Vehicle vehicle=new Vehicle("1","1","1","1","1","1","1","1","1","1","1");
 //        service.addVehicle(vehicle);
-//       vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
+//        vehicle=new Vehicle("1","1","2 2","1","1","1","1","1","1","1","1");
 //        service.updateVehicle(vehicle);
 //        service.deleteVehicle(vehicle);
 //
@@ -49,11 +49,11 @@ public class app {
 //                System.out.println(a.getId());
 //            }
 //        }
-//        Special.VehicleCriterion criterion=new Special.VehicleCriterion("Ford","Mustang","CAR","2000","2003",10000,20000);
-//        Special.Discount discount = new Special.Discount(true,1.5f);
-//        Special special=new Special("38","gmps-tincher-london1","2018-12-1","2018-12-12","1","1","1",criterion,discount);
-//        SpecialService specialService=new SpecialServiceImpl();
-//        specialService.deleteSpecial(special);
+          Special.VehicleCriterion criterion=new Special.VehicleCriterion("Ford","Mustang","CAR","2000","2003",10000,20000);
+          Special.Discount discount = new Special.Discount(true,1.5f);
+          Special special=new Special("38","gmps-tincher-london1","2018-12-1","2018-12-12","1","1","1",criterion,discount);
+          SpecialService specialService=new SpecialServiceImpl();
+          specialService.deleteSpecial(special);
 //        VehicleService vehicleService=new VehicleServiceImple();
 //        Inventory inventory = vehicleService.getInventoryByDealer("gmps-tincher-london1",0);
 //        System.out.println(inventory);
@@ -81,7 +81,7 @@ public class app {
       /*
         SpecialService specialService=new SpecialServiceImple();
 
-       Special.VehicleCriterion criterion=new Special.VehicleCriterion("1","1","1",1,1);
+        Special.VehicleCriterion criterion=new Special.VehicleCriterion("1","1","1",1,1);
         Special special=new Special("1","1","1","1","1","1","1",1,criterion);
         specialService.addSpecial(special);
         special=new Special("1","1","22","1","1","1","1",1,criterion);

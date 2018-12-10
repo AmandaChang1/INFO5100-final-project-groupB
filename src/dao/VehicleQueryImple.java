@@ -2,6 +2,7 @@ package dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import dto.FilterContent;
 import dto.FilterContentModel;
@@ -53,14 +54,14 @@ public class VehicleQueryImple implements VehicleQuery{
     	for(Vehicle v : vehicles) {
     		if(		queryCondition(filterContentSelected.getCondition(), v) &&
     				queryBrand(filterContentSelected.getBrand(), v) &&
-    				queryBodyType(filterContentSelected.getBodyType(), v) && 
+    				queryBodyType(filterContentSelected.getBodyType(), v) &&
     				queryCarModel(filterContentSelected.getModel(),v) &&
     				queryPriceRange(filterContentSelected.getLowPrice(), filterContentSelected.getHighPrice(), v) &&
     				queryYearRange(filterContentSelected.getLowYear(), filterContentSelected.getHighYear(), v)
     				) {
     			result.add(v);
     		}
-    		
+
     	}
     	
     	Inventory results = new Inventory();
@@ -71,60 +72,90 @@ public class VehicleQueryImple implements VehicleQuery{
     private boolean queryCondition(List<String> conditions, Vehicle v) {
     	String targetContition = v.getCategory();
     	for(String condition : conditions) {
-    		if(condition == "condition") 
+    		//System.out.println("condition:" + condition +"targetCondition + " + condition);
+    		if(condition == "condition") {
+    			//System.out.println("condition matched;");
     			return true;
-    		else if(targetContition == condition) {
+    		}
+    		else if(targetContition.equals(condition)) {
+    			//System.out.println("condition matched;");
     			return true;
     		}
     	}
+    	//System.out.println("condition not matched;");
     	return false;
     }
     
     private boolean queryBrand(List<String> brands, Vehicle v) {
     	String targetBrand = v.getMake();
     	for(String brand : brands) {
-    		if(brand == "brand") 
-    			return true;
-    		else if(targetBrand == brand) {
+    		if(brand == "brand") {
+    			//System.out.println("brand matched;");
     			return true;
     		}
+    		else if(targetBrand.equals(brand)) {
+    			//System.out.println("brand matched;");
+    			return true;
+    			
+    		}
     	}
+    	//System.out.println("brand not matched;");
     	return false;
     }
     
     private boolean queryCarModel(List<String> models, Vehicle v) {
     	String targetmodel = v.getModel();
 		for(String model : models) {
-			if(model == "model") 
+			if(model == "model") {
+				//System.out.println("model matched;");
 				return true;
-			else if(targetmodel == model) 
+			}
+				
+			else if(targetmodel.equals(model) ) {
+				//System.out.println("model matched;");
 				return true;
+			}
 		}
+		//System.out.println("model not matched;");
+		
 		return false;
 	}
     
     private boolean queryBodyType(List<String> bodyTypes, Vehicle v) {
     	String targetBodyType = v.getType();
     	for(String bodyType : bodyTypes) {
-    		if(bodyType == "bodyType")
-    			return true;
-    		else if(targetBodyType == bodyType)
-    			return true;
+    		if(bodyType == "bodyType") {
+    			//System.out.println("model matched;");
+				return true;
+    		}
+    			
+    		else if(targetBodyType.equals(bodyType) ){
+    			//System.out.println("model matched;");
+				return true;
+    		}
+    			
     	}
+    	//System.out.println("model not matched;");
     	return false;
     }
     
     private boolean queryPriceRange(double lowPrice, double highPrice, Vehicle v) {
-    	double targetPrice = Double.valueOf(v.getPrice());
-    	if(targetPrice >= lowPrice && targetPrice <= highPrice) 
+    	double targetPrice = Double.valueOf(v.getDiscountprice());
+    	if(targetPrice >= lowPrice && targetPrice <= highPrice) {
+    		//System.out.println("price matched");
     		return true;
+    	}
+    	//System.out.println("price not match;");
     	return false;
     }
     
     private boolean queryYearRange(int lowYear, int highYear, Vehicle v) {
     	int targetYear = Integer.valueOf(v.getYear());
-    	if(targetYear >= lowYear && targetYear <= highYear)
+    	if(targetYear >= lowYear && targetYear <= highYear) {
+    		//System.out.println("year matched");
     		return true;
+    	}
+    	//System.out.println("year not matched");
     	return false;
     }
     
@@ -195,7 +226,6 @@ public class VehicleQueryImple implements VehicleQuery{
 		if (price > max) {
 			max = price;
 		}
-
 		if (price < min) {
 			min = price;
 		}
@@ -214,7 +244,6 @@ public class VehicleQueryImple implements VehicleQuery{
 		if (year > max) {
 			max = year;
 		}
-
 		if (year < min) {
 			min = year;
 		}

@@ -1,45 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="properties">
+    <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageDealer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageDealer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageDealerImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageDealerImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecialImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecialImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageUserImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageUserImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageVehicleImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageVehicleImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Dealer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/Dealer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Special$Discount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Special$VehicleCriterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Special.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/Special.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Specials.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/Specials.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dto/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/io/UserIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/io/UserIO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/io/UserIOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/io/UserIOInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/main/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/main/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/DealerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/DealerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/DealerServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/DealerServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/UserServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/UserServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/VehicleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/VehicleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/service/VehicleServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/service/VehicleServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/LoginSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/LoginSystem$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/LoginSystem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/LoginSystem$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/LoginSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/LoginSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Special.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Special.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/UserIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/UserIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ListOfDealersUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ListOfDealersUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SingleDealerPanelUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SingleDealerPanelUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/VehicleQueryImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/VehicleQueryImple.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,20 +11,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1438917756">
@@ -85,15 +35,18 @@
     <session id="826051715">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="7" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="18" />
+          <entry key="java" value="120" />
           <entry key="md" value="1" />
           <entry key="properties" value="1" />
           <entry key="xml" value="1" />
@@ -102,7 +55,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="18" />
+          <entry key="JAVA" value="120" />
           <entry key="Markdown" value="1" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="1" />
@@ -110,47 +63,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="173" />
+          <entry key="java" value="1629" />
           <entry key="properties" value="1" />
-          <entry key="txt" value="20" />
+          <entry key="txt" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="173" />
-          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="JAVA" value="1629" />
+          <entry key="PLAIN_TEXT" value="29" />
           <entry key="Properties" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-637544035">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="206" />
-          <entry key="png" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Image" value="2" />
-          <entry key="JAVA" value="206" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1408" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1408" />
         </counts>
       </usages-collector>
     </session>
@@ -158,51 +80,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/SpecialManagerEdit.java">
+        <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="277" column="40" selection-start-line="277" selection-start-column="40" selection-end-line="277" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1979#1980#0" expanded="true" />
-                <element signature="e#2019#2020#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="276">
+              <caret line="138" column="47" lean-forward="true" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java">
+        <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicleImple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="348">
+              <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/SPEditEventListener.java">
+        <entry file="file://$PROJECT_DIR$/src/dao/VehicleQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="60">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dto/Special.java">
+        <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="60">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/SpecialManageUI.java">
+        <entry file="file://$PROJECT_DIR$/src/service/DealerServiceImple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="81" column="32" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+            <state relative-caret-position="345">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,34 +128,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dto/SpecialsTableModel.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+            <state relative-caret-position="285">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
               <folding>
-                <element signature="e#974#975#0" expanded="true" />
-                <element signature="e#1005#1006#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../SpecialManager.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+            <state relative-caret-position="1365">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/SpecialServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/io/UserIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="1770">
+              <caret line="125" column="79" selection-start-line="125" selection-start-column="79" selection-end-line="125" selection-end-column="79" />
               <folding>
-                <element signature="e#413#414#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/ManageDealerImple.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dto/SearchResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <folding>
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -258,15 +199,6 @@
     <findStrings>
       <find>inventory</find>
       <find>constructSpeicals</find>
-      <find>SpecialManager</find>
-      <find>specialm</find>
-      <find>specialmanager</find>
-      <find>add</find>
-      <find>save</find>
-      <find>closeUpdateSpecial</find>
-      <find>table</find>
-      <find>iniy</find>
-      <find>init</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -284,33 +216,36 @@
         <option value="$PROJECT_DIR$/src/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/service/UserServiceImple.java" />
         <option value="$PROJECT_DIR$/src/dao/ManageUserImple.java" />
-        <option value="$PROJECT_DIR$/src/io/UserIOInterface.java" />
         <option value="$PROJECT_DIR$/src/dao/ManageSpecial.java" />
         <option value="$PROJECT_DIR$/src/service/SpecialServiceImple.java" />
         <option value="$PROJECT_DIR$/src/service/SpecialService.java" />
         <option value="$PROJECT_DIR$/src/service/SpecialServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" />
         <option value="$PROJECT_DIR$/src/service/VehicleServiceImple.java" />
-        <option value="$PROJECT_DIR$/src/dao/VehicleQueryImple.java" />
+        <option value="$PROJECT_DIR$/src/dto/Special.java" />
         <option value="$PROJECT_DIR$/src/service/VehicleQuerySortServiceImple.java" />
         <option value="$PROJECT_DIR$/src/dao/Sort.java" />
         <option value="$PROJECT_DIR$/src/DB.properties" />
-        <option value="$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java" />
-        <option value="$PROJECT_DIR$/src/dto/SearchResult.java" />
-        <option value="$PROJECT_DIR$/src/service/DealerService.java" />
-        <option value="$PROJECT_DIR$/src/dao/ManageDealerImple.java" />
-        <option value="$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/SingleDealerPanelUI.java" />
-        <option value="$PROJECT_DIR$/src/dto/VehicleCriterion.java" />
-        <option value="$PROJECT_DIR$/src/ui/ListOfDealersUI.java" />
-        <option value="$PROJECT_DIR$/src/dto/Special.java" />
-        <option value="$PROJECT_DIR$/src/main/app.java" />
-        <option value="$PROJECT_DIR$/src/dto/SpecialManager.java" />
-        <option value="$PROJECT_DIR$/src/ui/SpecialManagerEdit.java" />
+        <option value="$PROJECT_DIR$/src/io/UserIOInterface.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java" />
         <option value="$PROJECT_DIR$/src/io/UserIO.java" />
-        <option value="$PROJECT_DIR$/../SpecialManager.java" />
-        <option value="$PROJECT_DIR$/src/ui/SpecialManageUI.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/SearchButton.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/ResetButton.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/BackgroundPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/MyComboBox.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/WebButton.java" />
+        <option value="$PROJECT_DIR$/src/service/DealerServiceImple.java" />
+        <option value="$PROJECT_DIR$/src/service/DealerService.java" />
+        <option value="$PROJECT_DIR$/src/dao/ManageDealer.java" />
+        <option value="$PROJECT_DIR$/src/ui/DealerSearchUI.java" />
+        <option value="$PROJECT_DIR$/src/dao/ManageDealerImple.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/main.java" />
+        <option value="$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java" />
+        <option value="$PROJECT_DIR$/src/dao/VehicleQueryImple.java" />
+        <option value="$PROJECT_DIR$/src/main/app.java" />
+        <option value="$PROJECT_DIR$/src/dto/SearchResult.java" />
         <option value="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" />
+        <option value="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" />
       </list>
     </option>
   </component>
@@ -328,8 +263,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="950" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -341,49 +276,23 @@
         <subPane>
           <expand>
             <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name=".settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="FinalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Document" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,13 +300,12 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544310103128" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544061046872" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -405,7 +313,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -428,7 +336,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SpecialManageUI">
+  <component name="RunManager" selected="Application.main">
     <configuration name="DealerSearchUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DealerSearchUI" />
       <module name="FinalProject" />
@@ -442,8 +350,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpecialManageUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.SpecialManageUI" />
+    <configuration name="LoginSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.LoginSystem" />
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -455,12 +363,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpecialManagerEdit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.SpecialManagerEdit" />
+    <configuration name="Sort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.Sort" />
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ui.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -497,17 +405,17 @@
     <list>
       <item itemvalue="Application.app" />
       <item itemvalue="Application.DealerSearchUI" />
+      <item itemvalue="Application.Sort" />
       <item itemvalue="Application.main" />
-      <item itemvalue="Application.SpecialManagerEdit" />
-      <item itemvalue="Application.SpecialManageUI" />
+      <item itemvalue="Application.LoginSystem" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SpecialManageUI" />
-        <item itemvalue="Application.SpecialManagerEdit" />
-        <item itemvalue="Application.DealerSearchUI" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.app" />
+        <item itemvalue="Application.DealerSearchUI" />
+        <item itemvalue="Application.LoginSystem" />
+        <item itemvalue="Application.Sort" />
       </list>
     </recent_temporary>
   </component>
@@ -536,9 +444,16 @@
       <workItem from="1543899130815" duration="2000" />
       <workItem from="1543953461817" duration="61000" />
       <workItem from="1543968246331" duration="301000" />
-      <workItem from="1543968550668" duration="4176000" />
-      <workItem from="1544141601017" duration="6719000" />
-      <workItem from="1544217338301" duration="10113000" />
+      <workItem from="1543968550668" duration="21333000" />
+      <workItem from="1544040870823" duration="3731000" />
+      <workItem from="1544048259974" duration="4347000" />
+      <workItem from="1544053304804" duration="1109000" />
+      <workItem from="1544054516551" duration="127000" />
+      <workItem from="1544057705029" duration="436000" />
+      <workItem from="1544060490571" duration="569000" />
+      <workItem from="1544061600371" duration="1593000" />
+      <workItem from="1544213001405" duration="21000" />
+      <workItem from="1544220081254" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="Associate speical to Vehicles">
       <created>1543362183200</created>
@@ -603,11 +518,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543970514438</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="bug fixed">
+      <created>1543973399085</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543973399085</updated>
+    </task>
+    <task id="LOCAL-00011" summary="bug fixed">
+      <created>1544226548710</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1544226548710</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68408000" />
+    <option name="totallyTimeSpent" value="82570000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -619,9 +548,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="950" extended-state="6" />
+    <frame x="1" y="24" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23687424" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18025751" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -631,16 +560,16 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" weight="0.2144522" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.27505827" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49284694" weight="0.2624204" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49499285" weight="0.27261147" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983682" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49499285" weight="0.29808918" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32867134" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.1969697" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4985694" weight="0.23543124" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5071531" side_tool="true" visible="true" weight="0.21528663" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49713877" weight="0.07388535" />
       <window_info anchor="bottom" id="Duplicate detector" order="12" visible="true" weight="0.32897863" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -648,14 +577,14 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32967034" />
+      <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32958803" />
       <window_info anchor="right" id="Maven" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23443224" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -665,16 +594,16 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" visible="true" weight="0.21528663" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.27505827" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49284694" visible="true" weight="0.21528663" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49499285" weight="0.27261147" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983682" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49499285" weight="0.29808918" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32867134" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" visible="true" weight="0.1969697" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4985694" weight="0.07388535" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5071531" side_tool="true" visible="true" weight="0.21528663" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49713877" weight="0.07388535" />
       <window_info anchor="bottom" id="Duplicate detector" order="12" visible="true" weight="0.32897863" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -703,41 +632,135 @@
     <MESSAGE value="New Special Attributes" />
     <MESSAGE value="dealer ui" />
     <MESSAGE value="properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="properties" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java</url>
+          <line>366</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageDealer.java">
+    <entry file="file://$PROJECT_DIR$/src/service/VehicleQuerySortServiceImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="555">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/Sort.java">
+    <entry file="file://$PROJECT_DIR$/out/production/FinalProject/dao/Sort.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="645">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/SortType.java">
+    <entry file="file://$PROJECT_DIR$/src/service/VehicleQuerySortService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="60">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/VehicleQuery.java">
+    <entry file="file://$PROJECT_DIR$/src/service/SpecialServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="195">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaProjectReadme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dto/Specials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/SearchPanel.java" />
+    <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/UserIOInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/LoginSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dto/Dealer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -748,357 +771,258 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/User.java">
+    <entry file="file://$PROJECT_DIR$/src/dto/Special.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="15">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicleImple.java">
+    <entry file="file://$PROJECT_DIR$/src/service/UserServiceImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="38" />
+        <state relative-caret-position="270">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicle.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="135">
+          <caret line="9" column="53" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="9" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageUserImple.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/Mylist.java" />
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Calendar/DateChooser.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyLabel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MinimizeButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/IconListItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/CloseButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/BackgroundPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="240">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/selfDefinedUI/selfDefinedUI/IconTextField.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/SearchButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="585">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/selfDefinedUI/selfDefinedUI/MyButton.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/IconListItemRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/selfDefinedUI/BackgroundPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/ControlPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/selfDefinedUI/selfDefinedUI/RoundBorder.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyComboBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="4020">
+          <caret line="286" column="1" selection-start-line="286" selection-start-column="1" selection-end-line="286" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Dealer Search wireframe.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/SearchResult.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MaximizeButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageUser.java">
+    <entry file="file://$PROJECT_DIR$/src/service/DealerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="135">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecial.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/ManageDealer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/selfDefinedUI/IconTextField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/selfDefinedUI/MyButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/FilterContentModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Dealer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SingleDealerPanelUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/LoginSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/ListOfDealersUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="105">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/DealerSearchUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="587">
+          <caret line="270" column="18" lean-forward="true" selection-start-line="270" selection-start-column="18" selection-end-line="270" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SpecialService.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/SortType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/WebButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/ResetButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/Sort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+        <state relative-caret-position="240">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../JavaFinal/src/dto/DummySpecials.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/VehicleQueryImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="536">
+          <caret line="214" column="9" selection-start-line="214" selection-start-column="9" selection-end-line="214" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Specials.java">
+    <entry file="file://$PROJECT_DIR$/src/service/DealerServiceImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/VCEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/VehicleCriterionUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8129">
-          <caret line="192" column="25" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
+        <state relative-caret-position="345">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/UserIOInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="285">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/SpecialManager.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/ResultPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1365">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/io/UserIO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2051">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Discount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/InMemoryPaginationDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/PaginationDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/VehicleCriterion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
-          <folding>
-            <element signature="e#2599#2600#0" expanded="true" />
-            <element signature="e#2626#2627#0" expanded="true" />
-            <element signature="e#3289#3290#0" expanded="true" />
-            <element signature="e#3321#3322#0" expanded="true" />
-            <element signature="e#3380#3381#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/FilterContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SpecialManagerEdit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="277" column="40" selection-start-line="277" selection-start-column="40" selection-end-line="277" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1979#1980#0" expanded="true" />
-            <element signature="e#2019#2020#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SPEditEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/JTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="3620" column="16" selection-start-line="3620" selection-start-column="16" selection-end-line="3620" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SpecialManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/Special.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dto/SpecialsTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding>
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SpecialManageUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="81" column="32" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+        <state relative-caret-position="1770">
+          <caret line="125" column="79" selection-start-line="125" selection-start-column="79" selection-end-line="125" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SpecialServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/ManageDealerImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="795">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
-            <element signature="e#413#414#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dto/SearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/VehicleQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="276">
+          <caret line="138" column="47" lean-forward="true" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ManageVehicleImple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="54" column="121" selection-start-line="54" selection-start-column="121" selection-end-line="54" selection-end-column="121" />
         </state>
       </provider>
     </entry>
@@ -1159,7 +1083,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1179,7 +1102,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jide-common</last-edited>
+          <last-edited>mysql-connector-java-8.0.13</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -8,5 +8,8 @@ public class PageButton extends ResetButton{
         super(text);
         setPreferredSize(new Dimension(30, 30));
         setFont(new Font("Chalkboard",Font.BOLD,20));
+
     }
+
+
 }
