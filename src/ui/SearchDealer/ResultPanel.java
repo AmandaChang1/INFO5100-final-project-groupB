@@ -36,17 +36,13 @@ public class ResultPanel extends MyPanel{
         for(int i=0;i<dealers.size();i++){
            ResPanel res=new ResPanel(dealers.get(i));
            panel.add(res);
-
         }
         add(panel);
-
-
     }
         //  /img/HomeImg.jpg 是存放在你正在编写的项目的bin文件夹下的img文件夹下的一个图片
     @Override
 
     public void paintComponent(Graphics g) {
-
         super.paintComponent(g);
 
         g.drawImage(img, 0, 0,this.getWidth(), this.getHeight(), this);
@@ -143,9 +139,6 @@ public class ResultPanel extends MyPanel{
 
                     add(searchButton);
         }
-
-
-
     }
     class panelListener implements MouseListener {
         String dealername;
