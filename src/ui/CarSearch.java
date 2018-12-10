@@ -1,9 +1,9 @@
 package ui;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import dao.*;
@@ -14,11 +14,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	VehicleQueryImple searchVehicle = new VehicleQueryImple();
 	VehicleQuerySortServiceImple vehicleService = new VehicleQuerySortServiceImple();
 	Inventory inventory;
-	String dealername;
+	String dealerName;
 
-	public CarSearch(String dealername) {
+	public CarSearch(String dealerName)
+	{
 		super();
-		this.dealername=dealername;
+		this.dealerName = dealerName;
 	}
 
 	public void createLeftPanelComponents() {
@@ -78,7 +79,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		leftPanel.add(minPriceFilter);
 		leftPanel.add(maxPriceLabel);
 		leftPanel.add(maxPriceFilter);
-		
+
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 40)));
 		leftPanel.add(clearFiltersButton);
 		leftPanel.add(applyFiltersButton);
@@ -93,9 +94,9 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private void defineFilters() {
-
-
+		
 		for (int j=0;j<inventory.getVehicles().size();j++)
 		{
 		 brandFilterItems.add(inventory.getVehicles().get(j).getMake());
@@ -119,8 +120,8 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		minYearFilter = new JComboBox(yearItems.toArray());
 		maxYearFilter = new JComboBox(yearItems.toArray());
 
-
 	}
+	
 
 	public void createTopPanelComponents() {
 		topPanel = new JPanel() {
@@ -130,13 +131,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			}
 		};
 		topPanel.setOpaque(true);
-		homeButton = new JButton("HOME");
+		homeButton = new JButton("Home");
+		backButton = new JButton("Back");
 		searchBar = new JTextField(40);
 		searchButton = new JButton("Search");
-		sortLabel = new JLabel("SORT:");
+		sortLabel = new JLabel("Sort:");
 		sortLabel.setForeground(Color.WHITE);
-		sortComboBox = new JComboBox(
-				new String[] { "Year ascending", "Year descending", "Price low to high", "Price high to low" });
+		sortComboBox = new JComboBox(new String[] { "Year ascending", "Year descending", "Price low to high", "Price high to low" });
 
 	}
 
@@ -145,8 +146,9 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 		createTopPanelComponents();
 		topPanel.setBorder(BorderFactory.createTitledBorder("Dealer Name"));
-		// topPanel.setBorder(BorderFactory);
+		topPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 		topPanel.add(Box.createRigidArea(new Dimension(200, 200)));
+		topPanel.add(backButton);
 		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
 		topPanel.add(homeButton);
 		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
@@ -159,76 +161,70 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		container.add(topPanel, BorderLayout.NORTH);
 	}
 
-	public void CallInventory() {
+	public void callInventory() {
 
-		Inventory inventory = null;
 		VehicleService vehicleService = new VehicleServiceImple();
+		
 		try {
-			this.inventory = vehicleService.getInventoryByDealer(dealername, 0);
+			this.inventory = vehicleService.getInventoryByDealer(this.dealerName, 0);
 		} catch (ParseException e1) {
 
 			e1.printStackTrace();
 		}
-		
 
 	}
+
 	public Inventory getFilterValue() {
-		
-        FilterContent filtercontent= new FilterContent();
-        ArrayList<String> category = new ArrayList<>();
+
+		FilterContent filtercontent = new FilterContent();
+		ArrayList<String> category = new ArrayList<>();
 		ArrayList<String> brands = new ArrayList<>();
 		ArrayList<String> model = new ArrayList<>();
 		ArrayList<String> bodytype = new ArrayList<>();
-		if(categoryFilter1.isSelected())
-		{
-			category.add("Cartified");
-		}
-		else if(categoryFilter2.isSelected())
-		{
-			category.add("New");
-		}
-		else if(categoryFilter3.isSelected())
-		{
-			category.add("Used");
-		}
-		filtercontent.setCondition(category);
-		brands.add((String)brandFilter.getSelectedItem());
-		filtercontent.setBrand(brands);
-		bodytype.add((String)bodyTypeFilter.getSelectedItem());
-	   filtercontent.setBodyType(bodytype);
-		model.add((String)modelFilter.getSelectedItem());
-		filtercontent.setModel(model);
-		filtercontent.setLowPrice(Double.valueOf(minPriceFilter.getSelectedItem().toString()));
-		filtercontent.setHighPrice(Double.valueOf(maxPriceFilter.getSelectedItem().toString()));
-		
-		filtercontent.setLowYear(Integer.valueOf(minYearFilter.getSelectedItem().toString()));
-		filtercontent.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
-		//Year filter validation
-		if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
-			String message = "Enter a valid price range";
-			JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-			return inventory;
-		}
-		//Price filter validation
-		if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
-			String message = "Enter a valid range for year";
-			JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-			return inventory;
+		while (true) {
+			if (categoryFilter1.isSelected()) {
+				category.add("Cartified");
+			} else if (categoryFilter2.isSelected()) {
+				category.add("New");
+			} else if (categoryFilter3.isSelected()) {
+				category.add("Used");
+			}
+			filtercontent.setCondition(category);
+			brands.add((String) brandFilter.getSelectedItem());
+			filtercontent.setBrand(brands);
+			bodytype.add((String) bodyTypeFilter.getSelectedItem());
+			filtercontent.setBodyType(bodytype);
+			model.add((String) modelFilter.getSelectedItem());
+			filtercontent.setModel(model);
+			filtercontent.setLowPrice(Double.valueOf(minPriceFilter.getSelectedItem().toString()));
+			filtercontent.setHighPrice(Double.valueOf(maxPriceFilter.getSelectedItem().toString()));
+			filtercontent.setLowYear(Integer.valueOf(minYearFilter.getSelectedItem().toString()));
+			filtercontent.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
+			//Year filter validation
+			if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
+				String message = "Enter a valid price range";
+				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				return inventory;
+			}
+			//Price filter validation
+			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
+				String message = "Enter a valid range for year";
+				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				return inventory;
 
+			}
+			System.out.println(filtercontent.getCondition() + " " + filtercontent.getBodyType() + " "
+					+ filtercontent.getModel() + " " + filtercontent.getBrand() + " " + filtercontent.getHighPrice()
+					+ " " + filtercontent.getLowPrice() + "  " + filtercontent.getLowYear() + "  "
+					+ filtercontent.getHighYear());
+
+			System.out.println("get all vehicles" + inventory.getVehicles().size());
+			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
+			
+			System.out.println("return result inventory " + inventory1.getVehicles().size());
+			return inventory1;
 		}
-		
-		System.out.println(filtercontent.getCondition()+" " +filtercontent.getBodyType() + " "+filtercontent.getModel()+" "+
-		filtercontent.getBrand() +" "+filtercontent.getHighPrice()+" "+filtercontent.getLowPrice() + "  "+filtercontent.getLowYear()+"  "+filtercontent.getHighYear());
-		
-		System.out.println("get all vehicles" + inventory.getVehicles().size());
-		Inventory inventory1=searchVehicle.queryByFilter(inventory,filtercontent);
-	
-		System.out.println("return result inventory "+ inventory1.getVehicles().size());
-		return inventory1;
-}
-
-
-	
+	}
 
 	public void setActionListener() {
 		if (applyFiltersButton == null)
@@ -250,8 +246,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				maxPriceFilter.setSelectedIndex(0);
 				minPriceFilter.setSelectedIndex(0);
 				setVehicleDetailsPanel(inventory);
-				
-				
+
 			}
 		});
 
@@ -266,6 +261,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				}
 			}
+
 		});
 
 		sortComboBox.addActionListener(new ActionListener() {
@@ -273,17 +269,31 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				Inventory sortedinventory = null;
 				if (sortComboBox.getSelectedItem().equals("Year ascending")) {
-					sortedinventory = vehicleService.Sort(SortType.YEAR_ASC,inventory);
+					sortedinventory = vehicleService.Sort(SortType.YEAR_ASC, inventory);
 				} else if (sortComboBox.getSelectedItem().equals("Year descending")) {
-					sortedinventory = vehicleService.Sort(SortType.YEAR_DSC,inventory);
+					sortedinventory = vehicleService.Sort(SortType.YEAR_DSC, inventory);
 				} else if (sortComboBox.getSelectedItem().equals("Price low to high")) {
 					sortedinventory = vehicleService.Sort(SortType.PRICE_ASC, inventory);
 					System.out.println(sortedinventory.getVehicles().size());
 				} else if (sortComboBox.getSelectedItem().equals("Price high to low")) {
-					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC,inventory);
+					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC, inventory);
 				}
 				System.out.println("New sorted Inventory size: " + sortedinventory.getVehicles().size());
 				setVehicleDetailsPanel(sortedinventory);
+			}
+		});
+
+		homeButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					new DealerSearchUI().setVisible(true);
+				} catch (IOException e1) {
+					System.out.println("Error in Going to Home");
+					e1.printStackTrace();
+				}
+				dispose();
 			}
 		});
 	}
@@ -291,21 +301,19 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	public void setVehicleDetailsPanel(Inventory inventory) {
 		// clear the vehicleDetailsPane
 		vehicleDetailsPane.removeAll();
-		vehicleDetailsPane.revalidate(); 
+		vehicleDetailsPane.revalidate();
 		vehicleDetailsPane.repaint();
+
 		// call the function to return List of; Vehicles
 		int length = inventory.getVehicles().size();
 
 		for (int i = 0; i < length; i++) {
-			JPanel carPanel = new JPanel();			
+			JPanel carPanel = new JPanel();
+			carPanel.setLayout(new BorderLayout());
 			JPanel carItemPanel = new JPanel();
 			JPanel carImagePanel = new JPanel();
-			
-			
-			// ImageIcon(inventory.getVehicles().get(i).getImages()));
-		
-			// ImageIcon("http://inventory-dmg.assets-cdk.com/5/1/7/13411480715x90.jpg"));
-
+			JPanel trimPanel = new JPanel();
+			carItemPanel.setLayout(new BoxLayout(carItemPanel, BoxLayout.Y_AXIS));
 			JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
 			JLabel vehicleIdLabel = new JLabel("VEHICLE ID : " + inventory.getVehicles().get(i).getId());
 			JLabel brandLabel = new JLabel("BRAND : " + inventory.getVehicles().get(i).getMake());
@@ -313,28 +321,21 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			JLabel bodyTypeLabel = new JLabel("BODY TYPE : " + inventory.getVehicles().get(i).getType());
 			JLabel priceLabel = new JLabel("PRICE : " + inventory.getVehicles().get(i).getPrice());
 			JLabel trimLabel = new JLabel(inventory.getVehicles().get(i).getTrim());
-			JLabel yearLabel = new JLabel("YEAR: "+inventory.getVehicles().get(i).getYear());
+			JLabel yearLabel = new JLabel("YEAR: " + inventory.getVehicles().get(i).getYear());
 			JButton moreDetails = new JButton("More Details");
-			//moreDetails.setPreferredSize(new Dimension(100,30));
-			//carImagePanel.setLayout(new );
-			carImagePanel.add(Picture);
-			carImagePanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
-			
-			
-			
-			
+			carImagePanel.add(Picture);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(yearLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 
-			carItemPanel.add(trimLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+			trimLabel.setFont(new Font("Courier New", Font.BOLD, 18));
+
+			trimPanel.add(trimLabel , FlowLayout.LEFT);
+			trimPanel.setBackground(Color.GRAY);
+			trimPanel.setBorder(BorderFactory.createLineBorder(Color.gray));
 
 			carItemPanel.add(vehicleIdLabel);
-			//carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-
-			// carItemPanel.add(Picture);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(brandLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -345,35 +346,30 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			carItemPanel.add(priceLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(moreDetails);
-			carItemPanel.setPreferredSize(new Dimension(200,500));
+			carItemPanel.setPreferredSize(new Dimension(400, 180));
 			carItemPanel.setBackground(new Color(225, 225, 0, 0));
-			carItemPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+			carItemPanel.add(moreDetails);
 
-			carPanel.setLayout(new FlowLayout());
-			carPanel.add(carImagePanel);
-			carPanel.add(carItemPanel);
-			carPanel.setPreferredSize(new Dimension(400,300));
+			carPanel.add(carImagePanel, BorderLayout.CENTER);
+			carPanel.add(carItemPanel, BorderLayout.EAST);
+			carPanel.add(trimPanel, BorderLayout.NORTH);
+			carPanel.setPreferredSize(new Dimension(500, 180));
 			carPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
 			vehicleDetailsPane.add(carPanel);
-			vehicleDetailsPane.add(moreDetails);
-			vehicleDetailsPane.add(trimLabel);
 		}
 
 	}
 
 	// @Override
 	public void setLayout() {
-	    CallInventory();
+		callInventory();
 		setTopPanel();
 		setLeftPanel();
 		vehicleDetailsPane = new JPanel();
 		BoxLayout layout = new BoxLayout(vehicleDetailsPane, BoxLayout.Y_AXIS);
 		vehicleDetailsPane.setLayout(layout);
 		vehicleDetailsPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-		//BoxLayout layout = new BoxLayout(vehicleDetailsPane, BoxLayout.Y_AXIS);
-		//vehicleDetailsPane.setLayout(layout);
 		vehicleDetailsPane.setBackground(Color.WHITE);
 		vehicleDetailsPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 		setVehicleDetailsPanel(inventory);
