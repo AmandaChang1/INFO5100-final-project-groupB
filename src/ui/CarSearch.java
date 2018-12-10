@@ -95,30 +95,30 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	private void defineFilters() {
 
-		String[] minPriceFilterItems = new String[] {"1000", "5000", "10000", "15000", "20000", "30000",
-				"40000" };
-		String[] maxPriceFilterItems = new String[] {"2000", "6000", "10000", "20000", "40000", "60000",
-				"70000" };
-		String[] modelFilterItems = new String[] {"CTS Sedan", "A", "B", "C" };
-		String[] brandFilterItems = new String[] {"Cadillac", "Chevrolet", "Chrysler", "Ford", "Toyota",
-				"Mazda", "Jaguar", "BMW", "Mercedes", "Jeep", "Mitsubishi", "Nissan", "Land Rover", "Other" };
-		String[] bodyTypeItems = new String[] { "CAR", "SUV", "HatchBack", "Coupe" };
-		String[] minYearFilterItems = new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
-				"2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" };
-		String[] maxYearFilterItems = new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
-				"2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" };
+
+		for (int j=0;j<inventory.getVehicles().size();j++)
+		{
+		 brandFilterItems.add(inventory.getVehicles().get(j).getMake());
+		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
+		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
+		 yearItems.add(inventory.getVehicles().get(j).getYear());
+		}
+
+		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000" };
+		String[] maxPriceFilterItems = new String[] { "70000", "60000", "50000", "40000", "30000", "20000", "10000" };
 
 		categoryFilter1 = new JCheckBox("Certified");
 		categoryFilter2 = new JCheckBox("New");
 		categoryFilter3 = new JCheckBox("Used");
 
-		modelFilter = new JComboBox(modelFilterItems);
+		modelFilter = new JComboBox(modelFilterItems.toArray());
 		minPriceFilter = new JComboBox(minPriceFilterItems);
 		maxPriceFilter = new JComboBox(maxPriceFilterItems);
-		brandFilter = new JComboBox(brandFilterItems);
-		bodyTypeFilter = new JComboBox(bodyTypeItems);
-		minYearFilter = new JComboBox(minYearFilterItems);
-		maxYearFilter = new JComboBox(maxYearFilterItems);
+		brandFilter = new JComboBox(brandFilterItems.toArray());
+		bodyTypeFilter = new JComboBox(bodyTypeFilterItems.toArray());
+		minYearFilter = new JComboBox(yearItems.toArray());
+		maxYearFilter = new JComboBox(yearItems.toArray());
+
 
 	}
 
@@ -174,7 +174,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	}
 	public Inventory getFilterValue() {
 		
-        FilterContent fb= new FilterContent();
+        FilterContent filtercontent= new FilterContent();
         ArrayList<String> category = new ArrayList<>();
 		ArrayList<String> brands = new ArrayList<>();
 		ArrayList<String> model = new ArrayList<>();
@@ -191,24 +191,37 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		{
 			category.add("Used");
 		}
-		fb.setCondition(category);
+		filtercontent.setCondition(category);
 		brands.add((String)brandFilter.getSelectedItem());
-		fb.setBrand(brands);
+		filtercontent.setBrand(brands);
 		bodytype.add((String)bodyTypeFilter.getSelectedItem());
-	    fb.setBodyType(bodytype);
+	   filtercontent.setBodyType(bodytype);
 		model.add((String)modelFilter.getSelectedItem());
-		fb.setModel(model);
-		fb.setLowPrice(Double.valueOf(minPriceFilter.getSelectedItem().toString()));
-		fb.setHighPrice(Double.valueOf(maxPriceFilter.getSelectedItem().toString()));
+		filtercontent.setModel(model);
+		filtercontent.setLowPrice(Double.valueOf(minPriceFilter.getSelectedItem().toString()));
+		filtercontent.setHighPrice(Double.valueOf(maxPriceFilter.getSelectedItem().toString()));
 		
-		fb.setLowYear(Integer.valueOf(minYearFilter.getSelectedItem().toString()));
-		fb.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
+		filtercontent.setLowYear(Integer.valueOf(minYearFilter.getSelectedItem().toString()));
+		filtercontent.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
+		//Year filter validation
+		if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
+			String message = "Enter a valid price range";
+			JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+			return inventory;
+		}
+		//Price filter validation
+		if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
+			String message = "Enter a valid range for year";
+			JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+			return inventory;
+
+		}
 		
-		System.out.println( fb.getCondition()+" " +fb.getBodyType() + " "+ fb.getModel()+" "+
-		fb.getBrand() +" "+fb.getHighPrice()+" "+fb.getLowPrice() + "  "+fb.getLowYear()+"  "+fb.getHighYear());
+		System.out.println(filtercontent.getCondition()+" " +filtercontent.getBodyType() + " "+filtercontent.getModel()+" "+
+		filtercontent.getBrand() +" "+filtercontent.getHighPrice()+" "+filtercontent.getLowPrice() + "  "+filtercontent.getLowYear()+"  "+filtercontent.getHighYear());
 		
 		System.out.println("get all vehicles" + inventory.getVehicles().size());
-		Inventory inventory1=searchVehicle.queryByFilter(inventory, fb);
+		Inventory inventory1=searchVehicle.queryByFilter(inventory,filtercontent);
 	
 		System.out.println("return result inventory "+ inventory1.getVehicles().size());
 		return inventory1;
@@ -226,9 +239,18 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		clearFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Clear button pressed");
-				setVehicleDetailsPanel(inventory);
+				categoryFilter1.setSelected(false);
+				categoryFilter2.setSelected(false);
+				categoryFilter3.setSelected(false);
 				brandFilter.setSelectedIndex(0);
+				modelFilter.setSelectedIndex(0);
+				minYearFilter.setSelectedIndex(0);
+				maxYearFilter.setSelectedIndex(0);
+				bodyTypeFilter.setSelectedIndex(0);
+				maxPriceFilter.setSelectedIndex(0);
+				minPriceFilter.setSelectedIndex(0);
+				setVehicleDetailsPanel(inventory);
+				
 				
 			}
 		});
@@ -236,8 +258,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		applyFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("applyFilterbuttonpressed");
-				setVehicleDetailsPanel(getFilterValue());
+				Inventory temp = getFilterValue();
+				setVehicleDetailsPanel(temp);
+				//no matching search found validation
+				if (temp.getVehicles().size() == 0) {
+					String message = "No matching search found";
+					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 
@@ -273,10 +300,10 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			JPanel carPanel = new JPanel();			
 			JPanel carItemPanel = new JPanel();
 			JPanel carImagePanel = new JPanel();
-			//carItemPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			// JLabel Picture = new JLabel(new
+			
+			
 			// ImageIcon(inventory.getVehicles().get(i).getImages()));
-			// JLabel Picture = new JLabel(new
+		
 			// ImageIcon("http://inventory-dmg.assets-cdk.com/5/1/7/13411480715x90.jpg"));
 
 			JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
