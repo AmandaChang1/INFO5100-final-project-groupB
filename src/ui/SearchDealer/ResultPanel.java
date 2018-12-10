@@ -101,7 +101,7 @@ public class ResultPanel extends MyPanel{
             address.setFont(font.loadHeitiFont(12));
 
             panelname.add(name);
-            panelname.addMouseListener(new panelListener(dealer.getName()));
+            name.addMouseListener(new panelListener(dealer.getName()));
             panelzipcode.add(zipcode);
 
             paneladdress.add(address);
