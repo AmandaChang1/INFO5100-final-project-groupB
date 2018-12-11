@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import dao.*;
 import dto.*;
 import service.*;
+import ui.SearchDealer.MyFrame;
 
 public class CarSearch extends CarSearchDefination implements ActionListener {
 	VehicleQueryImple searchVehicle = new VehicleQueryImple();
@@ -132,7 +133,6 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		};
 		topPanel.setOpaque(true);
 		homeButton = new JButton("Home");
-		backButton = new JButton("Back");
 		searchBar = new JTextField(40);
 		searchButton = new JButton("Search");
 		sortLabel = new JLabel("Sort:");
@@ -148,8 +148,6 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		topPanel.setBorder(BorderFactory.createTitledBorder("Dealer Name"));
 		topPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 		topPanel.add(Box.createRigidArea(new Dimension(200, 200)));
-		topPanel.add(backButton);
-		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
 		topPanel.add(homeButton);
 		topPanel.add(Box.createRigidArea(new Dimension(20, 0)));
 		topPanel.add(searchBar);
@@ -288,7 +286,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					new DealerSearchUI().setVisible(true);
+					new MyFrame().setVisible(true);
 				} catch (IOException e1) {
 					System.out.println("Error in Going to Home");
 					e1.printStackTrace();
@@ -322,6 +320,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			JLabel priceLabel = new JLabel("PRICE : " + inventory.getVehicles().get(i).getPrice());
 			JLabel trimLabel = new JLabel(inventory.getVehicles().get(i).getTrim());
 			JLabel yearLabel = new JLabel("YEAR: " + inventory.getVehicles().get(i).getYear());
+			JLabel discountedPriceLable = new JLabel("DISCOUNTED PRICE: " + inventory.getVehicles().get(i).getDiscountprice());
+			Color redColor = new Color(225,0,0);
+			discountedPriceLable.setForeground(redColor);
+			JPanel discountedPricePanel = new JPanel();
+			discountedPricePanel.add(discountedPriceLable);
+
+
 			JButton moreDetails = new JButton("More Details");
 
 			carImagePanel.add(Picture);
@@ -345,10 +350,11 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(priceLabel);
 			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+			carItemPanel.add(discountedPriceLable);
+			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			carItemPanel.add(moreDetails);
 			carItemPanel.setPreferredSize(new Dimension(400, 180));
 			carItemPanel.setBackground(new Color(225, 225, 0, 0));
-			carItemPanel.add(moreDetails);
 
 			carPanel.add(carImagePanel, BorderLayout.CENTER);
 			carPanel.add(carItemPanel, BorderLayout.EAST);
