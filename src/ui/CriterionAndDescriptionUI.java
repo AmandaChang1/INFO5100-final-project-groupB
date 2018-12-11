@@ -13,17 +13,20 @@ public class CriterionAndDescriptionUI extends JFrame {
     public CriterionAndDescriptionUI() {
         createComponent();
         addComponnet();
-        setSize(new Dimension(600, 200));
+        setSize(new Dimension(300, 300));
         setVisible(true);
     }
 
     public CriterionAndDescriptionUI(String criterion, String description) {
         createComponent();
         addComponnet();
-        setSize(new Dimension(600, 200));
+        setSize(new Dimension(300, 300));
+
         setVisible(true);
         criterionTextArea.setText(criterion);
+        criterionTextArea.setBorder(null);
         descriptionTextArea.setText(description);
+        descriptionTextArea.setBorder(null);
         new Close().start();
     }
     class Close extends Thread{
@@ -64,6 +67,6 @@ public class CriterionAndDescriptionUI extends JFrame {
     }
 
     public static void main(String[] arg){
-        CriterionAndDescriptionUI criterionAndDescriptionUI = new CriterionAndDescriptionUI("test", "testtesttesttest");
+        CriterionAndDescriptionUI criterionAndDescriptionUI = new CriterionAndDescriptionUI("test", "you are");
     }
 }

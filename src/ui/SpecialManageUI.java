@@ -346,8 +346,9 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
                 Special currentSpecial = specialService.getSpecialsByDealer(dealerName,0).getSpecials().get(rowindex);
                 //悬浮显示内容
                 //specialTable.setToolTipText(currentSpecial.getCriterionString());
+                System.out.println("test: " + currentSpecial.getDescription());
                 CriterionAndDescriptionUI criterionAndDescriptionUI = new CriterionAndDescriptionUI(currentSpecial.getCriterionString(), currentSpecial.getDescription());
-                criterionAndDescriptionUI.setLocationRelativeTo(specialTable);
+                criterionAndDescriptionUI.setLocationRelativeTo(null);
             }
 
         });
