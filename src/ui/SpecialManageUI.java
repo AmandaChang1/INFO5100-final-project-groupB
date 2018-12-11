@@ -324,6 +324,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
         //Add Table Listener
         specialTable.addMouseListener(new MouseAdapter() {
+
             // Double click : edit
             @Override
             public void mousePressed(MouseEvent mouseEvent) {
@@ -331,10 +332,12 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
                 if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     editSpecial();
                 }
+
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                if(e.getModifiers() == 4) return;
                 int r = specialTable.rowAtPoint(e.getPoint());
                 if (r >= 0 && r < specialTable.getRowCount()) {
                     specialTable.setRowSelectionInterval(r, r);
