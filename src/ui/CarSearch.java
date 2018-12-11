@@ -98,11 +98,11 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	private void defineFilters() {
 
 		for (int j=0;j<inventory.getVehicles().size();j++) {
-		 brandFilterItems.add(inventory.getVehicles().get(j).getMake());
-		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
-		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
-		 yearItems.add(inventory.getVehicles().get(j).getYear());
-		
+			brandFilterItems.add(inventory.getVehicles().get(j).getMake());
+			modelFilterItems.add(inventory.getVehicles().get(j).getModel());
+			bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
+			yearItems.add(inventory.getVehicles().get(j).getYear());
+
 		}
 		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000","50000","60000","70000" };
 		String[] maxPriceFilterItems = new String[] { "120000","100000","90000","80000","70000", "60000", "50000", "40000", "30000", "20000", "10000" };
@@ -160,7 +160,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	public void callInventory() {
 
 		VehicleService vehicleService = new VehicleServiceImple();
-	    try {
+		try {
 			this.inventory = vehicleService.getInventoryByDealer(this.dealerName, 0);
 		} catch (ParseException e1) {
 			e1.printStackTrace();
@@ -199,13 +199,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				String message = "Enter a valid price range";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				return inventory;
-				}
+			}
 			//Price filter validation
 			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
 				String message = "Enter a valid range for year";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				return inventory;
-				}
+			}
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			return inventory1;
 		}
@@ -263,7 +263,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				} else if (sortComboBox.getSelectedItem().equals("Price high to low")) {
 					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC, inventory);
 				}
-				
+
 				setVehicleDetailsPanel(sortedinventory);
 			}
 		});
@@ -286,12 +286,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	public void setVehicleDetailsPanel(Inventory inventory) {
 		// clear the vehicleDetailsPane
-				vehicleDetailsPane.removeAll();
-				vehicleDetailsPane.revalidate();
-				vehicleDetailsPane.repaint();
+		vehicleDetailsPane.removeAll();
+		vehicleDetailsPane.revalidate();
+		vehicleDetailsPane.repaint();
 
-				// call the function to return List of; Vehicles
-				int length = inventory.getVehicles().size();
+		// call the function to return List of; Vehicles
+		int length = inventory.getVehicles().size();
 
 		for (int i = 0; i < length; i++) {
 			setCarDetailList(inventory, i);
@@ -306,7 +306,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		JPanel trimPanel = new JPanel();
 		carItemPanel.setLayout(new BoxLayout(carItemPanel, BoxLayout.Y_AXIS));
 		JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
-		
+
 		JLabel vehicleIdLabel = new JLabel("VEHICLE ID : " + inventory.getVehicles().get(i).getId());
 		JLabel brandLabel = new JLabel("BRAND : " + inventory.getVehicles().get(i).getMake());
 		JLabel modelLabel = new JLabel("MODEL: " + inventory.getVehicles().get(i).getModel());
@@ -319,7 +319,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		discountedPriceLable.setForeground(redColor);
 		JPanel discountedPricePanel = new JPanel();
 		discountedPricePanel.add(discountedPriceLable);
-		
+
 		JButton moreDetails = new JButton("More Details");
 		moreDetails.addActionListener(new ActionListener() {
 
@@ -328,7 +328,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 				System.out.println("more details button pressed");
 				setCarDetailsFrame(inventory, i);
-				
+
 
 			}
 		});
@@ -368,7 +368,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 		vehicleDetailsPane.add(carPanel);
 
-		
+
 	}
 
 	// @Override
@@ -416,7 +416,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		String imagePath = "src//ui//Images//Jaguar.png";
 		ImageIcon image = new ImageIcon(imagePath);
 		JLabel imageLabel = new JLabel(image);
-		
+
 		displayCarDetailsFrame.setLayout(new GridLayout(1,1));
 		displayCarDetailsFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		displayCarDetailsFrame.setSize(500,500);
@@ -476,13 +476,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		gbc.gridx = 0;
 		gbc.gridy = 7;
 		detailsPanel.add(carPrice, gbc);
-		
+
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
 		gbc.gridy = 8;
 		detailsPanel.add(carDiscountedPrice, gbc);
-		
+
 		imagePanel.setVisible(true);
 		detailsPanel.setVisible(true);
 		displayCarDetailsFrame.setVisible(true);
