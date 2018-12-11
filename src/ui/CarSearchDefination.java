@@ -29,6 +29,10 @@ public class CarSearchDefination extends JFrame{
 			bodyTypeFilterItems = new TreeSet<>(),yearItems = new TreeSet<>();
 	           
 	    
+	protected JFrame displayCarDetailsFrame;
+    protected JPanel imagePanel, detailsPanel;
+    protected JLabel carId, carCategory, carYear, carMake, carModel, carTrim, carType, carPrice, carDiscountedPrice;
+	
 	protected CarSearchDefination(){
 		this.setSize(1924,500);
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
