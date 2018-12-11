@@ -2,6 +2,7 @@ package ui;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	public CarSearch(String dealerName) {
 		super();
 		this.dealerName = dealerName;
+		this.setTitle(dealerName);
 	}
 
 	public void createLeftPanelComponents() {
@@ -195,32 +197,19 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			filtercontent.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
 			//Year filter validation
 			if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
-				errorMessagePrice();
+				String message = "Enter a valid price range";
+				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				return inventory;
 			}
 			//Price filter validation
 			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
-				errorMessageYear();
+				String message = "Enter a valid range for year";
+				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				return inventory;
 			}
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			return inventory1;
 		}
-	}
-	public void errorMessageYear() {
-		String message = "Enter a valid year range";
-		JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-		
-	}
-	public void errorMessagePrice() {
-		String message = "Enter a valid price range";
-		JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-		
-	}
-	public void errorMessageNoSearchFound()
-	{
-		String message = "No matching search found";
-		JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void setActionListener() {
@@ -254,8 +243,8 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				setVehicleDetailsPanel(temp);
 				//no matching search found validation
 				if (temp.getVehicles().size() == 0) {
-					errorMessageNoSearchFound();
-					
+					String message = "No matching search found";
+					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 
@@ -415,15 +404,24 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		imagePanel = new JPanel();
 		detailsPanel = new JPanel();
 
-		carId = new JLabel("CarId : " + in.getVehicles().get(index).getId());
-		carCategory = new JLabel("Category : " + in.getVehicles().get(index).getCategory());
+		carTitle = new JLabel(in.getVehicles().get(index).getMake() +" "+ in.getVehicles().get(index).getModel());
+		carTitle.setForeground(Color.DARK_GRAY);
+		Font titleFont = new Font("MS UI Gothic", Font.BOLD, 22);
+		carTitle.setFont(titleFont);
+		carId = new JLabel("\nCar Id : " + in.getVehicles().get(index).getId());
+		carCategory = new JLabel("" + in.getVehicles().get(index).getCategory().toUpperCase());
+		carCategory.setForeground(Color.DARK_GRAY);
+		Font carCategoryFont = new Font("MS UI Gothic", Font.ITALIC, 22);
+		carCategory.setFont(carCategoryFont);
 		carYear = new JLabel("Year : " + in.getVehicles().get(index).getYear());
-		carMake = new JLabel("Make : " + in.getVehicles().get(index).getMake());
+		carMake = new JLabel("Brand : " + in.getVehicles().get(index).getMake());
 		carModel = new JLabel("Model : " + in.getVehicles().get(index).getModel());
 		carTrim = new JLabel("Trim : " + in.getVehicles().get(index).getTrim());
-		carType = new JLabel("Type : " + in.getVehicles().get(index).getType());
+		carType = new JLabel("Body Type : " + in.getVehicles().get(index).getType());
 		carPrice = new JLabel("Price : " + in.getVehicles().get(index).getPrice()); //or discounted price
 		carDiscountedPrice = new JLabel("Discount Price : " + in.getVehicles().get(index).getDiscountprice());
+		Color redColor = new Color(225,0,0);
+		carDiscountedPrice.setForeground(redColor);
 		//String imagePath = in.getVehicles().get(index).getImages();
 		String imagePath = "src//ui//Images//Jaguar.png";
 		ImageIcon image = new ImageIcon(imagePath);
@@ -431,68 +429,60 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 		displayCarDetailsFrame.setLayout(new GridLayout(1,1));
 		displayCarDetailsFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		displayCarDetailsFrame.setSize(500,500);
-		imagePanel.setLayout(new BorderLayout());
+		displayCarDetailsFrame.setSize(500,200);
+		imagePanel.setLayout(new BoxLayout(imagePanel, BoxLayout.Y_AXIS));
 		detailsPanel.setLayout(new GridBagLayout());
 
 		displayCarDetailsFrame.add(imagePanel);
 		displayCarDetailsFrame.add(detailsPanel);
 
-		imagePanel.add(imageLabel, BorderLayout.NORTH);
+		imagePanel.add(carCategory);
+		imagePanel.add(carTitle);
+		imagePanel.add(imageLabel);
+		imagePanel.add(carId);
+		
 		GridBagConstraints gbc = new GridBagConstraints();
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 0;
-		detailsPanel.add(carId, gbc);
-
-		gbc.fill = gbc.BOTH;
-		gbc.anchor = gbc.WEST;
-		gbc.gridx = 0;
 		gbc.gridy = 1;
-		detailsPanel.add(carCategory, gbc);
-
-		gbc.fill = gbc.BOTH;
-		gbc.anchor = gbc.WEST;
-		gbc.gridx = 0;
-		gbc.gridy = 2;
 		detailsPanel.add(carMake, gbc);
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 3;
+		gbc.gridy = 2;
 		detailsPanel.add(carModel, gbc);
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 4;
+		gbc.gridy = 3;
 		detailsPanel.add(carYear, gbc);
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 5;
+		gbc.gridy = 4;
 		detailsPanel.add(carTrim, gbc);
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 6;
+		gbc.gridy = 5;
 		detailsPanel.add(carType, gbc);
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 7;
+		gbc.gridy = 6;
 		detailsPanel.add(carPrice, gbc);
 
 		gbc.fill = gbc.BOTH;
 		gbc.anchor = gbc.WEST;
 		gbc.gridx = 0;
-		gbc.gridy = 8;
+		gbc.gridy = 7;
 		detailsPanel.add(carDiscountedPrice, gbc);
 
 		imagePanel.setVisible(true);
