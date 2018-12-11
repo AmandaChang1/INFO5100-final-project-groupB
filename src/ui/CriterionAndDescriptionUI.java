@@ -32,7 +32,7 @@ public class CriterionAndDescriptionUI extends JFrame {
     class Close extends Thread{
 
         public void run(){
-            for(int i = 0; i < 5; i++){
+            for(int i = 0; i < 4; i++){
                 try{
                     Thread.sleep(1000);//线程暂停1S
                 }catch (InterruptedException e) {
