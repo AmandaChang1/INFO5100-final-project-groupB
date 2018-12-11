@@ -343,8 +343,11 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
                 int rowindex = specialTable.getSelectedRow();
                 if (rowindex < 0) return;
+                Special currentSpecial = specialService.getSpecialsByDealer(dealerName,0).getSpecials().get(rowindex);
                 //悬浮显示内容
-                specialTable.setToolTipText(specialService.getSpecialsByDealer(dealerName,0).getSpecials().get(rowindex).getCriterionString());
+                //specialTable.setToolTipText(currentSpecial.getCriterionString());
+                CriterionAndDescriptionUI criterionAndDescriptionUI = new CriterionAndDescriptionUI(currentSpecial.getCriterionString(), currentSpecial.getDescription());
+                criterionAndDescriptionUI.setLocationRelativeTo(specialTable);
             }
 
         });
