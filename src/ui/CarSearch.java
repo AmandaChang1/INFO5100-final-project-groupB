@@ -120,7 +120,18 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		bodyTypeFilter = new JComboBox(bodyTypeFilterItems.toArray());
 		minYearFilter = new JComboBox(yearItems.toArray());
 		maxYearFilter = new JComboBox(yearItems.toArray());
+		setFilterIndex();
 
+	}
+	public void setFilterIndex() {
+		 brandFilter.setSelectedIndex(brandFilter.getItemCount()-1);
+		 modelFilter.setSelectedIndex(modelFilter.getItemCount()-1);
+		 bodyTypeFilter.setSelectedIndex(bodyTypeFilter.getItemCount()-1);
+		 categoryFilter1.setSelected(false);
+		 categoryFilter2.setSelected(true);
+		 categoryFilter3.setSelected(false);
+		 
+		
 	}
 
 
@@ -221,16 +232,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		clearFiltersButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				categoryFilter1.setSelected(false);
-				categoryFilter2.setSelected(true);
-				categoryFilter3.setSelected(false);
-				brandFilter.setSelectedIndex(0);
-				modelFilter.setSelectedIndex(0);
-				minYearFilter.setSelectedIndex(0);
-				maxYearFilter.setSelectedIndex(0);
-				bodyTypeFilter.setSelectedIndex(0);
-				maxPriceFilter.setSelectedIndex(0);
-				minPriceFilter.setSelectedIndex(0);
+				setFilterIndex();
 				setVehicleDetailsPanel(inventory);
 
 			}
