@@ -28,6 +28,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
     private Container container;
     private Font titleFont1, titleFont2, tableFont, headTableFont, popUpMenuFont;
 
+
     private JLabel pageNumLabel;
 
     private int currentPageSize;
@@ -116,7 +117,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
     private void addSepcial() {
         SpecialManageUI frame = this;
-        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(null, false);
+        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(dealerName, false);
         specialManagerEdit.addListener(frame);
     }
 
@@ -346,9 +347,8 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
                 Special currentSpecial = specialService.getSpecialsByDealer(dealerName,0).getSpecials().get(rowindex);
                 //悬浮显示内容
                 //specialTable.setToolTipText(currentSpecial.getCriterionString());
-                System.out.println("test: " + currentSpecial.getDescription());
                 CriterionAndDescriptionUI criterionAndDescriptionUI = new CriterionAndDescriptionUI(currentSpecial.getCriterionString(), currentSpecial.getDescription());
-                criterionAndDescriptionUI.setLocationRelativeTo(null);
+                criterionAndDescriptionUI.setLocationRelativeTo(specialTable);
             }
 
         });

@@ -85,7 +85,7 @@ public class SpecialsTableModel extends AbstractTableModel{
 					if (discount.getCashBack())
 						return "Cash back: " + discount.getValue() + "$";
 					else
-						return "Percentage off: " + (int)(discount.getValue() * 100) + "%";
+						return "Percentage off: " + (int)(100- discount.getValue() * 100) + "%";
 			}
 		}
 
