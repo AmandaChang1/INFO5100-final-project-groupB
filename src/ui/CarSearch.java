@@ -17,8 +17,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	Inventory inventory;
 	String dealerName;
 
-	public CarSearch(String dealerName)
-	{
+	public CarSearch(String dealerName) {
 		super();
 		this.dealerName = dealerName;
 	}
@@ -38,7 +37,6 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		searchVehicleLabel.setFont(new Font("Times new Roman", Font.BOLD, 20));
 		clearFiltersButton = new JButton("CLEAR FILTERS");
 		applyFiltersButton = new JButton("APPLY FILTERS");
-		
 	}
 
 	// @Override
@@ -98,9 +96,8 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	@SuppressWarnings("unchecked")
 	private void defineFilters() {
-		
-		for (int j=0;j<inventory.getVehicles().size();j++)
-		{
+
+		for (int j=0;j<inventory.getVehicles().size();j++) {
 		 brandFilterItems.add(inventory.getVehicles().get(j).getMake());
 		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
 		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
@@ -124,7 +121,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		maxYearFilter = new JComboBox(yearItems.toArray());
 
 	}
-	
+
 
 	public void createTopPanelComponents() {
 		topPanel = new JPanel() {
@@ -140,7 +137,6 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		sortLabel = new JLabel("Sort:");
 		sortLabel.setForeground(Color.WHITE);
 		sortComboBox = new JComboBox(new String[] { "Year ascending", "Year descending", "Price low to high", "Price high to low" });
-
 	}
 
 	// @Override
@@ -162,6 +158,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	}
 
 	public void callInventory() {
+
 		VehicleService vehicleService = new VehicleServiceImple();
 	    try {
 			this.inventory = vehicleService.getInventoryByDealer(this.dealerName, 0);
@@ -201,12 +198,14 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
 				String message = "Enter a valid price range";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-				return inventory;}
+				return inventory;
+				}
 			//Price filter validation
 			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
 				String message = "Enter a valid range for year";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-				return inventory;}
+				return inventory;
+				}
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			return inventory1;
 		}
@@ -282,78 +281,94 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				dispose();
 			}
 		});
+
 	}
 
 	public void setVehicleDetailsPanel(Inventory inventory) {
 		// clear the vehicleDetailsPane
-		vehicleDetailsPane.removeAll();
-		vehicleDetailsPane.revalidate();
-		vehicleDetailsPane.repaint();
+				vehicleDetailsPane.removeAll();
+				vehicleDetailsPane.revalidate();
+				vehicleDetailsPane.repaint();
 
-		// call the function to return List of; Vehicles
-		int length = inventory.getVehicles().size();
+				// call the function to return List of; Vehicles
+				int length = inventory.getVehicles().size();
 
 		for (int i = 0; i < length; i++) {
-			JPanel carPanel = new JPanel();
-			carPanel.setLayout(new BorderLayout());
-			JPanel carItemPanel = new JPanel();
-			JPanel carImagePanel = new JPanel();
-			JPanel trimPanel = new JPanel();
-			carItemPanel.setLayout(new BoxLayout(carItemPanel, BoxLayout.Y_AXIS));
-			JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
-			
-			JLabel vehicleIdLabel = new JLabel("VEHICLE ID : " + inventory.getVehicles().get(i).getId());
-			JLabel brandLabel = new JLabel("BRAND : " + inventory.getVehicles().get(i).getMake());
-			JLabel modelLabel = new JLabel("MODEL: " + inventory.getVehicles().get(i).getModel());
-			JLabel bodyTypeLabel = new JLabel("BODY TYPE : " + inventory.getVehicles().get(i).getType());
-			JLabel priceLabel = new JLabel("PRICE : " + inventory.getVehicles().get(i).getPrice());
-			JLabel trimLabel = new JLabel(inventory.getVehicles().get(i).getTrim());
-			JLabel yearLabel = new JLabel("YEAR: " + inventory.getVehicles().get(i).getYear());
-			JLabel discountedPriceLable = new JLabel("DISCOUNTED PRICE: " + inventory.getVehicles().get(i).getDiscountprice());
-			Color redColor = new Color(225,0,0);
-			discountedPriceLable.setForeground(redColor);
-			JPanel discountedPricePanel = new JPanel();
-			discountedPricePanel.add(discountedPriceLable);
-
-
-			JButton moreDetails = new JButton("More Details");
-
-			carImagePanel.add(Picture);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(yearLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-
-			trimLabel.setFont(new Font("Courier New", Font.BOLD, 18));
-
-			trimPanel.add(trimLabel , FlowLayout.LEFT);
-			trimPanel.setBackground(Color.GRAY);
-			trimPanel.setBorder(BorderFactory.createLineBorder(Color.gray));
-
-			carItemPanel.add(vehicleIdLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(brandLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(modelLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(bodyTypeLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(priceLabel);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(discountedPriceLable);
-			carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-			carItemPanel.add(moreDetails);
-			carItemPanel.setPreferredSize(new Dimension(400, 180));
-			carItemPanel.setBackground(new Color(225, 225, 0, 0));
-
-			carPanel.add(carImagePanel, BorderLayout.CENTER);
-			carPanel.add(carItemPanel, BorderLayout.EAST);
-			carPanel.add(trimPanel, BorderLayout.NORTH);
-			carPanel.setPreferredSize(new Dimension(500, 180));
-			carPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-
-			vehicleDetailsPane.add(carPanel);
+			setCarDetailList(inventory, i);
 		}
 
+	}
+	void setCarDetailList(Inventory inventory, int i) {
+		JPanel carPanel = new JPanel();
+		carPanel.setLayout(new BorderLayout());
+		JPanel carItemPanel = new JPanel();
+		JPanel carImagePanel = new JPanel();
+		JPanel trimPanel = new JPanel();
+		carItemPanel.setLayout(new BoxLayout(carItemPanel, BoxLayout.Y_AXIS));
+		JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
+		
+		JLabel vehicleIdLabel = new JLabel("VEHICLE ID : " + inventory.getVehicles().get(i).getId());
+		JLabel brandLabel = new JLabel("BRAND : " + inventory.getVehicles().get(i).getMake());
+		JLabel modelLabel = new JLabel("MODEL: " + inventory.getVehicles().get(i).getModel());
+		JLabel bodyTypeLabel = new JLabel("BODY TYPE : " + inventory.getVehicles().get(i).getType());
+		JLabel priceLabel = new JLabel("PRICE : " + inventory.getVehicles().get(i).getPrice());
+		JLabel trimLabel = new JLabel(inventory.getVehicles().get(i).getTrim());
+		JLabel yearLabel = new JLabel("YEAR: " + inventory.getVehicles().get(i).getYear());
+		JLabel discountedPriceLable = new JLabel("DISCOUNTED PRICE: " + inventory.getVehicles().get(i).getDiscountprice());
+		Color redColor = new Color(225,0,0);
+		discountedPriceLable.setForeground(redColor);
+		JPanel discountedPricePanel = new JPanel();
+		discountedPricePanel.add(discountedPriceLable);
+		
+		JButton moreDetails = new JButton("More Details");
+		moreDetails.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				System.out.println("more details button pressed");
+				setCarDetailsFrame(inventory, i);
+				
+
+			}
+		});
+
+		carImagePanel.add(Picture);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(yearLabel);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+
+		trimLabel.setFont(new Font("Courier New", Font.BOLD, 18));
+
+		trimPanel.add(trimLabel , FlowLayout.LEFT);
+		trimPanel.setBackground(Color.GRAY);
+		trimPanel.setBorder(BorderFactory.createLineBorder(Color.gray));
+
+		carItemPanel.add(vehicleIdLabel);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(brandLabel);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(modelLabel);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(bodyTypeLabel);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(priceLabel);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(discountedPriceLable);
+		carItemPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+		carItemPanel.add(moreDetails);
+		carItemPanel.setPreferredSize(new Dimension(400, 180));
+		carItemPanel.setBackground(new Color(225, 225, 0, 0));
+
+		carPanel.add(carImagePanel, BorderLayout.CENTER);
+		carPanel.add(carItemPanel, BorderLayout.EAST);
+		carPanel.add(trimPanel, BorderLayout.NORTH);
+		carPanel.setPreferredSize(new Dimension(500, 180));
+		carPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+
+		vehicleDetailsPane.add(carPanel);
+
+		
 	}
 
 	// @Override
@@ -383,4 +398,93 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 
 	}
 
+	public void setCarDetailsFrame(Inventory in, int index) {
+		displayCarDetailsFrame = new JFrame(in.getVehicles().get(index).getMake() +" "+ in.getVehicles().get(index).getModel());
+		imagePanel = new JPanel();
+		detailsPanel = new JPanel();
+
+		carId = new JLabel("CarId : " + in.getVehicles().get(index).getId());
+		carCategory = new JLabel("Category : " + in.getVehicles().get(index).getCategory());
+		carYear = new JLabel("Year : " + in.getVehicles().get(index).getYear());
+		carMake = new JLabel("Make : " + in.getVehicles().get(index).getMake());
+		carModel = new JLabel("Model : " + in.getVehicles().get(index).getModel());
+		carTrim = new JLabel("Trim : " + in.getVehicles().get(index).getTrim());
+		carType = new JLabel("Type : " + in.getVehicles().get(index).getType());
+		carPrice = new JLabel("Price : " + in.getVehicles().get(index).getPrice()); //or discounted price
+		carDiscountedPrice = new JLabel("Discount Price : " + in.getVehicles().get(index).getDiscountprice());
+		//String imagePath = in.getVehicles().get(index).getImages();
+		String imagePath = "src//ui//Images//Jaguar.png";
+		ImageIcon image = new ImageIcon(imagePath);
+		JLabel imageLabel = new JLabel(image);
+		
+		displayCarDetailsFrame.setLayout(new GridLayout(1,1));
+		displayCarDetailsFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		displayCarDetailsFrame.setSize(500,500);
+		imagePanel.setLayout(new BorderLayout());
+		detailsPanel.setLayout(new GridBagLayout());
+
+		displayCarDetailsFrame.add(imagePanel);
+		displayCarDetailsFrame.add(detailsPanel);
+
+		imagePanel.add(imageLabel, BorderLayout.NORTH);
+		GridBagConstraints gbc = new GridBagConstraints();
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		detailsPanel.add(carId, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		detailsPanel.add(carCategory, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 2;
+		detailsPanel.add(carMake, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 3;
+		detailsPanel.add(carModel, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 4;
+		detailsPanel.add(carYear, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 5;
+		detailsPanel.add(carTrim, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 6;
+		detailsPanel.add(carType, gbc);
+
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 7;
+		detailsPanel.add(carPrice, gbc);
+		
+		gbc.fill = gbc.BOTH;
+		gbc.anchor = gbc.WEST;
+		gbc.gridx = 0;
+		gbc.gridy = 8;
+		detailsPanel.add(carDiscountedPrice, gbc);
+		
+		imagePanel.setVisible(true);
+		detailsPanel.setVisible(true);
+		displayCarDetailsFrame.setVisible(true);
+	}
 }
