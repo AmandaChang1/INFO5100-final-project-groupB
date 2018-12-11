@@ -2,7 +2,6 @@ package ui;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -196,19 +195,32 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			filtercontent.setHighYear(Integer.valueOf(maxYearFilter.getSelectedItem().toString()));
 			//Year filter validation
 			if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
-				String message = "Enter a valid price range";
-				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				errorMessagePrice();
 				return inventory;
 			}
 			//Price filter validation
 			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
-				String message = "Enter a valid range for year";
-				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+				errorMessageYear();
 				return inventory;
 			}
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			return inventory1;
 		}
+	}
+	public void errorMessageYear() {
+		String message = "Enter a valid year range";
+		JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+		
+	}
+	public void errorMessagePrice() {
+		String message = "Enter a valid price range";
+		JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+		
+	}
+	public void errorMessageNoSearchFound()
+	{
+		String message = "No matching search found";
+		JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void setActionListener() {
@@ -242,8 +254,8 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				setVehicleDetailsPanel(temp);
 				//no matching search found validation
 				if (temp.getVehicles().size() == 0) {
-					String message = "No matching search found";
-					JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
+					errorMessageNoSearchFound();
+					
 				}
 			}
 
