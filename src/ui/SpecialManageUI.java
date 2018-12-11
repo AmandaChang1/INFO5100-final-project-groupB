@@ -40,7 +40,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
     SpecialManageUI() {
         //background = new JLabel(new ImageIcon(("resources/icons/background.jpeg")));
-        dealerName = "gmps-tincher-london";
+        dealerName = "gmps-tincher-london1";
         initData();
         initiateIcons();
         createComponents();
@@ -62,7 +62,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
     }
 
     public static void main(String[] args) {
-        SpecialManageUI specialManageUI = new SpecialManageUI("gmps-tincher-london");
+        SpecialManageUI specialManageUI = new SpecialManageUI("gmps-tincher-london1");
     }
 
     public void closeUpdateSpecial(Special sp, boolean isAddSpecial) {
@@ -116,7 +116,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
     private void addSepcial() {
         SpecialManageUI frame = this;
-        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(dealerName, false);
+        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(null, false);
         specialManagerEdit.addListener(frame);
     }
 
@@ -343,8 +343,12 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
                 int rowindex = specialTable.getSelectedRow();
                 if (rowindex < 0) return;
+                Special currentSpecial = specialService.getSpecialsByDealer(dealerName,0).getSpecials().get(rowindex);
                 //悬浮显示内容
-                specialTable.setToolTipText(specialService.getSpecialsByDealer(dealerName,0).getSpecials().get(rowindex).getCriterionString());
+                //specialTable.setToolTipText(currentSpecial.getCriterionString());
+                System.out.println("test: " + currentSpecial.getDescription());
+                CriterionAndDescriptionUI criterionAndDescriptionUI = new CriterionAndDescriptionUI(currentSpecial.getCriterionString(), currentSpecial.getDescription());
+                criterionAndDescriptionUI.setLocationRelativeTo(null);
             }
 
         });

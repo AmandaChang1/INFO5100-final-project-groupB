@@ -121,20 +121,22 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		minYearFilter = new JComboBox(yearItems.toArray());
 		maxYearFilter = new JComboBox(yearItems.toArray());
 		brandFilter.addItem("brand");
-		modelFilter.addItem("model");
-		bodyTypeFilter.addItem("bodytype");
+	    modelFilter.addItem("model");
+	    bodyTypeFilter.addItem("bodytype");
 		setFilterIndex();
 
 	}
 	public void setFilterIndex() {
-		brandFilter.setSelectedIndex(brandFilter.getItemCount()-1);
-		modelFilter.setSelectedIndex(modelFilter.getItemCount()-1);
-		bodyTypeFilter.setSelectedIndex(bodyTypeFilter.getItemCount()-1);
-		categoryFilter1.setSelected(false);
-		categoryFilter2.setSelected(true);
-		categoryFilter3.setSelected(false);
-
-
+		 brandFilter.setSelectedIndex(brandFilter.getItemCount()-1);
+		 modelFilter.setSelectedIndex(modelFilter.getItemCount()-1);
+		 bodyTypeFilter.setSelectedIndex(bodyTypeFilter.getItemCount()-1);
+		 maxYearFilter.setSelectedIndex(maxYearFilter.getItemCount()-1);
+		 minYearFilter.setSelectedIndex(1);
+		 maxPriceFilter.setSelectedIndex(1);
+		 minPriceFilter.setSelectedIndex(1);
+		 categoryFilter1.setSelected(false);
+		 categoryFilter2.setSelected(true);
+		 categoryFilter3.setSelected(false);
 	}
 
 
@@ -221,7 +223,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
 				return inventory;
 			}
-			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent);
+			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
 			return inventory1;
 		}
 	}
@@ -445,7 +447,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		imagePanel.add(carTitle);
 		imagePanel.add(imageLabel);
 		imagePanel.add(carId);
-
+		
 		GridBagConstraints gbc = new GridBagConstraints();
 
 		gbc.fill = gbc.BOTH;
