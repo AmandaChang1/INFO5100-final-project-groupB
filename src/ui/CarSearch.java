@@ -181,11 +181,11 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		ArrayList<String> bodytype = new ArrayList<>();
 		while (true) {
 			if (categoryFilter1.isSelected()) {
-				category.add("Cartified");
+				category.add("certified");
 			} else if (categoryFilter2.isSelected()) {
-				category.add("New");
+				category.add("new");
 			} else if (categoryFilter3.isSelected()) {
-				category.add("Used");
+				category.add("used");
 			}
 			filtercontent.setCondition(category);
 			brands.add((String) brandFilter.getSelectedItem());
@@ -313,6 +313,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			JPanel trimPanel = new JPanel();
 			carItemPanel.setLayout(new BoxLayout(carItemPanel, BoxLayout.Y_AXIS));
 			JLabel Picture = new JLabel(new ImageIcon("src//ui//Images//Jaguar.png"));
+			
 			JLabel vehicleIdLabel = new JLabel("VEHICLE ID : " + inventory.getVehicles().get(i).getId());
 			JLabel brandLabel = new JLabel("BRAND : " + inventory.getVehicles().get(i).getMake());
 			JLabel modelLabel = new JLabel("MODEL: " + inventory.getVehicles().get(i).getModel());
