@@ -31,7 +31,7 @@ public class CarSearchDefination extends JFrame{
 
 	protected JFrame displayCarDetailsFrame;
 	protected JPanel imagePanel, detailsPanel;
-	protected JLabel carId, carCategory, carYear, carMake, carModel, carTrim, carType, carPrice, carDiscountedPrice;
+	protected JLabel carTitle, carId, carCategory, carYear, carMake, carModel, carTrim, carType, carPrice, carDiscountedPrice;
 
 	protected CarSearchDefination(){
 		this.setSize(1924,500);
