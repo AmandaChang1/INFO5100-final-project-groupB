@@ -34,12 +34,12 @@ public class ResultPanel extends MyPanel{
         panel.setBounds(20,50,800,600);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER,50,125));
         for(int i=0;i<dealers.size();i++){
-           ResPanel res=new ResPanel(dealers.get(i));
-           panel.add(res);
+            ResPanel res=new ResPanel(dealers.get(i));
+            panel.add(res);
         }
         add(panel);
     }
-        //  /img/HomeImg.jpg 是存放在你正在编写的项目的bin文件夹下的img文件夹下的一个图片
+    //  /img/HomeImg.jpg 是存放在你正在编写的项目的bin文件夹下的img文件夹下的一个图片
     @Override
 
     public void paintComponent(Graphics g) {
@@ -101,7 +101,7 @@ public class ResultPanel extends MyPanel{
             address.setFont(font.loadHeitiFont(12));
 
             panelname.add(name);
-            panelname.addMouseListener(new panelListener(dealer.getName()));
+            name.addMouseListener(new panelListener(dealer.getName()));
             panelzipcode.add(zipcode);
 
             paneladdress.add(address);
@@ -121,23 +121,23 @@ public class ResultPanel extends MyPanel{
 
 //Runtime.getRuntime().exec("C:/Program Files/Internet Explorer/IEXPLORE.exe　http://www.baidu.com"); 　//绝对路径
 
-                        Desktop desktop = Desktop.getDesktop();
+                    Desktop desktop = Desktop.getDesktop();
 
+                    try {
                         try {
-                            try {
-                                desktop.browse(new URI("http://"+dealer.getUrl()));
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        } catch (URISyntaxException e) {
+                            desktop.browse(new URI("http://"+dealer.getUrl()));
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
+                    } catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
 
 
                 }
             });
 
-                    add(searchButton);
+            add(searchButton);
         }
     }
     class panelListener implements MouseListener {

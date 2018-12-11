@@ -72,7 +72,7 @@ public class VehicleQueryImple implements VehicleQuery{
     private boolean queryCondition(List<String> conditions, Vehicle v) {
     	String targetContition = v.getCategory();
     	for(String condition : conditions) {
-    		System.out.println("condition:" + condition +"targetCondition + " + targetContition);
+    		//System.out.println("condition:" + condition +"targetCondition + " + condition);
     		if(condition == "condition") {
     			//System.out.println("condition matched;");
     			return true;
@@ -82,7 +82,7 @@ public class VehicleQueryImple implements VehicleQuery{
     			return true;
     		}
     	}
-    	System.out.println("condition not matched;");
+    	//System.out.println("condition not matched;");
     	return false;
     }
     
@@ -99,7 +99,8 @@ public class VehicleQueryImple implements VehicleQuery{
     			
     		}
     	}
-    	System.out.println("brand not matched;");
+
+    	//System.out.println("brand not matched;");
     	return false;
     }
     
@@ -116,7 +117,7 @@ public class VehicleQueryImple implements VehicleQuery{
 				return true;
 			}
 		}
-		System.out.println("model not matched;");
+		//System.out.println("model not matched;");
 		
 		return false;
 	}
@@ -135,7 +136,7 @@ public class VehicleQueryImple implements VehicleQuery{
     		}
     			
     	}
-    	System.out.println("model not matched;");
+    	//System.out.println("model not matched;");
     	return false;
     }
     
@@ -145,7 +146,7 @@ public class VehicleQueryImple implements VehicleQuery{
     		//System.out.println("price matched");
     		return true;
     	}
-    	System.out.println("price not match;");
+    	//System.out.println("price not match;");
     	return false;
     }
     
@@ -155,7 +156,7 @@ public class VehicleQueryImple implements VehicleQuery{
     		//System.out.println("year matched");
     		return true;
     	}
-    	System.out.println("year not matched");
+    	//System.out.println("year not matched");
     	return false;
     }
     

@@ -14,4 +14,5 @@ public interface ManageSpecial {
     void updateSpecial(Special special);
     Specials getSpecialsByDealer(String dealerId,int pageNumber);
     Inventory assocaiteSpecials(Inventory inventory) throws ParseException;
+    int numberOfCars(Special special) throws ParseException;
 }

@@ -40,7 +40,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
     SpecialManageUI() {
         //background = new JLabel(new ImageIcon(("resources/icons/background.jpeg")));
-        dealerName = "gmps-tincher-london1";
+        dealerName = "gmps-tincher-london";
         initData();
         initiateIcons();
         createComponents();
@@ -116,7 +116,7 @@ public class SpecialManageUI extends JFrame implements SPEditEventListener  {
 
     private void addSepcial() {
         SpecialManageUI frame = this;
-        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(null, false);
+        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(dealerName, false);
         specialManagerEdit.addListener(frame);
     }
 

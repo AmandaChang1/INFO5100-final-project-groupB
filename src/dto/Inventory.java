@@ -20,4 +20,7 @@ public class Inventory  {
         vehicles.add(o);
     }
 
+    public Vehicle getVehicle(int index){
+        return vehicles.get(index);
+    }
 }

@@ -5,6 +5,8 @@ import dao.ManageSpecialImple;
 import dto.Special;
 import dto.Specials;
 
+import java.text.ParseException;
+
 public class SpecialServiceImpl implements SpecialService{
     private ManageSpecial manageSpecial;
     public SpecialServiceImpl() {
@@ -18,17 +20,22 @@ public class SpecialServiceImpl implements SpecialService{
 
     @Override
     public void deleteSpecial(Special special) {
-manageSpecial.deleteSpecial(special);
+        manageSpecial.deleteSpecial(special);
     }
 
     @Override
     public void updateSpecial(Special special) {
-manageSpecial.updateSpecial(special);
+        manageSpecial.updateSpecial(special);
     }
 
     @Override
     public Specials getSpecialsByDealer(String dealerId, int pageNumber) {
         Specials specials=manageSpecial.getSpecialsByDealer(dealerId,pageNumber);
         return  specials;
+    }
+
+    @Override
+    public int getCarNumber(Special special) throws ParseException {
+        return manageSpecial.numberOfCars(special);
     }
 }

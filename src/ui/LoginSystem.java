@@ -97,7 +97,7 @@ public class LoginSystem {
                 UserService userService = new UserServiceImple();
                 if(comboBox.getSelectedItem() == "Dealer"){
                     if(userService.compareD(tf_name.getText(),String.valueOf(password.getPassword()))){
-                        JOptionPane.showMessageDialog(null,"成功！");
+                        new ui.SelectionUI(tf_name.getText());
                     }
                 }else{
                     if(userService.compareC(tf_name.getText(),String.valueOf(password.getPassword()))){
