@@ -132,13 +132,11 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		 bodyTypeFilter.setSelectedIndex(bodyTypeFilter.getItemCount()-1);
 		 maxYearFilter.setSelectedIndex(maxYearFilter.getItemCount()-1);
 		 minYearFilter.setSelectedIndex(1);
-		 maxPriceFilter.setSelectedIndex(maxPriceFilter.getItemCount()-1);
+		 maxPriceFilter.setSelectedIndex(1);
 		 minPriceFilter.setSelectedIndex(1);
 		 categoryFilter1.setSelected(false);
 		 categoryFilter2.setSelected(true);
 		 categoryFilter3.setSelected(false);
-		 
-		
 	}
 
 
