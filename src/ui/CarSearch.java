@@ -114,8 +114,9 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		String[] maxPriceFilterItems = new String[] { "120000","100000","90000","80000","70000", "60000", "50000", "40000", "30000", "20000", "10000" };
 
 		categoryFilter1 = new JCheckBox("Certified");
-		categoryFilter1.setSelected(true);
+		
 		categoryFilter2 = new JCheckBox("New");
+		categoryFilter2.setSelected(true);
 		categoryFilter3 = new JCheckBox("Used");
 
 		modelFilter = new JComboBox(modelFilterItems.toArray());
@@ -239,7 +240,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				categoryFilter1.setSelected(false);
-				categoryFilter2.setSelected(false);
+				categoryFilter2.setSelected(true);
 				categoryFilter3.setSelected(false);
 				brandFilter.setSelectedIndex(0);
 				modelFilter.setSelectedIndex(0);
