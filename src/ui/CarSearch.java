@@ -38,6 +38,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		searchVehicleLabel.setFont(new Font("Times new Roman", Font.BOLD, 20));
 		clearFiltersButton = new JButton("CLEAR FILTERS");
 		applyFiltersButton = new JButton("APPLY FILTERS");
+		
 	}
 
 	// @Override
@@ -113,6 +114,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		String[] maxPriceFilterItems = new String[] { "120000","100000","90000","80000","70000", "60000", "50000", "40000", "30000", "20000", "10000" };
 
 		categoryFilter1 = new JCheckBox("Certified");
+		categoryFilter1.setSelected(true);
 		categoryFilter2 = new JCheckBox("New");
 		categoryFilter3 = new JCheckBox("Used");
 

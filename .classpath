@@ -7,6 +7,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Home-Seattle/Downloads/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/SayaliGirish/eclipse-workspace/IntegratedProject1/mysql-connector-java-8.0.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
