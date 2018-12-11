@@ -104,10 +104,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
 		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
 		 yearItems.add(inventory.getVehicles().get(j).getYear());
+		// minPriceFilterItems.add(inventory.getVehicles().get(j).getPrice());
+		// maxPriceFilterItems.add(inventory.getVehicles().get(j).getPrice());
+		 
 		}
 
-		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000","50000","60000" };
-		String[] maxPriceFilterItems = new String[] { "90000","80000","70000", "60000", "50000", "40000", "30000", "20000", "10000" };
+		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000","50000","60000","70000" };
+		String[] maxPriceFilterItems = new String[] { "120000","100000","90000","80000","70000", "60000", "50000", "40000", "30000", "20000", "10000" };
 
 		categoryFilter1 = new JCheckBox("Certified");
 		categoryFilter2 = new JCheckBox("New");
