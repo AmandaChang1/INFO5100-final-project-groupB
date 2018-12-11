@@ -105,16 +105,12 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		 modelFilterItems.add(inventory.getVehicles().get(j).getModel());
 		 bodyTypeFilterItems.add(inventory.getVehicles().get(j).getType());
 		 yearItems.add(inventory.getVehicles().get(j).getYear());
-		// minPriceFilterItems.add(inventory.getVehicles().get(j).getPrice());
-		// maxPriceFilterItems.add(inventory.getVehicles().get(j).getPrice());
-		 
+		
 		}
-
 		String[] minPriceFilterItems = new String[] { "1000", "5000", "10000", "15000", "20000", "30000", "40000","50000","60000","70000" };
 		String[] maxPriceFilterItems = new String[] { "120000","100000","90000","80000","70000", "60000", "50000", "40000", "30000", "20000", "10000" };
 
 		categoryFilter1 = new JCheckBox("Certified");
-		
 		categoryFilter2 = new JCheckBox("New");
 		categoryFilter2.setSelected(true);
 		categoryFilter3 = new JCheckBox("Used");
@@ -166,13 +162,10 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 	}
 
 	public void callInventory() {
-
 		VehicleService vehicleService = new VehicleServiceImple();
-		
-		try {
+	    try {
 			this.inventory = vehicleService.getInventoryByDealer(this.dealerName, 0);
 		} catch (ParseException e1) {
-
 			e1.printStackTrace();
 		}
 
@@ -208,24 +201,13 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 			if (filtercontent.getHighPrice() < filtercontent.getLowPrice()) {
 				String message = "Enter a valid price range";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-				return inventory;
-			}
+				return inventory;}
 			//Price filter validation
 			if (filtercontent.getHighYear() < filtercontent.getLowYear()) {
 				String message = "Enter a valid range for year";
 				JOptionPane.showMessageDialog(new JFrame(), message, "Dialog", JOptionPane.ERROR_MESSAGE);
-				return inventory;
-
-			}
-			System.out.println(filtercontent.getCondition() + " " + filtercontent.getBodyType() + " "
-					+ filtercontent.getModel() + " " + filtercontent.getBrand() + " " + filtercontent.getHighPrice()
-					+ " " + filtercontent.getLowPrice() + "  " + filtercontent.getLowYear() + "  "
-					+ filtercontent.getHighYear());
-
-			System.out.println("get all vehicles" + inventory.getVehicles().size());
+				return inventory;}
 			Inventory inventory1 = searchVehicle.queryByFilter(inventory, filtercontent); 
-			
-			System.out.println("return result inventory " + inventory1.getVehicles().size());
 			return inventory1;
 		}
 	}
@@ -282,7 +264,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 				} else if (sortComboBox.getSelectedItem().equals("Price high to low")) {
 					sortedinventory = vehicleService.Sort(SortType.PRICE_DSC, inventory);
 				}
-				System.out.println("New sorted Inventory size: " + sortedinventory.getVehicles().size());
+				
 				setVehicleDetailsPanel(sortedinventory);
 			}
 		});

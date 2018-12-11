@@ -26,9 +26,7 @@ public class CarSearchDefination extends JFrame{
 	protected Container container;
 	protected Inventory inventory;
 	protected Set<String> modelFilterItems = new TreeSet<>(),brandFilterItems = new TreeSet<>(),
-			bodyTypeFilterItems = new TreeSet<>(),yearItems = new TreeSet<>(),
-			minPriceFilterItems=new TreeSet<>(),
-			maxPriceFilterItems=new TreeSet<>();;
+			bodyTypeFilterItems = new TreeSet<>(),yearItems = new TreeSet<>();
 	           
 	    
 	protected CarSearchDefination(){
