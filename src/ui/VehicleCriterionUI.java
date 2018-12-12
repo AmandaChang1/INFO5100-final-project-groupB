@@ -88,6 +88,7 @@ public class VehicleCriterionUI extends JFrame{
             for (String s : list) {
                 comboBox_model.addItem(s);
             }
+            field_othermaker.setBackground(Color.lightGray);
         } else {
             comboBox_maker.setSelectedItem("Other");
             field_othermaker.setEditable(true);
@@ -105,6 +106,7 @@ public class VehicleCriterionUI extends JFrame{
 //            System.out.println(map.get("Other").get(1));
             field_othermodel.setEditable(true);
             field_othermodel.setText(vc.getModel());
+            field_othermodel.setBackground(Color.lightGray);
         } else {
             comboBox_model.setSelectedItem(vc.getModel());
         }
@@ -202,8 +204,10 @@ public class VehicleCriterionUI extends JFrame{
             comboBox_model.setSelectedItem(null);
 			field_othermaker.setText("");
 			field_othermaker.setEditable(false);
+			field_othermaker.setBackground(Color.lightGray);
             field_othermodel.setText("");
             field_othermodel.setEditable(false);
+            field_othermodel.setBackground(Color.lightGray);
 			field_sp.setText("");
 			field_ep.setText("");
             bg.clearSelection();
@@ -223,16 +227,22 @@ public class VehicleCriterionUI extends JFrame{
             if(key == "Other") {
                 field_othermaker.setEditable(true);
                 field_othermodel.setEditable(true);
+                field_othermaker.setBackground(Color.white);
+                field_othermodel.setBackground(Color.white);
                 comboBox_model.setSelectedItem("Other");
             } else if (key == "ALL") {
                 comboBox_model.setSelectedItem("All");
                 field_othermaker.setEditable(false);
                 field_othermodel.setEditable(false);
+                field_othermaker.setBackground(Color.lightGray);
+                field_othermodel.setBackground(Color.lightGray);
             } else {
                 field_othermaker.setText("");
                 field_othermodel.setText("");
                 field_othermaker.setEditable(false);
                 field_othermodel.setEditable(false);
+                field_othermaker.setBackground(Color.lightGray);
+                field_othermodel.setBackground(Color.lightGray);
             }
             ArrayList<String> list = map.get(key);
             comboBox_model.removeAllItems();
@@ -248,9 +258,11 @@ public class VehicleCriterionUI extends JFrame{
             String value = (String)e.getItem();
             if(value == "Other")  {
                 field_othermodel.setEditable(true);
+                field_othermodel.setBackground(Color.white);
             } else {
                 field_othermodel.setText("");
                 field_othermodel.setEditable(false);
+                field_othermodel.setBackground(Color.lightGray);
             }
         }
     }
@@ -336,10 +348,20 @@ public class VehicleCriterionUI extends JFrame{
         list_all.add("All");
         map.put("All", list_all);
 
+        ArrayList<String> list_bmw = new ArrayList<String>();
+        list_bmw.add("All");
+        list_bmw.add("535i");
+        list_bmw.add("Other");
+        map.put("BMW", list_bmw);
+
+
         ArrayList<String> list_cadillac = new ArrayList<String>();
         list_cadillac.add("All");
         list_cadillac.add("CTS Sedan");
         list_cadillac.add("ATS Sedan");
+        list_cadillac.add("XTS");
+        list_cadillac.add("CT6 Sedan");
+        list_cadillac.add("Escalade");
         list_cadillac.add("Other");
         map.put("Cadillac", list_cadillac);
 
@@ -347,6 +369,12 @@ public class VehicleCriterionUI extends JFrame{
         list_chevrolet.add("All");
         list_chevrolet.add("Camaro");
         list_chevrolet.add("Cruze");
+        list_chevrolet.add("Malibu");
+        list_chevrolet.add("Silverado");
+        list_chevrolet.add("Sonic");
+        list_chevrolet.add("Trax");
+        list_chevrolet.add("Covette");
+        list_chevrolet.add("City Express Cargo Van");
         list_chevrolet.add("Other");
         map.put("Chevrolet",list_chevrolet);
 
@@ -404,6 +432,7 @@ public class VehicleCriterionUI extends JFrame{
         field_othermaker.setBounds(330, 100 , 200, 30);
         this.add(field_othermaker);
         field_othermaker.setEditable(false);
+        field_othermaker.setBackground(Color.lightGray);
 
     }
 
@@ -430,6 +459,7 @@ public class VehicleCriterionUI extends JFrame{
         field_othermodel.setBounds(330, 180 , 200, 30);
         this.add(field_othermodel);
         field_othermodel.setEditable(false);
+        field_othermodel.setBackground(Color.lightGray);
     }
 
     public void componentPrice() {
