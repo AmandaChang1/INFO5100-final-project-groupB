@@ -106,9 +106,9 @@ public class VehicleCriterionUI extends JFrame{
 //            System.out.println(map.get("Other").get(1));
             field_othermodel.setEditable(true);
             field_othermodel.setText(vc.getModel());
-            field_othermodel.setBackground(Color.lightGray);
         } else {
             comboBox_model.setSelectedItem(vc.getModel());
+	    field_othermodel.setBackground(Color.lightGray);
         }
         field_sp.setText(String.valueOf(vc.getMinPrice()));
         field_ep.setText(String.valueOf(vc.getMaxPrice()));
