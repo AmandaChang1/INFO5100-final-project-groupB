@@ -25,7 +25,8 @@ public class LoginSystem {
         f.setVisible(true);
 
 //设置窗口的大小和位置
-        f.setSize(400,400);
+
+        f.setPreferredSize(new Dimension(400,400));
         f.setLocation(200,200);
 
 
