@@ -8,8 +8,10 @@ import dto.VehicleCriterion;
 import service.SpecialService;
 import service.SpecialServiceImpl;
 import ui.Calendar.DateChooser;
+import ui.selfDefinedUI.MyButton;
 import ui.selfDefinedUI.MyTextArea;
 import ui.selfDefinedUI.MyTextField;
+import ui.selfDefinedUI.RoundBorder;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -28,10 +30,12 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
     private VehicleCriterion vehicleCriterion;
     private boolean isAddSpecial, isCopy;
 
+    private ImageIcon saveIcon, clearIcon, cancelIcon, editIcon;
+
     private JScrollPane scrollPane, scrollPane1, scrollPane2;
     private Label l_startDate, l_endDate, l_title, l_description, l_discountType, l_D_description, l_D_criterion, l_discountInfo;
     private JFormattedTextField jftf_startDate, jftf_endDate;
-    private JButton jb_save, jb_clear, jb_cancel, jb_edit;
+    private MyButton jb_save, jb_clear, jb_cancel, jb_edit;
     private JRadioButton jrb_cashBack, jrb_percentageOff;
     private JSlider js_discountOff;
     private MyTextField jtf_title;
@@ -58,7 +62,15 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit("", false);
 
     }
+    private void initiateIcons(){
+        saveIcon = new ImageIcon("src/resources/icons/save.png");
+        clearIcon = new ImageIcon("src/resources/icons/clearAll.png");
+        cancelIcon = new ImageIcon("src/resources/icons/cancel.png");
+        editIcon = new ImageIcon("src/resources/icons/edit.png");
+    }
+
     public SpecialManagerEdit(String dealername, boolean isCopy){
+        initiateIcons();
         this.special = new Special();
         special.setDealerName(dealername);
         this.isCopy = isCopy;
@@ -78,14 +90,13 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         display();
     }
 
-
     //initialize
     public void addListener(SPEditEventListener listener) {
         this.listener = listener;
     }
 
-
-    public SpecialManagerEdit(Special special, boolean isCopy) {
+    public SpecialManagerEdit(Special special, boolean isCopy){
+        initiateIcons();
         this.special = special;
         this.isCopy = isCopy;
 
@@ -110,6 +121,7 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jftf_endDate.setText(special.getEndDate());
         jtf_title.setText(special.getTitle());
         jta_description.setText(special.getDescription());
+        jta_description.setBorder(null);
 
         if (special.getDiscount().getCashBack()) {
             jrb_cashBack.setSelected(true);
@@ -349,7 +361,9 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         l_description.setBounds(x_startPoint, l_title.getY() + gapHeight + l_title.getHeight(), labelLength, singleLineHeight);
 
         container.add(jftf_startDate);
-        jftf_startDate.setSize(dateFieldLength, singleLineHeight);
+
+        container.setBackground(getBackground());
+        jftf_startDate.setSize(dateFieldLength,singleLineHeight);
         jftf_startDate.setEditable(false);
         jftf_startDate.setBounds(l_startDate.getX() + l_startDate.getWidth() + gapWidth, y_startPoint - 3, dateFieldLength, singleLineHeight);
 
@@ -372,6 +386,8 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
                 jftf_startDate.getX() + jftf_endDate.getWidth(), singleLineHeight);
 
         scrollPane = new JScrollPane(jta_description);
+        scrollPane.setBorder(null);
+        scrollPane.setBackground(getBackground());
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setViewportView(jta_description);
@@ -479,15 +495,17 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
 
 
         jftf_startDate = new JFormattedTextField();
+        jftf_startDate.setBorder(new RoundBorder());
         jftf_endDate = new JFormattedTextField();
+        jftf_endDate.setBorder(new RoundBorder());
 
-        jb_save = new JButton("Save");
+        jb_save = new MyButton(saveIcon);
         jb_save.setFont(font2);
-        jb_cancel = new JButton("Cancel");
+        jb_cancel = new MyButton(cancelIcon);
         jb_cancel.setFont(font2);
-        jb_clear = new JButton("Clear");
+        jb_clear = new MyButton(clearIcon);
         jb_clear.setFont(font2);
-        jb_edit = new JButton("Edit");
+        jb_edit = new MyButton(editIcon);
         jb_edit.setFont(font2);
 
         jrb_cashBack = new JRadioButton("Cash back", true);
