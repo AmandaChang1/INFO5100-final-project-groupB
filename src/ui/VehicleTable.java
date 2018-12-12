@@ -70,7 +70,7 @@ public class VehicleTable extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 AddCars ac = new AddCars();
-                ac.add();
+                ac.add(dealername);
             }
         });
         panel.add(b1);
@@ -124,6 +124,7 @@ public class VehicleTable extends JFrame {
 
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.pack();
     }
 

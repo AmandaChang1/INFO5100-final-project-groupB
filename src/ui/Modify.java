@@ -53,21 +53,13 @@ public class Modify extends JFrame {
     private ManageVehicle mc;
     private String dealerName;
 
-    public Modify(){
-        setContentPane(updateP);
-        setSize(800, 600);
-        go();
-        setLocationRelativeTo(null);
-        //frame4.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
-    }
 
     public Modify(Vehicle vehicle,String dealerName){
         this.mc = new ManageVehicleImple();
         mc.updateVehicle(vehicle);
         this.vehicle = vehicle;
 //        System.out.println(vehicle.getId());
-        go();
+        go(dealerName);
         setContentPane(updateP);
         setSize(800, 600);
         setLocationRelativeTo(null);
@@ -79,7 +71,7 @@ public class Modify extends JFrame {
 
 
 
-    public void go() {
+    public void go(String dealerName) {
         this.setTitle("Modify Inventory");
 
 		updateP = new JPanel();
@@ -87,7 +79,7 @@ public class Modify extends JFrame {
 		updateP.setLayout(new GridLayout(11, 2, 30, 10));
 
         JLabel labelDealerID = new JLabel("Dealer ID: ");
-        fieldDealerID = new JTextField("gmps-priority");
+        fieldDealerID = new JTextField(dealerName);
 
         JLabel labelID = new JLabel("ID: ");
         fieldID = new JTextField(20);

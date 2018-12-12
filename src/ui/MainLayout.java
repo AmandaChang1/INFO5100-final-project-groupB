@@ -25,54 +25,54 @@ public class MainLayout extends JFrame {
 //		
 //	}
 	
-	public void go() {
-		JFrame frame2 = new JFrame("Modify Inventory");
-		JPanel mainP = new JPanel();
-		
-		JButton addB = new JButton();
-		JButton searchB = new JButton();
-		addB.setBounds(0, 0, 360, 360);
-		searchB.setBounds(0, 0, 360, 360);
-		
-		ImageIcon ic1 = new ImageIcon("add.png");
-		ImageIcon ic2 = new ImageIcon("search.png");
-		
-		addB.setIcon(ic1);
-		searchB.setIcon(ic2);
-
-
-		addB.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame2.dispose();
-				AddCars ac = new AddCars();
-				ac.add();
-			}
-		});
-	
-			
-		mainP.add(addB);
-		mainP.add(searchB);
-		
-
-		frame2.setContentPane(mainP);
-		frame2.setSize(500, 250);
-        frame2.setLocationRelativeTo(null);          
-        frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame2.setVisible(true);
-	}
+//	public void go() {
+//		JFrame frame2 = new JFrame("Modify Inventory");
+//		JPanel mainP = new JPanel();
+//
+//		JButton addB = new JButton();
+//		JButton searchB = new JButton();
+//		addB.setBounds(0, 0, 360, 360);
+//		searchB.setBounds(0, 0, 360, 360);
+//
+//		ImageIcon ic1 = new ImageIcon("add.png");
+//		ImageIcon ic2 = new ImageIcon("search.png");
+//
+//		addB.setIcon(ic1);
+//		searchB.setIcon(ic2);
+//
+//
+//		addB.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame2.dispose();
+//				AddCars ac = new AddCars();
+//				ac.add();
+//			}
+//		});
+//
+//
+//		mainP.add(addB);
+//		mainP.add(searchB);
+//
+//
+//		frame2.setContentPane(mainP);
+//		frame2.setSize(500, 250);
+//        frame2.setLocationRelativeTo(null);
+//        frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        frame2.setVisible(true);
+//	}
 }
 
 
 class AddCars extends JFrame{
 	
-	public void add() {
+	public void add(String dealerName) {
 		JFrame frame3 = new JFrame("Add New Inventory");
 		JPanel addP = new JPanel();
 		
 		addP.setLayout(new GridLayout(11, 2, 30, 10));
 
         JLabel labelDealerID = new JLabel("Dealer ID: ");
-        JTextField fieldDealerID = new JTextField("gmps-priority");
+        JTextField fieldDealerID = new JTextField(dealerName);
         fieldDealerID.setEditable(false);
 //        JLabel labelID = new JLabel("Car ID: ");
 //        JTextField fieldID = new JTextField(20);
@@ -88,8 +88,10 @@ class AddCars extends JFrame{
         JTextField fieldTrim = new JTextField(20);
         JLabel labelType = new JLabel("Type: ");
         JComboBox type = new JComboBox();
-        type.addItem("New");
-        type.addItem("Used");
+        type.addItem("CAR");
+        type.addItem("SUV");
+        type.addItem("TRUCK");
+        type.addItem("VAN");
         JLabel labelPrice = new JLabel("Price: ");
         JTextField fieldPrice = new JTextField(20);
         JLabel labelImages = new JLabel("Images: ");
@@ -125,12 +127,13 @@ class AddCars extends JFrame{
                 vehicle.setMake(fieldMake.getText());
                 vehicle.setModel(fieldModel.getText());
                 vehicle.setTrim(fieldTrim.getText());
-                vehicle.setType(type.getName());
+                vehicle.setType((String) type.getSelectedItem());
                 vehicle.setPrice(fieldPrice.getText());
                 vehicle.setImages(uploadButton.getText());
 
                 ManageVehicle manageVehicle = new ManageVehicleImple();
                 manageVehicle.addVehicle(vehicle);
+                frame3.dispose();
             }
         });
 

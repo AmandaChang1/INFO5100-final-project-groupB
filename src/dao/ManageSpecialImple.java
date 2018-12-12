@@ -102,8 +102,16 @@ public class ManageSpecialImple implements ManageSpecial{
             ArrayList<String> category = new ArrayList<>();
             Collections.addAll(category,strs);
             criterion.setCategory(category);
-            criterion.setMaker(res[7]);
-            criterion.setModel(res[8]);
+            if(res[7].equals("All")){
+                criterion.setMaker(null);
+            }else{
+                criterion.setMaker(res[7]);
+            }
+            if(res[8].equals("All")){
+                criterion.setModel(null);
+            }else{
+                criterion.setModel(res[8]);
+            }
             String[] strs1 = res[9].split("\\s+");
             ArrayList<String> type = new ArrayList<>();
             Collections.addAll(type,strs1);

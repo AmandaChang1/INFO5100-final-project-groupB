@@ -45,6 +45,9 @@ public class ManageUserImple implements ManageUser {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO dealeraccount (name,password)  VALUES (" + "'" + name + "','" + password + "')");
             preparedStatement.executeUpdate();
             preparedStatement.close();
+            PreparedStatement preparedStatement1 = connection.prepareStatement("INSERT INTO dealer (dealername)  VALUES (" + "'" + name +  "')");
+            preparedStatement1.executeUpdate();
+            preparedStatement1.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
