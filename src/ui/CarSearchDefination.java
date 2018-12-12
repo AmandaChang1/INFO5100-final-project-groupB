@@ -1,4 +1,4 @@
-package src.ui;
+package ui;
 import javax.swing.*;
 import dto.*;
 import dao.*;

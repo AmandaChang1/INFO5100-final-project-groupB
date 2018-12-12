@@ -1,4 +1,4 @@
-package src.ui.SearchDealer;
+package ui.SearchDealer;
 
 import java.io.IOException;
 
