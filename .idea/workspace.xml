@@ -1,53 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="add font">
+    <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageUserImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageUserImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/AddCars.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/CarSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/MainLayout$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/MainLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/MainLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/Modify.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$DiscountTypeSelectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$DiscountTypeSelectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$sliderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit$sliderListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/SpecialManagerEdit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$CategoryListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$CategoryListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$ClearListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$ClearListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$MakerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$MakerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$ModelListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$ModelListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$SubmitListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$SubmitListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$TypeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$TypeListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$YearListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI$YearListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleCriterionUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleTable$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleTable$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/ui/VehicleTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ManageUserImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ManageUserImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Images/SelectionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SelectionUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/MainLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Modify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/selfDefinedUI/VehicleTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/VehicleTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecialImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalProject/dao/ManageSpecialImple.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,6 +11,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Java5100Final_master$LoginSystem.ic" NAME="LoginSystem Coverage Results" MODIFIED="1544654937354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ui.*</FILTER>
+    </SUITE>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1438917756">
@@ -135,7 +96,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="62" />
+          <entry key="java" value="66" />
           <entry key="png" value="2" />
         </counts>
       </usages-collector>
@@ -143,28 +104,30 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="Image" value="2" />
-          <entry key="JAVA" value="62" />
+          <entry key="JAVA" value="66" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="280" />
+          <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="280" />
+          <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="96" column="39" lean-forward="true" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+            <state relative-caret-position="172">
+              <caret line="226" column="55" lean-forward="true" selection-start-line="226" selection-start-column="55" selection-end-line="226" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -178,14 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="841">
-              <caret line="197" column="45" selection-start-line="197" selection-start-column="45" selection-end-line="197" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -231,45 +191,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dto/Specials.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#233#234#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dto/VehicleCriterion.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/MainLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-              <folding>
-                <element signature="e#2240#2241#0" expanded="true" />
-                <element signature="e#2268#2269#0" expanded="true" />
-                <element signature="e#2404#2405#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="452">
+              <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/io/UserIO.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/DealerSearchUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="162" column="34" lean-forward="true" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
+            <state relative-caret-position="550">
+              <caret line="270" column="18" lean-forward="true" selection-start-line="270" selection-start-column="18" selection-end-line="270" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/ManageUser.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/SelectionUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="274">
+              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -401,20 +353,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchDealer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java5100Final-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java5100Final-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="MainLayout.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -426,7 +364,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544654634338" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544655135936" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -581,7 +519,7 @@
       <workItem from="1544417009765" duration="344000" />
       <workItem from="1544571639057" duration="72000" />
       <workItem from="1544571761487" duration="67000" />
-      <workItem from="1544642710941" duration="8624000" />
+      <workItem from="1544642710941" duration="9155000" />
     </task>
     <task id="LOCAL-00001" summary="Associate speical to Vehicles">
       <created>1543362183200</created>
@@ -660,11 +598,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544226548710</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="final bug fixed">
+      <created>1544654663063</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1544654663063</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100329000" />
+    <option name="totallyTimeSpent" value="100860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -679,7 +624,7 @@
     <frame x="0" y="23" width="1680" height="950" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1959707" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1959707" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -701,6 +646,7 @@
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49642345" weight="0.073426574" />
       <window_info anchor="bottom" id="Duplicate detector" order="12" visible="true" weight="0.32897863" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -763,7 +709,8 @@
     <MESSAGE value="properties" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="add font" />
-    <option name="LAST_COMMIT_MESSAGE" value="add font" />
+    <MESSAGE value="final bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="final bug fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -773,12 +720,6 @@
           <line>83</line>
           <properties />
           <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java</url>
-          <line>235</line>
-          <properties />
-          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -827,13 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -896,13 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/DealerSearchUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="270" column="18" lean-forward="true" selection-start-line="270" selection-start-column="18" selection-end-line="270" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/CriterionAndDescriptionUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -928,13 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/SelectionUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1003,13 +923,6 @@
           <folding>
             <element signature="e#4879#4880#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/MainLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1151,13 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="96" column="39" lean-forward="true" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/IconListItemRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1174,11 +1080,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="197" column="45" selection-start-line="197" selection-start-column="45" selection-end-line="197" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SearchDealer/PageButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/MainLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/DealerSearchUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="270" column="18" lean-forward="true" selection-start-line="270" selection-start-column="18" selection-end-line="270" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/SelectionUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ManageSpecialImple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="226" column="55" lean-forward="true" selection-start-line="226" selection-start-column="55" selection-end-line="226" selection-end-column="55" />
         </state>
       </provider>
     </entry>
