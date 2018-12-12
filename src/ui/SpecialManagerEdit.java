@@ -1,15 +1,14 @@
 package ui;
 
 
-import dao.ManageDealerImple;
 import dto.Discount;
 import dto.Special;
 import dto.VehicleCriterion;
-import service.SpecialService;
-import service.SpecialServiceImpl;
 import ui.Calendar.DateChooser;
+import ui.selfDefinedUI.MyButton;
 import ui.selfDefinedUI.MyTextArea;
 import ui.selfDefinedUI.MyTextField;
+import ui.selfDefinedUI.RoundBorder;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -28,20 +27,21 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
     private VehicleCriterion vehicleCriterion;
     private boolean isAddSpecial, isCopy;
 
+    private ImageIcon saveIcon, clearIcon, cancelIcon, editIcon;
+
     private JScrollPane scrollPane, scrollPane1, scrollPane2;
     private Label l_startDate, l_endDate, l_title, l_description, l_discountType, l_D_description, l_D_criterion, l_discountInfo;
     private JFormattedTextField jftf_startDate, jftf_endDate;
-    private JButton jb_save, jb_clear, jb_cancel, jb_edit;
+    private MyButton jb_save, jb_clear, jb_cancel, jb_edit;
     private JRadioButton jrb_cashBack, jrb_percentageOff;
     private JSlider js_discountOff;
     private MyTextField jtf_title;
-    private MyTextArea jta_description, jta_descriptionDisplay, jta_criterionDisplay;
+    private MyTextArea jta_description,jta_descriptionDisplay, jta_criterionDisplay;
     private ButtonGroup btg_discountType;
     //For text font
-    private Font font1 = new Font("TimesRoman", Font.BOLD, 20);
+    private Font font1 = new Font("TimesRoman", Font.BOLD,20);
     //For button font
-    private Font font2 = new Font("TimesRoman", Font.PLAIN, 18);
-    private SpecialService specialService;
+    private Font font2 = new Font("TimesRoman", Font.PLAIN,18);
 
 
     //For null layout
@@ -49,48 +49,33 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
     public final int singleLineHeight = 30;
     public final int gapHeight = 20;
     public final int gapWidth = 10;
-    public final int dateFieldLength = 100;
+    public final int dateFieldLength =100;
     public final int buttonWidth = 75;
 
     SPEditEventListener listener;
 
     public static void main(String[] args) {
-        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit("", false);
+        SpecialManagerEdit specialManagerEdit = new SpecialManagerEdit(null,false);
 
     }
-    public SpecialManagerEdit(String dealername, boolean isCopy){
-        this.special = new Special();
-        special.setDealerName(dealername);
-        this.isCopy = isCopy;
-
-        this.isAddSpecial = isCopy || (this.special == null);
-        specialService=new SpecialServiceImpl();
-        if (this.special == null)
-            this.special = new Special();
-
-        if (isCopy)
-            this.special = new Special(special);
-
-        createComponents();
-        setLayouts();
-        addComponents();
-        addBehaviors();
-        display();
+    private void initiateIcons(){
+        saveIcon = new ImageIcon("src/resources/icons/save.png");
+        clearIcon = new ImageIcon("src/resources/icons/clearAll.png");
+        cancelIcon = new ImageIcon("src/resources/icons/save.png");
+        editIcon = new ImageIcon("src/resources/icons/edit.png");
     }
-
 
     //initialize
     public void addListener(SPEditEventListener listener) {
         this.listener = listener;
     }
 
-
-    public SpecialManagerEdit(Special special, boolean isCopy) {
+    public SpecialManagerEdit(Special special, boolean isCopy){
+        initiateIcons();
         this.special = special;
         this.isCopy = isCopy;
 
         this.isAddSpecial = isCopy || (this.special == null);
-        specialService=new SpecialServiceImpl();
         if (this.special == null)
             this.special = new Special();
 
@@ -101,7 +86,8 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         setLayouts();
         addComponents();
         addBehaviors();
-        initiateTextfields();
+        if (special != null)
+            initiateTextfields();
         display();
     }
 
@@ -110,10 +96,11 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jftf_endDate.setText(special.getEndDate());
         jtf_title.setText(special.getTitle());
         jta_description.setText(special.getDescription());
+        jta_description.setBorder(null);
 
-        if (special.getDiscount().getCashBack()) {
+        if (special.getDiscount().getCashBack()){
             jrb_cashBack.setSelected(true);
-            System.out.println((int) special.getDiscount().getValue());
+            System.out.println((int)special.getDiscount().getValue());
             js_discountOff.setMaximum(5000);
             js_discountOff.setMinimum(0);
             js_discountOff.setMinorTickSpacing(100);
@@ -121,12 +108,12 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
             js_discountOff.setSnapToTicks(true);
             js_discountOff.setPaintTrack(true);
             js_discountOff.setPaintLabels(false);
-            js_discountOff.setValue((int) special.getDiscount().getValue());
+            js_discountOff.setValue((int)special.getDiscount().getValue());
         }
-        if (!special.getDiscount().getCashBack()) {
+        if (!special.getDiscount().getCashBack()){
             jrb_percentageOff.setSelected(true);
-            float discount = 100 - special.getDiscount().getValue() * 100;
-            js_discountOff.setValue((int) discount);
+            float discount = special.getDiscount().getValue()*100;
+            js_discountOff.setValue((int)discount);
         }
         if (!jta_description.getText().equals(""))
             jta_descriptionDisplay.setText(special.getDescription());
@@ -134,7 +121,7 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jta_criterionDisplay.setText(special.getCriterionString());
     }
 
-    private void setSliderFormat(JSlider jSlider, int max, int min, int minTrack, int majorTrack, boolean isSnaped, boolean ispaintTrack, boolean ispaintLabel) {
+    private void setSliderFormat(JSlider jSlider,int max, int min, int minTrack, int majorTrack, boolean isSnaped, boolean ispaintTrack, boolean ispaintLabel){
         jSlider.setMaximum(max);
         jSlider.setMinimum(min);
         jSlider.setMinorTickSpacing(minTrack);
@@ -144,24 +131,24 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jSlider.setPaintLabels(ispaintLabel);
     }
 
-    class DiscountTypeSelectListener implements ChangeListener {
+    class DiscountTypeSelectListener implements ChangeListener{
         @Override
         public void stateChanged(ChangeEvent e) {
-            if (jrb_cashBack.isSelected()) {
+            if (jrb_cashBack.isSelected()){
                 l_discountInfo.setText("CB: $ " + js_discountOff.getValue() + " OFF");
-                setSliderFormat(js_discountOff, 5000, 0, 100, 1000, true, true, false);
-            } else {
+                setSliderFormat(js_discountOff,5000,0,100,1000,true,true,false);
+            }else {
                 l_discountInfo.setText("PF: " + js_discountOff.getValue() + "% OFF");
-                setSliderFormat(js_discountOff, 100, 0, 5, 20, false, true, true);
+                setSliderFormat(js_discountOff,100,0,5,20,false,true,true);
             }
         }
     }
 
-    class sliderListener implements ChangeListener {
+    class sliderListener implements ChangeListener{
 
         @Override
         public void stateChanged(ChangeEvent e) {
-            if (jrb_cashBack.isSelected()) {
+            if (jrb_cashBack.isSelected()){
                 l_discountInfo.setText("CB: $ " + js_discountOff.getValue() + " OFF");
             }
             if (jrb_percentageOff.isSelected())
@@ -169,8 +156,8 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         }
     }
 
-    private void dateChooseCheck(JFormattedTextField startDate, JFormattedTextField endDate, JFormattedTextField choosenField) {
-        DateChooser dateChooser_start = new DateChooser(choosenField);
+    private void dateChooseCheck(JFormattedTextField startDate, JFormattedTextField endDate, JFormattedTextField choosenField){
+        DateChooser dateChooser_start=new DateChooser(choosenField);
         Point p = choosenField.getLocationOnScreen();
         p.y = p.y + 30;
         dateChooser_start.showDateChooser(p);
@@ -178,22 +165,22 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String startDateString = startDate.getText();
         String endDateString = endDate.getText();
-        try {
+        try{
             Date startdate = null;
             Date enddate = null;
-            if (!startDate.getText().equals("")) {
+            if (!startDate.getText().equals("")){
                 startdate = sdf.parse(startDateString);
             }
-            if (!endDate.getText().equals("")) {
+            if (!endDate.getText().equals("")){
                 enddate = sdf.parse(endDateString);
             }
-            if (startdate != null && enddate != null && startdate.after(enddate)) {
-                JOptionPane.showMessageDialog(null, "Start Date should before end date!", "Choose Error", JOptionPane.ERROR_MESSAGE);
+            if (startdate != null && enddate != null && startdate.after(enddate)){
+                JOptionPane.showMessageDialog(null,"Start Date should before end date!", "Choose Error",JOptionPane.ERROR_MESSAGE);
             }
 //            if (startdate != null && enddate != null && enddate.before(startdate)){
 //                JOptionPane.showMessageDialog(null,"End date should AFTER start Date!", "Choose Error",JOptionPane.ERROR_MESSAGE);
 //            }
-        } catch (ParseException e) {
+        } catch (ParseException e){
 
         }
     }
@@ -202,14 +189,14 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jftf_startDate.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                dateChooseCheck(jftf_startDate, jftf_endDate, jftf_startDate);
+                dateChooseCheck(jftf_startDate,jftf_endDate,jftf_startDate);
             }
         });
 
         jftf_endDate.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                dateChooseCheck(jftf_startDate, jftf_endDate, jftf_endDate);
+                dateChooseCheck(jftf_startDate,jftf_endDate,jftf_endDate);
             }
         });
 
@@ -263,7 +250,7 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
             @Override
             public void mouseReleased(MouseEvent e) {
 
-                VehicleCriterionUI vehicleCriterionUI = null;
+                VehicleCriterionUI  vehicleCriterionUI = null;
 
                 if (special.getCriterion() == null)
                     vehicleCriterionUI = new VehicleCriterionUI();
@@ -280,11 +267,11 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
             public void mouseReleased(MouseEvent e) {
                 // add close event
                 if (jftf_startDate.getText().equals(""))
-                    JOptionPane.showMessageDialog(null, "Start date shouldn't be null", "Save Error", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Start date shouldn't be null", "Save Error",JOptionPane.INFORMATION_MESSAGE);
                 else if (jftf_endDate.getText().equals(""))
-                    JOptionPane.showMessageDialog(null, "End date shouldn't be null", "Save Error", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"End date shouldn't be null", "Save Error",JOptionPane.INFORMATION_MESSAGE);
                 else if (jtf_title.getText().equals(""))
-                    JOptionPane.showMessageDialog(null, "Title shouldn't be null", "Save Error", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Title shouldn't be null", "Save Error",JOptionPane.INFORMATION_MESSAGE);
                 else {
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                     String startDateString = jftf_startDate.getText();
@@ -300,19 +287,9 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
                     if (!startDate.before(endDate))
                         JOptionPane.showMessageDialog(null, "Start Date should before end date!", "Choose Error", JOptionPane.ERROR_MESSAGE);
                     else {
-                        int numbersOfCars= 0;
-                        try {
-                            updateSpecial();
-                            numbersOfCars = specialService.getCarNumber(special);
-                        } catch (ParseException e1) {
-                            e1.printStackTrace();
-                        }
-                        int isSave = JOptionPane.showConfirmDialog(null, "There are " + numbersOfCars + " vehicles linked to this special offer!", "Vehicle Pair avaliable", JOptionPane.YES_NO_CANCEL_OPTION);
-                        if (isSave == JOptionPane.YES_OPTION) {
-//                            updateSpecial();
-                            listener.closeUpdateSpecial(special, isAddSpecial);
-                            dispose();
-                        }
+                        updateSpecial();
+                        listener.closeUpdateSpecial(special, isAddSpecial);
+                        dispose();
                     }
                 }
             }
@@ -328,7 +305,7 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
     }
 
     private void display() {
-        setSize(630, 680);
+        setSize(630,680);
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -342,19 +319,20 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
 
         //Add components and set those position
         container.add(l_startDate);
-        l_startDate.setBounds(x_startPoint, y_startPoint, labelLength, singleLineHeight);
+        l_startDate.setBounds(x_startPoint,y_startPoint,labelLength,singleLineHeight);
         container.add(l_title);
-        l_title.setBounds(x_startPoint, l_startDate.getY() + gapHeight + l_startDate.getHeight(), labelLength, singleLineHeight);
+        l_title.setBounds(x_startPoint,l_startDate.getY()+ gapHeight + l_startDate.getHeight(),labelLength,singleLineHeight);
         container.add(l_description);
-        l_description.setBounds(x_startPoint, l_title.getY() + gapHeight + l_title.getHeight(), labelLength, singleLineHeight);
+        l_description.setBounds(x_startPoint,l_title.getY() + gapHeight + l_title.getHeight(),labelLength,singleLineHeight);
 
         container.add(jftf_startDate);
-        jftf_startDate.setSize(dateFieldLength, singleLineHeight);
+        container.setBackground(getBackground());
+        jftf_startDate.setSize(dateFieldLength,singleLineHeight);
         jftf_startDate.setEditable(false);
-        jftf_startDate.setBounds(l_startDate.getX() + l_startDate.getWidth() + gapWidth, y_startPoint - 3, dateFieldLength, singleLineHeight);
+        jftf_startDate.setBounds(l_startDate.getX() + l_startDate.getWidth() + gapWidth,y_startPoint -3,dateFieldLength,singleLineHeight);
 
         container.add(l_discountType);
-        l_discountType.setBounds(x_startPoint, l_description.getY() + gapHeight + singleLineHeight * 4, labelLength, singleLineHeight);
+        l_discountType.setBounds(x_startPoint,l_description.getY() + gapHeight + singleLineHeight*4, labelLength, singleLineHeight);
 
         btg_discountType = new ButtonGroup();
         btg_discountType.add(jrb_cashBack);
@@ -365,19 +343,21 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
 
         container.add(jftf_endDate);
         jftf_endDate.setEditable(false);
-        jftf_endDate.setBounds(l_endDate.getX() + l_endDate.getWidth() + gapWidth, l_endDate.getY() - 3, jftf_startDate.getWidth(), singleLineHeight);
+        jftf_endDate.setBounds(l_endDate.getX() + l_endDate.getWidth() + gapWidth, l_endDate.getY() -3, jftf_startDate.getWidth(), singleLineHeight);
 
         container.add(jtf_title);
-        jtf_title.setBounds(l_title.getX() + l_title.getWidth() + gapWidth, l_title.getY() - 3, jftf_endDate.getX() -
+        jtf_title.setBounds(l_title.getX() + l_title.getWidth() + gapWidth, l_title.getY() -3, jftf_endDate.getX() -
                 jftf_startDate.getX() + jftf_endDate.getWidth(), singleLineHeight);
 
         scrollPane = new JScrollPane(jta_description);
+        scrollPane.setBorder(null);
+        scrollPane.setBackground(getBackground());
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setViewportView(jta_description);
 //        jta_description.setBackground(getContentPane().getBackground());
 //        scrollPane.getViewport().setBackground(getContentPane().getBackground());
-        scrollPane.setBounds(l_description.getX() + l_description.getWidth() + gapWidth, l_description.getY(), jtf_title.getWidth(), l_discountType.getY() - l_description.getY() - gapHeight);
+        scrollPane.setBounds(l_description.getX() + l_description.getWidth() + gapWidth, l_description.getY(), jtf_title.getWidth(), l_discountType.getY() - l_description.getY()- gapHeight);
         jta_description.setLineWrap(true);
         container.add(scrollPane);
 
@@ -385,41 +365,41 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jrb_cashBack.setBounds(l_description.getX() + l_description.getWidth() + gapWidth, l_discountType.getY(), labelLength, singleLineHeight);
 
         container.add(jrb_percentageOff);
-        jrb_percentageOff.setBounds(jrb_cashBack.getX() + gapWidth + jrb_cashBack.getWidth(), jrb_cashBack.getY(), labelLength, singleLineHeight);
+        jrb_percentageOff.setBounds(jrb_cashBack.getX() + gapWidth + jrb_cashBack.getWidth(),jrb_cashBack.getY(),labelLength, singleLineHeight);
 
-        js_discountOff.setBounds(l_discountType.getX() + l_discountType.getWidth() + gapWidth, l_discountType.getY() + singleLineHeight + gapHeight, jtf_title.getWidth(), singleLineHeight + 5);
+        js_discountOff.setBounds(l_discountType.getX() + l_discountType.getWidth() + gapWidth,l_discountType.getY() + singleLineHeight +gapHeight, jtf_title.getWidth(),singleLineHeight+5);
         container.add(js_discountOff);
 
 //        js_cashBack.setBounds(l_discountType.getX() + l_discountType.getWidth() + gapWidth,l_discountType.getY() + singleLineHeight +gapHeight, jtf_title.getWidth(),singleLineHeight+5);
 //        container.add(js_cashBack);
 
         container.add(jb_save);
-        jb_save.setBounds(js_discountOff.getX(), js_discountOff.getY() + js_discountOff.getHeight() + gapHeight, buttonWidth, singleLineHeight);
+        jb_save.setBounds(js_discountOff.getX(), js_discountOff.getY() + js_discountOff.getHeight() + gapHeight,buttonWidth,singleLineHeight);
 
         container.add(jb_clear);
-        jb_clear.setBounds(jtf_title.getWidth() / 3 + jb_save.getX() + buttonWidth / 2, jb_save.getY(), buttonWidth, singleLineHeight);
+        jb_clear.setBounds(jtf_title.getWidth() /3 + jb_save.getX() + buttonWidth/2, jb_save.getY(), buttonWidth,singleLineHeight);
 
         container.add(jb_cancel);
-        jb_cancel.setBounds(jtf_title.getWidth() + jtf_title.getX() - buttonWidth, jb_save.getY(), buttonWidth, singleLineHeight);
+        jb_cancel.setBounds(jtf_title.getWidth() + jtf_title.getX() - buttonWidth,jb_save.getY(),buttonWidth,singleLineHeight);
 
         container.add(l_discountInfo);
-        l_discountInfo.setBounds(l_discountType.getX() + 10, js_discountOff.getY(), l_discountType.getWidth(), singleLineHeight);
+        l_discountInfo.setBounds(l_discountType.getX()+10, js_discountOff.getY(),l_discountType.getWidth(),singleLineHeight);
 
         JPanel panel = new JPanel();
-        GridLayout gridLayout = new GridLayout(1, 2);
-        gridLayout.setHgap(gapWidth * 2);
+        GridLayout gridLayout = new GridLayout(1,2);
+        gridLayout.setHgap(gapWidth*2);
         panel.setLayout(gridLayout);
 
         panel.setBorder(BorderFactory.createTitledBorder("Detail Information"));
-        panel.setPreferredSize(new Dimension(jb_cancel.getX() - l_startDate.getX() + jb_cancel.getWidth(), scrollPane.getHeight() * 2 - 30));
-        panel.setMaximumSize(new Dimension(jb_cancel.getX() - l_startDate.getX() + jb_cancel.getWidth(), scrollPane.getHeight() * 2 - 30));
-        panel.setMinimumSize(new Dimension(jb_cancel.getX() - l_startDate.getX() + jb_cancel.getWidth(), scrollPane.getHeight() * 2 - 30));
-        panel.setBounds(l_startDate.getX(), jb_save.getY() + gapHeight * 2, jb_cancel.getX() - l_startDate.getX() + jb_cancel.getWidth(), scrollPane.getHeight() * 2 - 30);
+        panel.setPreferredSize(new Dimension(jb_cancel.getX()- l_startDate.getX() + jb_cancel.getWidth(),scrollPane.getHeight()*2 -30));
+        panel.setMaximumSize(new Dimension(jb_cancel.getX()- l_startDate.getX() + jb_cancel.getWidth(),scrollPane.getHeight()*2 -30));
+        panel.setMinimumSize(new Dimension(jb_cancel.getX()- l_startDate.getX() + jb_cancel.getWidth(),scrollPane.getHeight()*2 -30));
+        panel.setBounds(l_startDate.getX(),jb_save.getY()+ gapHeight * 2,jb_cancel.getX()- l_startDate.getX() + jb_cancel.getWidth(),scrollPane.getHeight()*2 -30);
 
         JPanel panelLeft = new JPanel();
         panelLeft.setLayout(new BorderLayout());
-        panelLeft.setSize(panel.getWidth() / 2, panel.getHeight());
-        panelLeft.add("North", l_D_description);
+        panelLeft.setSize(panel.getWidth()/2,panel.getHeight());
+        panelLeft.add("North",l_D_description);
         scrollPane1 = new JScrollPane(jta_descriptionDisplay);
         scrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -427,24 +407,24 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         jta_descriptionDisplay.setBackground(getContentPane().getBackground());
         scrollPane1.getViewport().setBackground(getContentPane().getBackground());
         scrollPane1.setBorder(BorderFactory.createLineBorder(getContentPane().getBackground()));
-        panelLeft.add("Center", scrollPane1);
+        panelLeft.add("Center",scrollPane1);
         jta_descriptionDisplay.setOpaque(false);
 
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BorderLayout());
-        panelRight.setSize(panel.getWidth() / 2, panel.getHeight());
+        panelRight.setSize(panel.getWidth()/2,panel.getHeight());
         JPanel panelLeftUp = new JPanel();
-        panelLeftUp.setLayout(new GridLayout(1, 2));
+        panelLeftUp.setLayout(new GridLayout(1,2));
         panelLeftUp.add(l_D_criterion);
         panelLeftUp.add(jb_edit);
-        panelRight.add("North", panelLeftUp);
+        panelRight.add("North",panelLeftUp);
         scrollPane2 = new JScrollPane(jta_criterionDisplay);
         scrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         jta_criterionDisplay.setBackground(getContentPane().getBackground());
         scrollPane2.getViewport().setBackground(getContentPane().getBackground());
         scrollPane2.setBorder(BorderFactory.createLineBorder(getContentPane().getBackground()));
-        panelRight.add("Center", scrollPane2);
+        panelRight.add("Center",scrollPane2);
         jta_criterionDisplay.setOpaque(false);
 
         panel.add(panelLeft);
@@ -456,7 +436,7 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
     private void setLayouts() {
         Container container = getContentPane();
         container.setLayout(null);
-        container.setBounds(100, 100, 250, 150);
+        container.setBounds(100,100,250,150);
     }
 
     private void createComponents() {
@@ -479,21 +459,23 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
 
 
         jftf_startDate = new JFormattedTextField();
+        jftf_startDate.setBorder(new RoundBorder());
         jftf_endDate = new JFormattedTextField();
+        jftf_endDate.setBorder(new RoundBorder());
 
-        jb_save = new JButton("Save");
+        jb_save = new MyButton(saveIcon);
         jb_save.setFont(font2);
-        jb_cancel = new JButton("Cancel");
+        jb_cancel = new MyButton(cancelIcon);
         jb_cancel.setFont(font2);
-        jb_clear = new JButton("Clear");
+        jb_clear = new MyButton(clearIcon);
         jb_clear.setFont(font2);
-        jb_edit = new JButton("Edit");
+        jb_edit = new MyButton(editIcon);
         jb_edit.setFont(font2);
 
-        jrb_cashBack = new JRadioButton("Cash back", true);
+        jrb_cashBack = new JRadioButton("Cash back",true);
         jrb_percentageOff = new JRadioButton("Percentage Off", false);
 
-        js_discountOff = new JSlider(JSlider.HORIZONTAL, 0, 100, 10);
+        js_discountOff = new JSlider(JSlider.HORIZONTAL,0,100,10);
         js_discountOff.setMinorTickSpacing(2);
         js_discountOff.setMajorTickSpacing(20);
         js_discountOff.setPaintTicks(true);
@@ -518,16 +500,18 @@ public class SpecialManagerEdit extends JFrame implements VCEventListener {
         if (jrb_cashBack.isSelected()) {
             discount.setCashBack(true);
             discount.setValue((int) js_discountOff.getValue());
-        } else {
+        }
+        else{
             discount.setCashBack(false);
-            discount.setValue(1 - (float) js_discountOff.getValue() / 100);
+            discount.setValue((float) js_discountOff.getValue()/100);
         }
 
 
         if (special.getId() == null) {
             Random ran = new Random();
-            special.setId("" + Math.abs(ran.nextInt()));
+            special.setId(""+ Math.abs(ran.nextInt()));
         }
+
 
         special.setDescription(jta_description.getText());
         special.setDiscount(discount);
