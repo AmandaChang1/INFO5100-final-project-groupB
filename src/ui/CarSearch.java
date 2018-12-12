@@ -122,7 +122,7 @@ public class CarSearch extends CarSearchDefination implements ActionListener {
 		maxYearFilter = new JComboBox(yearItems.toArray());
 		brandFilter.addItem("brand");
 	    modelFilter.addItem("model");
-	    bodyTypeFilter.addItem("bodytype");
+	    bodyTypeFilter.addItem("bodyType");
 		setFilterIndex();
 
 	}
