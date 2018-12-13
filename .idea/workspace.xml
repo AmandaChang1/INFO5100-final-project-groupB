@@ -1,65 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="final version">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Document/classDocument.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Document/databaseDocument.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinalProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql-connector-java-8.0.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FinalProject/BaseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FinalProject/dealers" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FinalProject/dto/Special$VehicleCriterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FinalProject/service/SpecialServiceImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/BaseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dao/ManageDealer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dao/ManageDealerImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dao/ManageSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dao/ManageSpecialImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dao/ManageVehicle.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dao/ManageVehicleImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dealers" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dto/Dealer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dto/Inventory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dto/Special$VehicleCriterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dto/Special.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dto/Specials.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/dto/Vehicle.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/io/UserIO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/io/UserIOInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/main/app.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/service/DealerService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/service/DealerServiceImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/service/SpecialService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/service/SpecialServiceImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/service/VehicleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaFinalProject/service/VehicleServiceImple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BaseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ManageDealer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ManageDealerImple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ManageSpecial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ManageSpecialImple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ManageVehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ManageVehicleImple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dealers" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Dealer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Special.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Specials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/UserIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/UserIOInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/app.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/DealerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/DealerServiceImple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/SpecialService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/SpecialServiceImple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/VehicleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/VehicleServiceImple.java" afterDir="false" />
-    </list>
+    <list default="true" id="4774fff0-5594-4a42-8553-75c211fc7bee" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/app.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="270">
+              <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -134,9 +76,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="95" />
+    <option name="x" value="294" />
     <option name="y" value="23" />
-    <option name="width" value="1110" />
+    <option name="width" value="1278" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -218,17 +160,34 @@
       <option name="presentableId" value="Default" />
       <updated>1542755142681</updated>
       <workItem from="1542755144968" duration="817000" />
-      <workItem from="1544672226619" duration="258000" />
+      <workItem from="1544672226619" duration="648000" />
     </task>
+    <task id="LOCAL-00001" summary="final version">
+      <created>1544672520541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544672520541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1075000" />
+    <option name="totallyTimeSpent" value="1465000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="186" y="23" width="1110" height="876" extended-state="0" />
+    <frame x="-28" y="23" width="1278" height="876" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25468165" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22006473" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -241,11 +200,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49906367" weight="0.32908162" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49812734" weight="0.32908162" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="10" side_tool="true" visible="true" weight="0.32908162" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49838188" visible="true" weight="0.32908162" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50161815" side_tool="true" visible="true" weight="0.32908162" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -272,8 +231,8 @@
     <entry file="file://$PROJECT_DIR$/javaFinalProject.iml" />
     <entry file="file://$PROJECT_DIR$/src/main/app.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="270">
+          <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
         </state>
       </provider>
     </entry>
