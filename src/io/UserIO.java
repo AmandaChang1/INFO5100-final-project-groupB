@@ -23,7 +23,7 @@ public class UserIO implements  UserIOInterface {
         updatemap.put("dealer","dealername,url,location,zipcode,address");
         updatemap.put("special","id,dealername,startdate,enddate,title,description,category,maker,model,type,startyear,endyear,minPrice,maxPrice,isCashBack,value");
         addmap.put("vehicle","dealername,category,year,make,model,trim,type,price,images");
-       addmap.put("dealer","dealername,url,location,zipcode,address");
+        addmap.put("dealer","dealername,url,location,zipcode,address");
         addmap.put("special","dealername,startdate,enddate,title,description,category,maker,model,type,startyear,endyear,minPrice,maxPrice,isCashBack,value");
 
     }
